@@ -3,108 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Engagement of Arbaj & Sana</title>
-    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>The Engagement Ceremony of Arbaj & Sana</title>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --bg-silk: #faf8f5;
-            --panel-pearl: rgba(255, 255, 255, 0.85);
-            --gold-leaf: #d4af37;
-            --gold-shimmer: linear-gradient(135deg, #b38728 0%, #fbf5b7 25%, #daaf38 50%, #f9f4b6 75%, #aa771c 100%);
-            --text-charcoal: #2c261f;
-            --text-muted: #7a7165;
-            --rose-blush: rgba(244, 233, 224, 0.5);
+            /* Premium Dual-Contrast Color Space */
+            --onyx-gate: #0d0f0e;
+            --onyx-accent: #171b19;
+            --alabaster-parchment: #faf8f5;
+            --emerald-royal: #062419;
+            --brass-metallic: linear-gradient(135deg, #9a7428 0%, #ecd08d 30%, #b88e3c 50%, #f7e6bd 85%, #86611b 100%);
+            --brass-solid: #ad873e;
+            --charcoal-text: #262a28;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background-color: var(--bg-silk);
-            color: var(--text-charcoal);
+            background-color: var(--onyx-gate);
+            color: var(--charcoal-text);
             font-family: 'Montserrat', sans-serif;
             overflow-x: hidden;
             min-height: 100vh;
-            background-image: 
-                radial-gradient(circle at 50% 30%, rgba(251, 245, 231, 0.6) 0%, rgba(250, 248, 245, 1) 100%),
-                url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stroke-linecap='round'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.015'/%3E%3C/svg%3E");
         }
 
-        /* --- THE CEREMONIAL SYSTEM OVERLAY --- */
-        #ceremony-stage {
+        /* --- MECHANIZED LUXURY GATE ENTRANCE (DARK THEME) --- */
+        #portal-stage {
             position: fixed;
             inset: 0;
-            z-index: 2000;
-            perspective: 1200px;
-            overflow: hidden;
+            z-index: 3000;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            overflow: hidden;
         }
 
-        .gate-door {
+        .portal-door {
             position: absolute;
             top: 0;
             width: 50%;
             height: 100%;
-            background: linear-gradient(135deg, #ffffff 0%, #f7f4ee 100%);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            transition: transform 1.6s cubic-bezier(0.66, 0, 0.2, 1);
-            z-index: 2002;
-            box-shadow: 0 0 40px rgba(40,30,20,0.05);
+            background: radial-gradient(circle at var(--p-align), var(--onyx-accent) 0%, var(--onyx-gate) 100%);
+            border: 1px solid rgba(173, 135, 62, 0.15);
+            transition: transform 1.6s cubic-bezier(0.77, 0, 0.175, 1);
             display: flex;
             justify-content: center;
             align-items: center;
         }
+        #door-left { left: 0; --p-align: right; border-right: 2px solid var(--brass-solid); }
+        #door-right { right: 0; --p-align: left; border-left: 2px solid var(--brass-solid); }
 
-        .gate-door.left { left: 0; border-right: 2px solid var(--gold-leaf); transform-origin: left center; }
-        .gate-door.right { right: 0; border-left: 2px solid var(--gold-leaf); transform-origin: right center; }
-
-        /* Elegant filigree inside doors */
-        .gate-door::before {
-            content: '';
+        .gate-filigree {
             position: absolute;
             inset: 30px;
-            border: 1px solid rgba(212, 175, 55, 0.15);
+            border: 1px dashed rgba(173, 135, 62, 0.2);
             pointer-events: none;
         }
 
-        /* Initiation Button */
-        #unseal-btn {
+        /* Master Entrance Button */
+        .portal-trigger {
             position: absolute;
-            z-index: 2005;
-            background: #ffffff;
-            border: 1px solid var(--gold-leaf);
-            padding: 18px 36px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3010;
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background: var(--onyx-gate);
+            border: 2px solid var(--brass-solid);
+            color: #fff;
             font-family: 'Cinzel', serif;
-            font-size: 0.8rem;
-            letter-spacing: 4px;
-            color: var(--text-charcoal);
+            font-size: 0.75rem;
+            letter-spacing: 3px;
             cursor: pointer;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
-            transition: all 0.5s ease;
-        }
-        #unseal-btn:hover { letter-spacing: 6px; background: var(--bg-silk); box-shadow: 0 15px 40px rgba(212, 175, 55, 0.25); }
-
-        /* The Inner Chamber containing the Hand Ring Sequence */
-        .inner-ritual-vault {
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle, #ffffff 0%, #fcfbf9 100%);
-            z-index: 2001;
+            box-shadow: 0 0 40px rgba(0,0,0,0.9), inset 0 0 15px rgba(173, 135, 62, 0.3);
+            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
             display: flex;
-            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .portal-trigger:hover {
+            transform: translate(-50%, -50%) scale(1.08);
+            box-shadow: 0 0 50px rgba(173, 135, 62, 0.6);
+            letter-spacing: 5px;
+        }
+
+        /* --- THE ETERNAL RING CEREMONY STAGE --- */
+        #ring-ritual-overlay {
+            position: fixed;
+            inset: 0;
+            background: var(--onyx-gate);
+            z-index: 2000;
+            display: none;
             justify-content: center;
             align-items: center;
             opacity: 0;
             transition: opacity 0.8s ease;
         }
 
-        .interaction-space {
+        .ritual-box {
             position: relative;
-            width: 300px;
-            height: 300px;
+            width: 400px;
+            height: 400px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -113,153 +114,145 @@
         .hand-silhouette {
             width: 220px;
             height: 220px;
-            opacity: 0.4;
-            transform: scale(0.95);
-            transition: all 1.2s ease;
+            stroke: var(--brass-solid);
+            stroke-width: 0.8;
+            fill: none;
+            opacity: 0.3;
         }
 
-        .couture-ring {
+        .lux-ring-object {
             position: absolute;
             width: 48px;
             height: 48px;
-            border: 2px solid transparent;
-            border-image: var(--gold-shimmer) 1;
+            border: 3px solid transparent;
+            border-image: var(--brass-metallic) 1;
             border-radius: 50%;
-            top: 0px;
-            left: 126px;
+            top: 50px;
+            left: 176px;
             transform: translateY(-100px) scale(1.5);
             opacity: 0;
-            transition: transform 2s cubic-bezier(0.25, 1, 0.5, 1), opacity 1.5s ease;
             display: flex;
             justify-content: center;
             align-items: center;
+            box-shadow: 0 0 0px rgba(236, 208, 141, 0);
         }
-
-        .couture-ring::before {
+        .lux-ring-object::after {
             content: '✦';
-            color: var(--gold-leaf);
-            font-size: 16px;
             position: absolute;
             top: -14px;
-            filter: drop-shadow(0 0 5px #fff);
+            color: #fff;
+            font-size: 14px;
+            text-shadow: 0 0 8px #ad873e;
         }
 
-        /* Light Flare climax element */
-        .ambient-flare {
+        .halo-burst-lens {
             position: fixed;
             inset: 0;
-            background: #ffffff;
-            z-index: 2999;
+            background: #fff;
+            z-index: 2500;
             opacity: 0;
             pointer-events: none;
-            transition: opacity 0.6s ease-in-out;
+            transition: opacity 0.3s ease-out;
         }
 
-        /* --- PREMIUM EDITORIAL CONTAINER --- */
-        .main-scroller {
+        /* --- COUTURE INVITATION CANVAS (LIGHT PARCHMENT THEME) --- */
+        .invitation-root {
+            background-color: var(--alabaster-parchment);
+            background-image: radial-gradient(rgba(173, 135, 62, 0.04) 1px, transparent 0);
+            background-size: 24px 24px;
             max-width: 850px;
             margin: 0 auto;
-            padding: 120px 24px;
+            padding: 120px 30px;
             display: none;
+            flex-direction: column;
+            gap: 100px;
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 2s ease, transform 2s ease;
+            box-shadow: 0 0 80px rgba(0,0,0,0.15);
+            border-left: 1px solid rgba(173, 135, 62, 0.15);
+            border-right: 1px solid rgba(173, 135, 62, 0.15);
         }
 
-        /* Traditional Islamic Bismillah / Welcoming Frame */
-        .welcome-crest {
-            text-align: center;
-            font-family: 'Cinzel', serif;
-            font-size: 0.75rem;
-            letter-spacing: 6px;
-            color: var(--gold-leaf);
-            margin-bottom: 20px;
-        }
-
-        .bismillah {
+        .arabic-invocation {
             font-size: 1.8rem;
-            font-family: 'Alex Brush', cursive;
-            color: var(--text-charcoal);
+            color: var(--emerald-royal);
+            font-weight: 400;
             text-align: center;
-            margin-bottom: 40px;
+            letter-spacing: 0;
+            margin-bottom: 20px;
             opacity: 0.8;
         }
 
-        .card-monogram-box {
+        .editorial-header {
             text-align: center;
-            padding: 80px 40px;
-            background: var(--panel-pearl);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            box-shadow: 0 20px 50px rgba(160, 140, 110, 0.08);
             position: relative;
-            margin-bottom: 60px;
         }
-
-        .cinzel-name {
+        .editorial-header h5 {
             font-family: 'Cinzel', serif;
-            font-size: clamp(2.2rem, 6vw, 4rem);
-            font-weight: 700;
-            letter-spacing: 2px;
-            color: var(--text-charcoal);
-            line-height: 1.2;
+            font-size: 0.75rem;
+            letter-spacing: 6px;
+            color: var(--brass-solid);
+            margin-bottom: 20px;
         }
 
-        .ampersand {
+        .couple-signature-block {
+            margin: 40px 0;
+        }
+        .name-row {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.2rem, 6vw, 4.2rem);
+            font-weight: 700;
+            color: var(--emerald-royal);
+            letter-spacing: 2px;
+            line-height: 1.1;
+        }
+        .conjunction-ampersand {
             font-family: 'Alex Brush', cursive;
             font-size: 3.5rem;
-            background: var(--gold-shimmer);
+            background: var(--brass-metallic);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin: 15px 0;
         }
 
-        /* Additional Traditional Invitation Text Elements */
-        .invitation-prose {
-            max-width: 550px;
-            margin: 40px auto;
-            text-align: center;
-            font-size: 0.9rem;
+        .parental-prologue {
+            font-size: 0.85rem;
             line-height: 2;
-            color: var(--text-muted);
-            letter-spacing: 1px;
-        }
-
-        .family-hierarchy {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin: 30px 0;
-            font-size: 0.8rem;
             letter-spacing: 2px;
             text-transform: uppercase;
+            max-width: 550px;
+            margin: 0 auto;
+            opacity: 0.75;
         }
 
-        /* --- GOLD FOIL SCRATCH BLOCK --- */
-        .scratch-wrapper {
-            max-width: 460px;
-            height: 240px;
-            margin: 60px auto;
+        /* --- METALLIC SCRATCH CARD MATRIX --- */
+        .scratch-architecture-shield {
             position: relative;
-            box-shadow: 0 15px 40px rgba(160,140,110,0.1);
-            border: 1px solid rgba(212, 175, 55, 0.3);
+            width: 100%;
+            max-width: 480px;
+            height: 250px;
+            margin: 0 auto;
+            border: 1px solid var(--brass-solid);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.06);
+            background: #fff;
         }
-
-        .details-underlay {
+        .underneath-vault-details {
             position: absolute;
             inset: 0;
-            background: #ffffff;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
+            background: #ffffff;
             z-index: 1;
         }
-
-        .details-underlay h4 { font-family: 'Cinzel', serif; font-size: 1.4rem; color: var(--gold-leaf); letter-spacing: 2px; margin-bottom: 5px;}
-        .details-underlay p { font-size: 0.85rem; letter-spacing: 1.5px; color: var(--text-charcoal); margin: 3px 0; }
-
-        #scratch-canvas {
+        .underneath-vault-details h6 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            color: var(--brass-solid);
+            margin-bottom: 10px;
+        }
+        #scratch-canvas-engine {
             position: absolute;
             inset: 0;
             z-index: 2;
@@ -268,299 +261,325 @@
             transition: opacity 0.5s ease;
         }
 
-        /* --- METALLIC CHRONO TILES --- */
-        .timer-row {
+        /* --- PREMIUM HIGHLIGHT CHRONO TICKER --- */
+        .ticker-flex-row {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 16px;
-            margin: 80px 0;
+            gap: 15px;
+            max-width: 650px;
+            margin: 0 auto;
         }
-
-        .timer-tile {
+        .ticker-block-card {
             background: #ffffff;
-            border: 1px solid rgba(212, 175, 55, 0.15);
-            padding: 25px 10px;
+            border: 1px solid rgba(173, 135, 62, 0.12);
+            padding: 30px 10px;
             text-align: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.02);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
         }
-
-        .timer-tile span {
+        .ticker-block-card span {
             display: block;
             font-family: 'Cinzel', serif;
-            font-size: 2.2rem;
-            color: var(--text-charcoal);
+            font-size: 2.8rem;
+            color: var(--emerald-royal);
             font-weight: 600;
         }
-
-        .timer-tile label {
-            font-size: 0.6rem;
+        .ticker-block-card label {
+            font-size: 0.65rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: var(--text-muted);
+            color: var(--brass-solid);
+            font-weight: 500;
         }
 
-        /* --- GEOGRAPHIC SPLIT PANELS --- */
-        .venue-split-grid {
+        /* --- THE DESTINATION & RSVP MAP GRID --- */
+        .split-destination-grid {
             display: grid;
-            grid-template-columns: 4.5fr 5.5fr;
+            grid-template-columns: 1.2fr 1fr;
             gap: 40px;
-            background: #ffffff;
-            padding: 40px;
-            border: 1px solid rgba(212, 175, 55, 0.15);
             align-items: center;
         }
-
-        .map-container iframe {
+        .destination-narrative {
+            text-align: left;
+        }
+        .destination-narrative h4 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            color: var(--emerald-royal);
+            margin-bottom: 15px;
+        }
+        .map-frame-wrapper {
+            border: 1px solid rgba(173, 135, 62, 0.25);
+            padding: 6px;
+            background: #fff;
+        }
+        iframe {
             width: 100%;
             height: 280px;
             border: 0;
-            filter: sepia(0.2) contrast(0.95);
+            filter: sepia(0.3) contrast(1.05);
+        }
+
+        .rsvp-block {
+            text-align: center;
+            border-top: 1px double rgba(173, 135, 62, 0.3);
+            padding-top: 5px;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
         }
 
         footer {
-            margin-top: 100px;
             text-align: center;
-            font-family: 'Cinzel', serif;
-            font-size: 0.8rem;
-            letter-spacing: 4px;
-            color: var(--gold-leaf);
-            padding: 40px 0;
-            border-top: 1px solid rgba(212, 175, 55, 0.15);
+            font-family: 'Alex Brush', cursive;
+            font-size: 2.6rem;
+            color: var(--brass-solid);
+            margin-top: 40px;
         }
 
-        /* --- INTERSECTION SCROLL MOTIONS --- */
-        .motion-fade { opacity: 0; transform: translateY(30px); transition: 1.2s cubic-bezier(0.215, 0.61, 0.355, 1); }
-        .motion-fade.active-view { opacity: 1; transform: translateY(0); }
+        /* --- TIMED TRANSITION INTERSECTIONS --- */
+        .reveal-node { opacity: 0; transform: translateY(40px); transition: 1.4s cubic-bezier(0.165, 0.84, 0.44, 1); }
+        .reveal-node.triggered { opacity: 1; transform: translateY(0); }
 
         @media (max-width: 768px) {
-            .venue-split-grid { grid-template-columns: 1fr; padding: 20px; }
-            .timer-row { grid-template-columns: repeat(2, 1fr); }
-            .family-hierarchy { flex-direction: column; gap: 10px; align-items: center; }
+            .split-destination-grid { grid-template-columns: 1fr; text-align: center; }
+            .destination-narrative { text-align: center; }
+            .ticker-flex-row { grid-template-columns: repeat(2, 1fr); }
+            .invitation-root { padding: 80px 20px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="ambient-flare" id="flare-layer"></div>
+    <div class="halo-burst-lens" id="lens-flare"></div>
 
-    <!-- The Grand Entrance Ceremonial Overlay Matrix -->
-    <div id="ceremony-stage">
-        <div class="gate-door left" id="g-left"></div>
-        <button id="unseal-btn">UNSEAL INVITATION</button>
-        <div class="gate-door right" id="g-right"></div>
+    <!-- Dual Contrast Dark Onyx Gates Screen -->
+    <div id="portal-stage">
+        <div class="portal-door" id="door-left"><div class="gate-filigree"></div></div>
+        <button class="portal-trigger" id="gate-open-btn">ENTER</button>
+        <div class="portal-door" id="door-right"><div class="gate-filigree"></div></div>
+    </div>
 
-        <!-- Hidden Chamber Behind Gates where Ring Ceremony manifests -->
-        <div class="inner-ritual-vault" id="ritual-vault">
-            <span style="font-family:'Cinzel'; font-size:0.65rem; letter-spacing:5px; opacity:0.6; transform:translateY(-20px);">THE RITUAL OF FOREVER</span>
-            <div class="interaction-space">
-                <svg class="hand-silhouette" id="ceremony-hands" viewBox="0 0 100 100" fill="none" stroke="#d4af37" stroke-width="0.6">
-                    <path d="M5,65 C20,60 35,52 45,42 C48,39 51,32 46,30 C42,28 39,36 42,42 C44,46 51,50 56,50 C62,50 65,42 61,40 C58,38 56,43 59,46 C62,49 75,48 85,52" />
-                    <path d="M41,40 C41,34 37,33 36,37 C35,40 39,45 42,47" stroke-dasharray="1 1" />
-                </svg>
-                <div class="couture-ring" id="ceremony-ring"></div>
-            </div>
+    <!-- Minimal Fine Art Finger Ring Wearing Ceremony Overlay -->
+    <div id="ring-ritual-overlay">
+        <div class="ritual-box">
+            <svg class="hand-silhouette" viewBox="0 0 100 100">
+                <path d="M10,70 C25,65 38,55 46,44 C49,40 52,32 47,30 C42,28 39,37 43,44 C45,48 52,52 58,52 C64,52 67,44 63,41 C59,38 57,44 60,47 C63,50 78,49 90,55" stroke-linecap="round"/>
+                <path d="M42,42 C42,35 38,34 37,38 C36,41 40,46 43,48" stroke-dasharray="1 1"/>
+            </svg>
+            <div class="lux-ring-object" id="ritual-ring-node"></div>
         </div>
     </div>
 
-    <!-- Invitation Document Architecture -->
-    <div class="main-scroller" id="scroll-root">
-        <div class="welcome-crest">In the Name of Allah, Most Gracious, Most Merciful</div>
-        <div class="bismillah">Bismillah-ir-Rahman-ir-Rahim</div>
+    <!-- Couture Light Theme Alabaster Invitation Body Canvas -->
+    <div class="invitation-root" id="invitation-canvas-container">
+        
+        <header class="editorial-header reveal-node">
+            <div class="arabic-invocation">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+            <h5>HEARTILY WELCOME TO THE CELEBRATION OF UNION</h5>
+            
+            <div class="parental-prologue">
+                Together with their families, <br>
+                <strong>Mr. & Mrs. Hakim Family</strong> <br>
+                & <br>
+                <strong>Mr. & Mrs. Shaikh Family</strong> <br>
+                solicit your gracious presence at the auspicious occasion of the Engagement Ceremony of their children
+            </div>
 
-        <header class="card-monogram-box motion-fade">
-            <span style="font-size:0.7rem; letter-spacing:5px; text-transform:uppercase; color:var(--text-muted); display:block; margin-bottom:15px;">THE ENGAGEMENT CEREMONY OF</span>
-            <div class="cinzel-name">Arbaj</div>
-            <div class="ampersand">and</div>
-            <div class="cinzel-name">Sana Kaussain</div>
+            <div class="couple-signature-block">
+                <div class="name-row">ARBAJ HAKIM</div>
+                <div class="conjunction-ampersand">and</div>
+                <div class="name-row">SANA KAUSSAIN</div>
+            </div>
         </header>
 
-        <section class="motion-fade">
-            <div class="invitation-prose">
-                "And among His signs is this, that He created for you mates from among yourselves, that ye may dwell in tranquility with them, and He has put love and mercy between your hearts."
-                <div style="font-size: 0.75rem; margin-top: 15px; font-family: 'Cinzel'; color: var(--gold-leaf);">- SURAH AR-RUM [30:21]</div>
-            </div>
-            
-            <div class="invitation-prose" style="font-weight: 400; color: var(--text-charcoal);">
-                Together with their families, the couple requests the honor of your presence and blessings as they exchange rings and bind their journeys together.
-            </div>
-
-            <div class="family-hierarchy">
-                <div><strong style="color:var(--gold-leaf);">Groom's Side:</strong> Hakim Family</div>
-                <div><strong style="color:var(--gold-leaf);">Bride's Side:</strong> Shaikh Family</div>
-            </div>
-        </section>
-
-        <!-- Interactive Scratch Cover Layer -->
-        <section class="motion-fade">
-            <div class="scratch-wrapper">
-                <div class="details-underlay">
-                    <p style="font-family:'Cinzel'; color:var(--gold-leaf); font-size:0.65rem; letter-spacing:3px;">THE CHRONOLOGY</p>
-                    <h4>Saturday, June 13, 2026</h4>
-                    <p>AFTER NAMAZ-A-ASR AT 5:30 PM</p>
+        <!-- Scratch Hidden Cover Engine Layer -->
+        <section class="reveal-node" style="text-align: center;">
+            <p style="font-size: 0.65rem; letter-spacing: 4px; margin-bottom: 20px; color: var(--charcoal-text); opacity: 0.6;">BRUSH AWAY THE METALLIC BRASS SHIELD TO DISCERN DETAILS</p>
+            <div class="scratch-architecture-shield" id="scratch-bounding-box">
+                <div class="underneath-vault-details">
+                    <h6>SATURDAY, JUNE 13, 2026</h6>
+                    <p style="font-size: 0.8rem; letter-spacing: 3px; font-weight: 500; color: var(--charcoal-text);">AFTER NAMAZ-A-ASR AT 5:30 PM</p>
                 </div>
-                <canvas id="scratch-canvas"></canvas>
+                <canvas id="scratch-canvas-engine"></canvas>
             </div>
         </section>
 
-        <!-- Precision Countdown Module Grid -->
-        <section class="motion-fade">
-            <div class="timer-row">
-                <div class="timer-tile"><span id="days">00</span><label>Days</label></div>
-                <div class="timer-tile"><span id="hours">00</span><label>Hours</label></div>
-                <div class="timer-tile"><span id="mins">00</span><label>Mins</label></div>
-                <div class="timer-tile"><span id="secs">00</span><label>Secs</label></div>
+        <!-- Chrono Countdown Engine Grid -->
+        <section class="reveal-node">
+            <div class="ticker-flex-row">
+                <div class="ticker-block-card"><span id="metric-days">00</span><label>Days</label></div>
+                <div class="ticker-block-card"><span id="metric-hours">00</span><label>Hours</label></div>
+                <div class="ticker-block-card"><span id="metric-mins">00</span><label>Mins</label></div>
+                <div class="ticker-block-card"><span id="metric-secs">00</span><label>Secs</label></div>
             </div>
         </section>
 
-        <!-- Geographic Structural Map Location Interface Layout -->
-        <section class="motion-fade">
-            <div class="venue-split-grid">
-                <div>
-                    <span style="font-family:'Cinzel'; font-size:0.7rem; color:var(--gold-leaf); letter-spacing:3px; display:block; margin-bottom:10px;">THE BANQUET</span>
-                    <h3 style="font-family:'Cinzel'; font-weight:400; font-size:1.8rem; margin-bottom:15px; line-height:1.3;">Hotel Yugvir & Garden</h3>
-                    <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.8;">Nira-Baramati Road, Nimbut.<br><br>We anticipate your arrival to grace our celebration with warmth, prayers, and unforgettable memories.</p>
+        <!-- Destination Geographic Core Layout -->
+        <section class="reveal-node">
+            <div class="split-destination-grid">
+                <div class="destination-narrative">
+                    <span style="font-size: 0.65rem; letter-spacing: 4px; color: var(--brass-solid); font-weight: 700; display: block; margin-bottom: 10px;">RENDEZVOUS COURT</span>
+                    <h4>Hotel Yugvir & Garden</h4>
+                    <p style="font-size: 0.9rem; opacity: 0.7; line-height: 1.8; margin-bottom: 25px;">
+                        Nira-Baramati Road, Nimbut.<br>
+                        Your presence will fill this historic milestone in our journey with abundant blessings and joy.
+                    </p>
+                    <div class="rsvp-block">
+                        <strong>RSVP:</strong> Kindly consider this as a personal invitation from all family members.
+                    </div>
                 </div>
-                <div class="map-container">
+                <div class="map-frame-wrapper">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3174.9610736330874!2d74.24886167424374!3d18.10959458160069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc3ab005580541d%3A0xec01f662fe63ba08!2sHotel%20Yugveer%20Garden!5e1!3m2!1sen!2sin!4v1780923617727!5m2!1sen!2sin"></iframe>
                 </div>
             </div>
         </section>
 
         <footer>
-            With Warm Regards & Compliments from Friends and Families
+            With Best Compliments From Friends & Relatives
         </footer>
     </div>
 
     <script>
-        const unsealBtn = document.getElementById('unseal-btn');
-        const gLeft = document.getElementById('g-left');
-        const gRight = document.getElementById('g-right');
-        const ritualVault = document.getElementById('ritual-vault');
-        const cHands = document.getElementById('ceremony-hands');
-        const cRing = document.getElementById('ceremony-ring');
-        const flareLayer = document.getElementById('flare-layer');
-        const scrollRoot = document.getElementById('scroll-root');
+        const gateBtn = document.getElementById('gate-open-btn');
+        const leftDoor = document.getElementById('door-left');
+        const rightDoor = document.getElementById('door-right');
+        const portalStage = document.getElementById('portal-stage');
+        const ringOverlay = document.getElementById('ring-ritual-overlay');
+        const ringNode = document.getElementById('ritual-ring-node');
+        const flareLens = document.getElementById('lens-flare');
+        const mainCard = document.getElementById('invitation-canvas-container');
 
-        unsealBtn.addEventListener('click', () => {
-            // Step 1: Open the gates swinging outwards
-            unsealBtn.style.opacity = '0';
-            unsealBtn.style.pointerEvents = 'none';
-            gLeft.style.transform = 'translateX(-100%) rotateY(-20deg)';
-            gRight.style.transform = 'translateX(100%) rotateY(20deg)';
-            
-            // Step 2: Fade in the waiting hand-ring chamber interface panel
+        // Stage 1: Mechanized Gate Open Event Action Loop
+        gateBtn.addEventListener('click', () => {
+            gateBtn.style.opacity = '0';
+            gateBtn.style.transform = 'translate(-50%, -50%) scale(0)';
+            leftDoor.style.transform = 'translateX(-100%)';
+            rightDoor.style.transform = 'translateX(100%)';
+
             setTimeout(() => {
-                ritualVault.style.opacity = '1';
-                cHands.style.transform = 'scale(1)';
-                cHands.style.opacity = '1';
-                
-                // Step 3: Run the sliding ring wear finger animation sequence logic
-                setTimeout(() => {
-                    cRing.style.opacity = '1';
-                    cRing.style.transform = 'translateY(43px) scale(1)';
-                    
-                    // Step 4: Initiate screen-wide luminous ambient flare blast transitions
-                    setTimeout(() => {
-                        flareLayer.style.opacity = '1';
-                        
-                        setTimeout(() => {
-                            document.getElementById('ceremony-stage').style.display = 'none';
-                            scrollRoot.style.display = 'block';
-                            window.scrollTo(0,0);
-                            
-                            setTimeout(() => {
-                                flareLayer.style.opacity = '0';
-                                scrollRoot.style.opacity = '1';
-                                scrollRoot.style.transform = 'translateY(0)';
-                                triggerViewIntersectionObserver();
-                                initGoldFoilScratchSurface();
-                            }, 300);
-                        }, 600);
-                    }, 1800);
-                }, 500);
-            }, 400);
+                portalStage.style.display = 'none';
+                executeRingCeremonySequence();
+            }, 1200);
         });
 
-        // Precision Intersection Observer for elements fading up smoothly on window scrolling
-        function triggerViewIntersectionObserver() {
-            const views = document.querySelectorAll('.motion-fade');
-            const obs = new IntersectionObserver((entries) => {
-                entries.forEach(e => {
-                    if(e.isIntersecting) e.target.classList.add('active-view');
-                });
-            }, { threshold: 0.1 });
-            views.forEach(v => obs.observe(v));
+        // Stage 2: Automated Ring Sliding finger animation sequence core logic
+        function executeRingCeremonySequence() {
+            ringOverlay.style.display = 'flex';
+            setTimeout(() => { ringOverlay.style.opacity = '1'; }, 50);
+
+            // Stagger ring entry path glide sequence point tracking
+            setTimeout(() => {
+                ringNode.style.opacity = '1';
+                ringNode.style.transform = 'translateY(45px) scale(1)';
+                ringNode.style.transition = 'transform 2.2s cubic-bezier(0.19, 1, 0.22, 1), opacity 1.5s ease';
+            }, 600);
+
+            // Climax explosion state transition point
+            setTimeout(() => {
+                ringNode.style.boxShadow = '0 0 50px 20px rgba(236, 208, 141, 0.9)';
+                flareLens.style.opacity = '1';
+                
+                setTimeout(() => {
+                    ringOverlay.style.display = 'none';
+                    document.body.style.backgroundColor = 'var(--alabaster-parchment)';
+                    mainCard.style.display = 'flex';
+                    window.scrollTo(0,0);
+                    
+                    setTimeout(() => {
+                        flareLens.style.opacity = '0';
+                        mainCard.style.opacity = '1';
+                        initializeScrollObserverMatrix();
+                        buildParchmentScratchEngine();
+                    }, 300);
+                }, 400);
+
+            }, 2600);
         }
 
-        // HTML5 Scratch Surface Engineering Configuration Layer
-        function initGoldFoilScratchSurface() {
-            const cvs = document.getElementById('scratch-canvas');
-            const ctx = cvs.getContext('2d');
-            const wrapper = cvs.parentElement;
-            
-            cvs.width = wrapper.offsetWidth;
-            cvs.height = wrapper.offsetHeight;
+        // Scroll Node Viewport Intersection Observation System API
+        function initializeScrollObserverMatrix() {
+            const elements = document.querySelectorAll('.reveal-node');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('triggered');
+                    }
+                });
+            }, { threshold: 0.1 });
+            elements.forEach(node => observer.observe(node));
+        }
 
-            // Paint an elegant metallic matte-gold brush overlay texture
-            ctx.fillStyle = '#ecdcb0';
-            ctx.fillRect(0, 0, cvs.width, cvs.height);
+        // Metallic Liquid Gold Canvas Scraping Module Mechanics
+        function buildParchmentScratchEngine() {
+            const canvas = document.getElementById('scratch-canvas-engine');
+            const ctx = canvas.getContext('2d');
+            const box = document.getElementById('scratch-bounding-box');
             
-            ctx.fillStyle = '#dec787';
-            for (let i = 0; i < cvs.width; i += 4) {
-                ctx.fillRect(i, Math.random() * cvs.height, 1, Math.random() * 20 + 10);
+            canvas.width = box.offsetWidth;
+            canvas.height = box.offsetHeight;
+
+            // Apply solid simulated gold cover plate layer
+            ctx.fillStyle = '#c5a059';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Apply granular premium noise distribution texture patterns to mask the cover plate
+            ctx.globalCompositeOperation = 'source-over';
+            ctx.fillStyle = 'rgba(255,255,255,0.08)';
+            for(let i=0; i<800; i++) {
+                ctx.fillRect(Math.random()*canvas.width, Math.random()*canvas.height, 1.5, 1.5);
             }
 
-            ctx.font = "600 9px Montserrat";
-            ctx.fillStyle = "#695a37";
+            ctx.font = "600 11px Montserrat";
+            ctx.fillStyle = "#ffffff";
             ctx.textAlign = "center";
             ctx.letterSpacing = "3px";
-            ctx.fillText("SCRATCH WITH FINGER TO REVEAL TIME", cvs.width / 2, cvs.height / 2 + 3);
+            ctx.fillText("SCRATCH WITH FINGER TO UNVEIL TIME", canvas.width/2, canvas.height/2 + 4);
 
-            let scratching = false;
-            const drawScratch = (e) => {
-                if (!scratching) return;
-                const rect = cvs.getBoundingClientRect();
-                const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-                const clientY = e.touches ? e.touches[0].clientY : e.clientY;
-                
-                const currentX = clientX - rect.left;
-                const currentY = clientY - rect.top;
+            let trackingBrush = false;
+
+            const eraseSequence = (e) => {
+                if(!trackingBrush) return;
+                const rect = canvas.getBoundingClientRect();
+                const pointerX = e.touches ? e.touches[0].clientX : e.clientX;
+                const pointerY = e.touches ? e.touches[0].clientY : e.clientY;
+
+                const posX = pointerX - rect.left;
+                const posY = pointerY - rect.top;
 
                 ctx.globalCompositeOperation = 'destination-out';
                 ctx.beginPath();
-                ctx.arc(currentX, currentY, 26, 0, Math.PI * 2);
+                ctx.arc(posX, posY, 32, 0, Math.PI * 2);
                 ctx.fill();
-                evaluateScratchProgress();
+                evaluateAreaThreshold();
             };
 
-            const evaluateScratchProgress = () => {
-                const pxData = ctx.getImageData(0, 0, cvs.width, cvs.height).data;
-                let blankSpace = 0;
-                for (let i = 3; i < pxData.length; i += 4) { if (pxData[i] === 0) blankSpace++; }
-                if (blankSpace > (pxData.length / 4) * 0.5) {
-                    cvs.style.opacity = '0';
-                    setTimeout(() => cvs.remove(), 500);
+            const evaluateAreaThreshold = () => {
+                const mapPixels = ctx.getImageData(0,0,canvas.width, canvas.height).data;
+                let emptyNodes = 0;
+                for(let i=3; i<mapPixels.length; i+=4) { if(mapPixels[i] === 0) emptyNodes++; }
+                if(emptyNodes > (mapPixels.length / 4) * 0.60) {
+                    canvas.style.opacity = '0';
+                    setTimeout(() => canvas.remove(), 500);
                 }
             };
 
-            cvs.addEventListener('mousedown', () => scratching = true);
-            cvs.addEventListener('touchstart', () => scratching = true);
-            window.addEventListener('mouseup', () => scratching = false);
-            window.addEventListener('touchend', () => scratching = false);
-            cvs.addEventListener('mousemove', drawScratch);
-            cvs.addEventListener('touchmove', drawScratch);
+            canvas.addEventListener('mousedown', () => trackingBrush = true);
+            canvas.addEventListener('touchstart', () => trackingBrush = true);
+            window.addEventListener('mouseup', () => trackingBrush = false);
+            window.addEventListener('touchend', () => trackingBrush = false);
+            canvas.addEventListener('mousemove', eraseSequence);
+            canvas.addEventListener('touchmove', eraseSequence);
         }
 
-        // Chronometer Precision Real-Time Engine Ticker
-        const targetTimeline = new Date("June 13, 2026 17:30:00").getTime();
+        // Live Real-Time Countdown Math Node Execution
+        const targetEpoch = new Date("June 13, 2026 17:30:00").getTime();
         setInterval(() => {
-            const distance = targetTimeline - new Date().getTime();
-            if (distance < 0) return;
+            const currentDelta = targetEpoch - new Date().getTime();
+            if(currentDelta < 0) return;
 
-            document.getElementById('days').innerText = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
-            document.getElementById('hours').innerText = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
-            document.getElementById('mins').innerText = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
-            document.getElementById('secs').innerText = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
+            document.getElementById('metric-days').innerText = String(Math.floor(currentDelta / (1000 * 60 * 60 * 24))).padStart(2, '0');
+            document.getElementById('metric-hours').innerText = String(Math.floor((currentDelta % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+            document.getElementById('metric-mins').innerText = String(Math.floor((currentDelta % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+            document.getElementById('metric-secs').innerText = String(Math.floor((currentDelta % (1000 * 60)) / 1000)).padStart(2, '0');
         }, 1000);
     </script>
 </body>
