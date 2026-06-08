@@ -3,582 +3,626 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Royal Engagement — Arbaj & Sana</title>
-    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;600;700&family=Montserrat:wght@200;400;500&display=swap" rel="stylesheet">
+    <title>The Engagement of Arbaj & Sana</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@200;400;500&family=Meera+Inimai&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --onyx-velvet: #030d0a;
-            --emerald-royal: #021f14;
-            --gold-leaf: #dfba6b;
-            --champagne-glow: linear-gradient(135deg, #b38728 0%, #fbf5b7 25%, #daaf4b 50%, #f9f4b3 75%, #aa771c 100%);
-            --silk-white: #f5f2eb;
+            --bg-velvet: #020b08;
+            --jade-matte: #041c13;
+            --gold-solid: #dfba6b;
+            --gold-gradient: linear-gradient(135deg, #b38728 0%, #fcf6ba 30%, #dfba6b 50%, #fcf6ba 70%, #aa771c 100%);
+            --cream: #f4f0e6;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border-glass: rgba(223, 186, 107, 0.2);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
         body {
-            background-color: var(--onyx-velvet);
-            color: var(--silk-white);
+            background-color: var(--bg-velvet);
+            color: var(--cream);
             font-family: 'Montserrat', sans-serif;
             overflow-x: hidden;
             min-height: 100vh;
         }
 
-        /* --- SPARKLING TWILIGHT ENVIRONMENT --- */
-        .ambient-sparkles {
+        /* --- THE CINEMATIC RITUAL EXPERIENCE --- */
+        #ceremony-portal {
             position: fixed;
             inset: 0;
-            pointer-events: none;
-            z-index: 10;
-        }
-        .sparkle {
-            position: absolute;
-            color: var(--gold-leaf);
-            font-size: 10px;
-            animation: pulseGlow 3s infinite ease-in-out;
-            opacity: 0;
-        }
-
-        @keyframes pulseGlow {
-            0%, 100% { opacity: 0; transform: scale(0.5); }
-            50% { opacity: 0.8; transform: scale(1.2) rotate(15deg); }
-        }
-
-        /* --- INTERACTIVE PROLOGUE ARCHWAY --- */
-        #prologue-archway {
-            position: fixed;
-            inset: 0;
-            background: radial-gradient(circle at center, var(--emerald-royal) 0%, var(--onyx-velvet) 100%);
+            background: radial-gradient(circle at center, var(--jade-matte) 0%, var(--bg-velvet) 100%);
             z-index: 3000;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            transition: all 1.8s cubic-bezier(0.77, 0, 0.175, 1);
+            transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
-        .kinetic-seal-wrapper {
+        .ritual-container {
             position: relative;
-            width: 260px;
-            height: 260px;
+            width: 320px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Pure CSS Architectural Vector Hands */
+        .hand-framework {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin-top: 20px;
+        }
+
+        .hand-framework svg {
+            width: 100%;
+            height: 100%;
+            stroke: var(--gold-solid);
+            stroke-width: 0.8;
+            fill: none;
+            opacity: 0.35;
+        }
+
+        /* Ring Tracker Track */
+        .finger-track {
+            position: absolute;
+            top: 40px;
+            left: 98px;
+            width: 4px;
+            height: 90px;
+            background: rgba(223, 186, 107, 0.1);
+            border-radius: 2px;
+        }
+
+        .interactive-ring {
+            position: absolute;
+            top: 0;
+            left: -18px;
+            width: 40px;
+            height: 40px;
+            border: 3px solid transparent;
+            border-image: var(--gold-gradient) 1;
+            border-radius: 50%;
+            cursor: grab;
             display: flex;
             justify-content: center;
             align-items: center;
+            box-shadow: 0 0 15px rgba(223, 186, 107, 0.3);
+            touch-action: none;
+            z-index: 10;
         }
 
-        .pulsing-halo {
+        .interactive-ring:active { cursor: grabbing; }
+
+        .interactive-ring::before {
+            content: '✦';
             position: absolute;
-            inset: 0;
-            border: 1px dashed var(--gold-leaf);
-            border-radius: 50%;
-            animation: spinHalo 24s linear infinite;
+            top: -14px;
+            color: #fff;
+            font-size: 14px;
+            text-shadow: 0 0 8px var(--gold-solid);
         }
 
-        @keyframes spinHalo { 100% { transform: rotate(360deg); } }
-
-        .hand-cuff-silhouette {
-            width: 140px;
-            height: 140px;
-            opacity: 0.35;
-            stroke: var(--gold-leaf);
-            stroke-width: 0.8;
-            transition: all 1s ease;
-        }
-
-        .ring-token {
-            position: absolute;
-            width: 28px;
-            height: 28px;
-            border: 2px solid transparent;
-            border-image: var(--champagne-glow) 1;
-            border-radius: 50%;
-            transform: translate(-18px, -45px) scale(2);
-            opacity: 0;
-            transition: all 2.5s cubic-bezier(0.19, 1, 0.22, 1);
-        }
-
-        .interaction-medallion {
-            margin-top: 40px;
-            background: transparent;
-            border: 1px solid var(--gold-leaf);
-            padding: 14px 28px;
-            font-family: 'Cinzel', serif;
-            font-size: 0.7rem;
+        .slider-instruction {
+            font-size: 0.65rem;
             letter-spacing: 4px;
-            color: var(--gold-leaf);
-            cursor: pointer;
-            border-radius: 50px;
-            transition: all 0.4s;
-            box-shadow: 0 0 15px rgba(223, 186, 107, 0.1);
+            text-transform: uppercase;
+            color: var(--gold-solid);
+            text-align: center;
+            opacity: 0.8;
+            animation: pulse 2s infinite;
         }
 
-        /* --- THE EMERALD COURT SCROLLER --- */
-        .court-scroller {
-            max-width: 850px;
+        @keyframes pulse {
+            0%, 100% { opacity: 0.4; transform: scale(0.98); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        .flash-lens {
+            position: fixed;
+            inset: 0;
+            background: #ffffff;
+            z-index: 4000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease-out;
+        }
+
+        /* --- IMMERSIVE MAIN MAIN CONTENT --- */
+        .main-scroller {
+            max-width: 700px;
             margin: 0 auto;
             padding: 120px 24px;
             display: none;
             opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 2.5s cubic-bezier(0.19, 1, 0.22, 1), transform 2.5s cubic-bezier(0.19, 1, 0.22, 1);
+            flex-direction: column;
+            gap: 100px;
+            transition: opacity 2s ease;
         }
 
-        .royal-crest-banner {
-            text-align: center;
-            margin-bottom: 90px;
-        }
-
-        .crest-monogram {
-            font-family: 'Cinzel', serif;
+        /* Editorial Headers */
+        .bismillah {
+            font-family: 'Meera Inimai', sans-serif;
             font-size: 1.8rem;
-            color: var(--gold-leaf);
-            border: 1px solid var(--gold-leaf);
-            width: 60px;
-            height: 60px;
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-            margin-bottom: 25px;
-            box-shadow: 0 0 20px rgba(223, 186, 107, 0.2);
+            color: var(--gold-solid);
+            text-align: center;
+            letter-spacing: 2px;
+            opacity: 0.85;
         }
 
-        .cinzel-subtitle {
-            font-family: 'Cinzel', serif;
-            font-size: 0.75rem;
+        .sacred-verse {
+            text-align: center;
+            font-size: 0.8rem;
+            font-style: italic;
+            line-height: 1.8;
+            max-width: 500px;
+            margin: 0 auto;
+            opacity: 0.6;
+        }
+
+        .monogram-card {
+            text-align: center;
+            border: 1px solid var(--border-glass);
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            padding: 60px 20px;
+            position: relative;
+        }
+
+        .monogram-card::before, .monogram-card::after {
+            content: ''; position: absolute; width: 20px; height: 20px; border: 1px solid var(--gold-solid);
+        }
+        .monogram-card::before { top: 15px; left: 15px; border-right: 0; border-bottom: 0; }
+        .monogram-card::after { bottom: 15px; right: 15px; border-left: 0; border-top: 0; }
+
+        .title-sub {
+            font-size: 0.7rem;
             letter-spacing: 6px;
             text-transform: uppercase;
-            color: var(--gold-leaf);
+            color: var(--gold-solid);
+            margin-bottom: 20px;
         }
 
-        .script-headline {
-            font-family: 'Alex Brush', cursive;
-            font-size: clamp(4rem, 11vw, 7.5rem);
-            background: var(--champagne-glow);
+        .grooms-names {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.2rem, 6vw, 4rem);
+            font-weight: 400;
+            letter-spacing: 2px;
+            line-gradient: var(--gold-gradient);
+            background: var(--gold-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin: 15px 0;
-            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.4));
         }
 
-        /* --- LINEAGE GENEALOGY CARD --- */
-        .lineage-box {
+        /* --- SCHEDULE & TIMELINE --- */
+        .itinerary-box {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            background: rgba(4, 28, 19, 0.3);
+            border: 1px solid var(--border-glass);
+            padding: 40px 30px;
+        }
+
+        .itinerary-row {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            border-top: 1px solid rgba(223, 186, 107, 0.15);
-            border-bottom: 1px solid rgba(223, 186, 107, 0.15);
-            padding: 45px 0;
-            margin-bottom: 90px;
-            text-align: center;
+            grid-template-columns: 80px 1fr;
+            align-items: baseline;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding-bottom: 15px;
         }
+        .itinerary-row:last-child { border: 0; padding-bottom: 0; }
 
-        .lineage-side h5 {
+        .time-stamp {
             font-family: 'Cinzel', serif;
-            font-size: 0.85rem;
-            color: var(--gold-leaf);
-            letter-spacing: 3px;
-            margin-bottom: 12px;
-        }
-
-        .lineage-side p {
+            color: var(--gold-solid);
             font-size: 0.9rem;
-            opacity: 0.8;
-            line-height: 1.8;
+            font-weight: bold;
         }
 
-        /* --- DIGITAL VELVET SCRATCH VAULT --- */
-        .velvet-scratch-shield {
+        .event-details h5 {
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+        .event-details p { font-size: 0.8rem; opacity: 0.6; }
+
+        /* --- SCRATCH SCREEN ENGINE --- */
+        .scratch-wrapper {
             position: relative;
             width: 100%;
-            max-width: 550px;
-            height: 260px;
-            margin: 0 auto 90px auto;
-            border: 1px solid rgba(223, 186, 107, 0.2);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+            height: 240px;
+            border: 1px solid var(--border-glass);
+            background: #03120d;
+            overflow: hidden;
         }
 
-        .hidden-temporal-vault {
+        .scratch-underlayer {
             position: absolute;
             inset: 0;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: #02140d;
             text-align: center;
+            z-index: 1;
+        }
+
+        .scratch-underlayer h4 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            color: var(--gold-solid);
+            margin-bottom: 5px;
         }
 
         #scratch-canvas {
             position: absolute;
             inset: 0;
-            z-index: 5;
+            z-index: 2;
             touch-action: none;
-            cursor: pointer;
+            cursor: crosshair;
+            transition: opacity 0.5s;
         }
 
-        /* --- CHRONO DISPLAY MODULES --- */
-        .ticker-flex-row {
+        /* --- TICKER TIMER PLATES --- */
+        .countdown-matrix {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 16px;
-            margin-bottom: 90px;
+            gap: 15px;
         }
 
-        .ticker-quad {
-            background: rgba(2, 31, 20, 0.4);
-            border-left: 1px solid var(--gold-leaf);
-            padding: 25px 10px;
+        .matrix-node {
+            background: var(--glass);
+            border: 1px solid var(--border-glass);
+            padding: 25px 5px;
             text-align: center;
         }
 
-        .ticker-quad span {
+        .matrix-node span {
             display: block;
             font-family: 'Cinzel', serif;
-            font-size: 2.4rem;
-            color: var(--gold-leaf);
+            font-size: 2.5rem;
+            color: var(--gold-solid);
+            font-weight: 300;
         }
 
-        .ticker-quad label {
+        .matrix-node label {
             font-size: 0.55rem;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             text-transform: uppercase;
             opacity: 0.5;
         }
 
-        /* --- THE DRESS CODE REVELATION --- */
-        .dress-code-center {
-            text-align: center;
-            margin-bottom: 90px;
-            background: rgba(255,255,255,0.01);
-            padding: 40px 20px;
-            border: 1px solid rgba(223, 186, 107, 0.05);
-        }
-
-        .palette-swatches {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .swatch {
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-
-        /* --- RENDZVOUS LAYOUT --- */
-        .rendezvous-frame {
+        /* --- MAP ARCHITECTURE --- */
+        .map-section {
             display: grid;
-            grid-template-columns: 40% 60%;
+            grid-template-columns: 1fr;
             gap: 30px;
-            align-items: center;
-            border: 1px solid rgba(223, 186, 107, 0.15);
-            padding: 30px;
-            background: rgba(2, 31, 20, 0.2);
+            text-align: center;
+        }
+
+        .map-container {
+            border: 1px solid var(--border-glass);
+            padding: 6px;
+            background: var(--glass);
         }
 
         iframe {
             width: 100%;
-            height: 280px;
+            height: 300px;
             border: 0;
             filter: grayscale(1) invert(0.95) contrast(1.1);
         }
 
-        /* --- CALL TO ACTIONS --- */
-        .action-gateways {
+        /* --- FLOATING CONTROLS --- */
+        .rsvp-bar {
             display: flex;
             justify-content: center;
             gap: 20px;
-            margin-top: 60px;
+            margin-top: 40px;
         }
 
-        .btn-luxury-action {
+        .btn-rsvp {
+            border: 1px solid var(--gold-solid);
             background: transparent;
-            border: 1px solid var(--gold-leaf);
-            color: var(--gold-leaf);
-            padding: 14px 28px;
-            font-family: 'Cinzel', serif;
-            font-size: 0.65rem;
-            letter-spacing: 3px;
-            text-decoration: none;
-            transition: all 0.4s;
-        }
-
-        .btn-luxury-action:hover {
-            background: var(--gold-leaf);
-            color: var(--onyx-velvet);
-            box-shadow: 0 0 20px rgba(223, 186, 107, 0.4);
-        }
-
-        footer {
-            margin-top: 100px;
-            text-align: center;
-            font-family: 'Cinzel', serif;
+            color: var(--gold-solid);
+            padding: 12px 24px;
             font-size: 0.7rem;
-            letter-spacing: 3px;
-            opacity: 0.5;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
         }
 
-        /* --- OBSERVER MOTION TRANSITIONS --- */
-        .motion-fade-up { opacity: 0; transform: translateY(50px); transition: 1.4s cubic-bezier(0.19, 1, 0.22, 1); }
-        .motion-fade-up.triggered { opacity: 1; transform: translateY(0); }
+        .btn-rsvp:hover {
+            background: var(--gold-solid);
+            color: var(--bg-velvet);
+        }
 
-        @media (max-width: 768px) {
-            .lineage-box, .rendezvous-frame { grid-template-columns: 1fr; text-align: center; }
-            .ticker-flex-row { grid-template-columns: repeat(2, 1fr); }
-            .action-gateways { flex-direction: column; align-items: center; }
-            .btn-luxury-action { width: 100%; text-align: center; }
+        /* --- ANIMATION SCROLL INTERACTION --- */
+        .motion-block { opacity: 0; transform: translateY(40px); transition: 1.2s cubic-bezier(0.215, 0.610, 0.355, 1); }
+        .motion-block.reveal-now { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 600px) {
+            .countdown-matrix { grid-template-columns: repeat(2, 1fr); }
+            .itinerary-row { grid-template-columns: 1fr; gap: 8px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Ambient Star Particles Background Grid -->
-    <div class="ambient-sparkles" id="sparkle-layer"></div>
+    <div class="flash-lens" id="flash-lens"></div>
 
-    <!-- Interactive Ring Ceremony Archway Reveal Cover -->
-    <div id="prologue-archway">
-        <div class="kinetic-seal-wrapper">
-            <div class="pulsing-halo"></div>
-            <!-- Hand Intersect Path Alignment Line Vector -->
-            <svg class="hand-cuff-silhouette" id="archway-hands" viewBox="0 0 100 100" fill="none" stroke-linecap="round">
-                <path d="M10,60 C25,58 35,50 45,40 C48,37 50,30 46,28 C42,26 38,34 42,40 C44,44 50,48 55,48 C60,48 64,40 60,38 C57,36 55,41 58,44 C61,47 72,46 85,50" />
-                <path d="M41,37 C41,32 37,31 36,35 C35,38 39,43 42,45" stroke-dasharray="1 1" />
-            </svg>
-            <div class="ring-token" id="archway-ring"></div>
+    <!-- Interactive Ring Placement Portal Interface Screen -->
+    <div id="ceremony-portal">
+        <div class="ritual-container">
+            <header style="text-align: center;">
+                <p style="font-size: 0.6rem; letter-spacing: 5px; opacity: 0.5; text-transform: uppercase;">The Union Sequence</p>
+                <h3 style="font-family: 'Cinzel', serif; font-weight: 400; margin-top: 5px; color: var(--cream);">PROLOGUE</h3>
+            </header>
+
+            <div class="hand-framework">
+                <svg viewBox="0 0 100 100">
+                    <!-- Left Palm and Finger Architecture Profile Path -->
+                    <path d="M10,80 C25,75 40,65 52,50 C55,46 58,36 53,34 C48,32 44,42 48,50 C50,55 58,60 64,60 C72,60 76,50 71,48 C67,46 64,52 68,56 C72,60 88,58 98,62" stroke-linecap="round"/>
+                    <!-- Ring Finger Segment Target Zone Link -->
+                    <path d="M47,47 C46,38 42,37 41,42 C40,46 44,52 48,55" stroke-dasharray="2 2"/>
+                </svg>
+                <div class="finger-track" id="track-finger">
+                    <div class="interactive-ring" id="ring-dragger"></div>
+                </div>
+            </div>
+
+            <div class="slider-instruction">Slide Ring to Finger Base</div>
         </div>
-        <p style="font-size: 0.6rem; letter-spacing: 4px; color: #fff; opacity: 0.4; margin-top: -10px; text-transform: uppercase;">Perform Ring Ritual</p>
-        <button class="interaction-medallion" id="seal-trigger">Hold To Place Ring</button>
     </div>
 
-    <!-- Main Elegant Invitation Canvas -->
-    <div class="court-scroller" id="scroll-root">
+    <!-- High Luxury Formal Invitation Container -->
+    <div class="main-scroller" id="main-scroller-layout">
+        <div class="bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
         
-        <header class="royal-crest-banner">
-            <div class="crest-monogram">AS</div>
-            <div class="cinzel-subtitle">Bismillah-ir-Rahman-ir-Rahim</div>
-            <h1 class="script-headline">Arbaj & Sana</h1>
-            <div class="cinzel-subtitle" style="color: var(--silk-white); opacity: 0.7; font-size: 0.65rem;">Together with their families request the pleasure of your company</div>
+        <p class="sacred-verse">
+            "And among His signs is this, that He created for you mates from among yourselves, that you may dwell in tranquillity with them, and He has put love and mercy between your hearts." <br>— (Surah Ar-Rum 30:21)
+        </p>
+
+        <header class="monogram-card motion-block">
+            <div class="title-sub">The Engagement Ceremony</div>
+            <h1 class="grooms-names">Arbaj</h1>
+            <p style="font-family: 'Cinzel'; font-size: 1.5rem; color: var(--gold-solid); margin: 15px 0;">&</p>
+            <h1 class="grooms-names">Sana Kaussain</h1>
+            <p style="font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; opacity: 0.6; margin-top: 35px;">
+                Together with their families, invite you to share in the joy of their beautiful beginning.
+            </p>
         </header>
 
-        <!-- Ancestral Lineage Acknowledgements -->
-        <section class="motion-fade-up lineage-box">
-            <div class="lineage-side" style="border-right: 1px solid rgba(223, 186, 107, 0.15);">
-                <h5>GROOM'S LINEAGE</h5>
-                <p>Son of <strong>Mr. & Mrs. Hakim Family</strong><br>Grandson of respected elders</p>
-            </div>
-            <div class="lineage-side">
-                <h5>BRIDE'S LINEAGE</h5>
-                <p>Daughter of <strong>Mr. & Mrs. Shaikh Family</strong><br>Grandson of respected elders</p>
+        <!-- Chronology Itinerary Blocks -->
+        <section class="motion-block">
+            <h3 style="font-family: 'Cinzel', serif; font-size: 1.1rem; text-align: center; margin-bottom: 30px; letter-spacing: 3px;">CEREMONIAL SCHEDULE</h3>
+            <div class="itinerary-box">
+                <div class="itinerary-row">
+                    <div class="time-stamp">05:30 PM</div>
+                    <div class="event-details">
+                        <h5>Namaz-e-Asr Assemblies</h5>
+                        <p>Welcoming of guests and families into the celebration grounds.</p>
+                    </div>
+                </div>
+                <div class="itinerary-row">
+                    <div class="time-stamp">06:00 PM</div>
+                    <div class="event-details">
+                        <h5>The Ring Exchange Ritual</h5>
+                        <p>The solemn celebration marking the eternal promise of union.</p>
+                    </div>
+                </div>
+                <div class="itinerary-row">
+                    <div class="time-stamp">07:00 PM</div>
+                    <div class="event-details">
+                        <h5>The Royal Feast</h5>
+                        <p>Join us for a curated celebratory dinner in the gardens.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Dynamic Velvet Micro-scratch Card Panel -->
-        <section class="motion-fade-up">
-            <div class="velvet-scratch-shield" id="scratch-anchor">
-                <div class="hidden-temporal-vault">
-                    <p class="cinzel-subtitle" style="margin-bottom: 10px;">THE DATE & TIME</p>
-                    <h3 style="font-family: 'Cinzel', serif; font-size: 1.8rem; color: var(--gold-leaf);">Saturday, June 13, 2026</h3>
-                    <p style="font-size: 0.8rem; letter-spacing: 3px; opacity: 0.7; margin-top: 5px;">AFTER NAMAZ-A-ASR AT 5:30 PM</p>
+        <!-- Premium Scratch Surface Panel -->
+        <section class="motion-block">
+            <p style="text-align: center; font-size: 0.65rem; letter-spacing: 3px; margin-bottom: 15px; opacity: 0.5;">BRUSH THE PANEL SURFACE TO UNVEIL DATE</p>
+            <div class="scratch-wrapper" id="scratch-anchor">
+                <div class="scratch-underlayer">
+                    <h4>Saturday, June 13, 2026</h4>
+                    <p style="font-size: 0.75rem; letter-spacing: 3px; opacity: 0.7;">JUNE 13 • SAVE THE TIMELINE</p>
                 </div>
                 <canvas id="scratch-canvas"></canvas>
             </div>
         </section>
 
-        <!-- Live Chrono Countdown Grid Matrix -->
-        <section class="motion-fade-up">
-            <div class="ticker-flex-row">
-                <div class="ticker-quad"><span id="val-d">00</span><label>Days</label></div>
-                <div class="ticker-quad"><span id="val-h">00</span><label>Hours</label></div>
-                <div class="ticker-quad"><span id="val-m">00</span><label>Mins</label></div>
-                <div class="ticker-quad"><span id="val-s">00</span><label>Secs</label></div>
+        <!-- Real-time Countdown Grid -->
+        <section class="motion-block">
+            <div class="countdown-matrix">
+                <div class="matrix-node"><span id="lbl-days">00</span><label>Days</label></div>
+                <div class="matrix-node"><span id="lbl-hours">00</span><label>Hours</label></div>
+                <div class="matrix-node"><span id="lbl-mins">00</span><label>Mins</label></div>
+                <div class="matrix-node"><span id="lbl-secs">00</span><label>Secs</label></div>
             </div>
         </section>
 
-        <!-- Dress Code Palette Accents Section -->
-        <section class="motion-fade-up dress-code-center">
-            <div class="cinzel-subtitle" style="font-size:0.65rem;">CELEBRATION DRESS CODE</div>
-            <p style="font-size:0.85rem; opacity:0.7; margin-top:5px;">Traditional Ethnic Wear in Harmony with Emerald Royal tones</p>
-            <div class="palette-swatches">
-                <div class="swatch" style="background:#022919;"></div>
-                <div class="swatch" style="background:#dfba6b;"></div>
-                <div class="swatch" style="background:#0b1c16;"></div>
-                <div class="swatch" style="background:#ebd29b;"></div>
-            </div>
-        </section>
-
-        <!-- Geographic Coordinate Mapping Destination Block -->
-        <section class="motion-fade-up rendezvous-frame">
+        <!-- Navigation Map Architecture Frame -->
+        <section class="motion-block map-section">
             <div>
-                <div class="cinzel-subtitle" style="font-size:0.6rem; margin-bottom:10px;">RENDEZVOUS DESTINATION</div>
-                <h4 style="font-family:'Cinzel', serif; font-size:1.6rem; color:var(--gold-leaf); margin-bottom:10px;">Hotel Yugvir & Garden</h4>
-                <p style="font-size:0.8rem; opacity:0.7; line-height:1.7;">Nira-Baramati Road,<br>Nimbut, Maharashtra</p>
+                <h4 style="font-family:'Cinzel', serif; font-size: 1.4rem; font-weight: 400; margin-bottom: 8px;">Hotel Yugvir & Garden</h4>
+                <p style="font-size: 0.85rem; opacity: 0.6;">Nira-Baramati Road, Nimbut.</p>
             </div>
-            <div>
+            <div class="map-container">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3174.9610736330874!2d74.24886167424374!3d18.10959458160069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc3ab005580541d%3A0xec01f662fe63ba08!2sHotel%20Yugveer%20Garden!5e1!3m2!1sen!2sin!4v1780923617727!5m2!1sen!2sin"></iframe>
             </div>
         </section>
 
-        <!-- External Interactive Action Anchors Links -->
-        <section class="action-gateways motion-fade-up">
-            <a href="https://maps.google.com/?q=Hotel+Yugveer+Garden+Nimbut" target="_blank" class="btn-luxury-action"><i class="fa-solid fa-diamond-turn-right"></i> Navigate Route</a>
-            <a href="https://wa.me/?text=I+am+delighted+to+confirm+my+attendance+at+the+Engagement+Ceremony+of+Arbaj+and+Sana!" target="_blank" class="btn-luxury-action"><i class="fa-regular fa-envelope"></i> Send RSVP</a>
-        </section>
-
-        <footer>
-            With Best Compliments From Hakim & Shaikh Families
+        <!-- RSVP & Contact Modules -->
+        <footer style="text-align: center;">
+            <p style="font-family: 'Cinzel'; font-size: 1.1rem; color: var(--gold-solid); opacity: 0.8;">Regards</p>
+            <p style="font-size: 0.85rem; opacity: 0.6; margin-top: 5px;">Hakim & Shaikh Families</p>
+            
+            <div class="rsvp-bar">
+                <a href="tel:+910000000000" class="btn-rsvp">Call RSVP</a>
+                <a href="https://wa.me/910000000000" class="btn-rsvp">WhatsApp</a>
+            </div>
         </footer>
     </div>
 
     <script>
-        // Generate Star Particles Across Ambient Space Background
-        const sparklesZone = document.getElementById('sparkle-layer');
-        for(let i=0; i<35; i++) {
-            const star = document.createElement('div');
-            star.className = 'sparkle';
-            star.innerText = '✦';
-            star.style.top = Math.random() * 100 + 'vh';
-            star.style.left = Math.random() * 100 + 'vw';
-            star.style.animationDelay = Math.random() * 3 + 's';
-            sparklesZone.appendChild(star);
+        // --- DRAG SLIDER RING LOGIC ---
+        const ring = document.getElementById('ring-dragger');
+        const track = document.getElementById('track-finger');
+        const portal = document.getElementById('ceremony-portal');
+        const scroller = document.getElementById('main-scroller-layout');
+        const flash = document.getElementById('flash-lens');
+
+        let isDragging = false;
+        let trackHeight = track.offsetHeight - ring.offsetHeight;
+
+        function updateRingPosition(clientY) {
+            const trackRect = track.getBoundingClientRect();
+            let newTop = clientY - trackRect.top - (ring.offsetHeight / 2);
+            
+            if (newTop < 0) newTop = 0;
+            if (newTop > trackHeight) newTop = trackHeight;
+            
+            ring.style.top = `${newTop}px`;
+
+            // Climax trigger parameter at base of track path
+            if (newTop >= trackHeight - 5) {
+                triggerClimaxUnlock();
+            }
         }
 
-        // Interactive Ring Placement Ritual Flow Mechanics
-        const trigger = document.getElementById('seal-trigger');
-        const ring = document.getElementById('archway-ring');
-        const hands = document.getElementById('archway-hands');
-        const archway = document.getElementById('prologue-archway');
-        const scrollRoot = document.getElementById('scroll-root');
-
-        let interactiveHoldLoop;
-        let isEngaging = false;
-
-        function runRitual() {
-            if(isEngaging) return;
-            isEngaging = true;
+        function triggerClimaxUnlock() {
+            if(isDragging === false && ring.style.pointerEvents === 'none') return;
+            isDragging = false;
+            ring.style.pointerEvents = 'none';
             
-            ring.style.opacity = '1';
-            ring.style.transform = 'translate(-4px, 12px) scale(1)';
-            hands.style.opacity = '0.9';
-            hands.style.transform = 'scale(1.03)';
-
-            interactiveHoldLoop = setTimeout(() => {
-                archway.style.opacity = '0';
-                archway.style.transform = 'scale(1.1)';
+            // Light explosion animation sequence
+            flash.style.opacity = '1';
+            
+            setTimeout(() => {
+                portal.style.display = 'none';
+                scroller.style.display = 'flex';
+                window.scrollTo(0,0);
                 
                 setTimeout(() => {
-                    archway.style.display = 'none';
-                    scrollRoot.style.display = 'block';
-                    window.scrollTo(0,0);
-                    
-                    setTimeout(() => {
-                        scrollRoot.style.opacity = '1';
-                        scrollRoot.style.transform = 'translateY(0)';
-                        initiateCoutureScratch();
-                        initiateScrollObserver();
-                    }, 150);
-                }, 1400);
-            }, 2400);
+                    flash.style.opacity = '0';
+                    scroller.style.opacity = '1';
+                    initIntersectionObserver();
+                    initScratchEngine();
+                }, 300);
+            }, 600);
         }
 
-        function cancelRitual() {
-            if(!isEngaging) return;
-            clearTimeout(interactiveHoldLoop);
-            isEngaging = false;
-            ring.style.opacity = '0';
-            ring.style.transform = 'translate(-18px, -45px) scale(2)';
-            hands.style.opacity = '0.35';
-            hands.style.transform = 'scale(1)';
-        }
+        // Mouse Observers
+        ring.addEventListener('mousedown', () => isDragging = true);
+        window.addEventListener('mousemove', (e) => { if (isDragging) updateRingPosition(e.clientY); });
+        window.addEventListener('mouseup', () => { 
+            if (isDragging) { isDragging = false; ring.style.top = '0px'; } 
+        });
 
-        trigger.addEventListener('mousedown', runRitual);
-        trigger.addEventListener('mouseup', cancelRitual);
-        trigger.addEventListener('touchstart', (e) => { e.preventDefault(); runRitual(); });
-        trigger.addEventListener('touchend', cancelRitual);
+        // Touch Observers
+        ring.addEventListener('touchstart', () => isDragging = true);
+        window.addEventListener('touchmove', (e) => { 
+            if (isDragging) updateRingPosition(e.touches[0].clientY); 
+        });
+        window.addEventListener('touchend', () => { 
+            if (isDragging) { isDragging = false; ring.style.top = '0px'; } 
+        });
 
-        // Core Intersection Observer Layout Transition
-        function initiateScrollObserver() {
-            const targets = document.querySelectorAll('.motion-fade-up');
-            const obs = new IntersectionObserver((entries) => {
+
+        // --- DYNAMIC INTERSECTION SCROLL OBSERVER ---
+        function initIntersectionObserver() {
+            const blocks = document.querySelectorAll('.motion-block');
+            const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if(entry.isIntersecting) entry.target.classList.add('triggered');
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('reveal-now');
+                    }
                 });
             }, { threshold: 0.1 });
-            targets.forEach(t => obs.observe(t));
+            blocks.forEach(b => observer.observe(b));
         }
 
-        // Velvet Matte Scratch Overlay Engine Layer Canvas
-        function initiateCoutureScratch() {
+        // --- MATTE JADE COAT SCRATCH ENGINE ---
+        function initScratchEngine() {
             const cvs = document.getElementById('scratch-canvas');
             const ctx = cvs.getContext('2d');
             const anchor = document.getElementById('scratch-anchor');
-            
+
             cvs.width = anchor.offsetWidth;
             cvs.height = anchor.offsetHeight;
 
-            ctx.fillStyle = '#01140c';
+            ctx.fillStyle = '#041c13';
             ctx.fillRect(0, 0, cvs.width, cvs.height);
 
-            // Add fine cross-hatching textures to matte cover surface
-            ctx.strokeStyle = 'rgba(223, 186, 107, 0.05)';
+            // Artistic Border Overlay line on Scratch Layer
+            ctx.strokeStyle = 'rgba(223, 186, 107, 0.3)';
             ctx.lineWidth = 1;
-            for(let i=0; i<cvs.width; i+=8) {
-                ctx.beginPath(); ctx.moveTo(i, 0); ctx.lineTo(i, cvs.height); ctx.stroke();
-            }
+            ctx.strokeRect(10, 10, cvs.width - 20, cvs.height - 20);
 
-            ctx.font = "600 9px Montserrat";
+            ctx.font = "500 10px Montserrat";
             ctx.fillStyle = "#dfba6b";
             ctx.textAlign = "center";
-            ctx.letterSpacing = "5px";
-            ctx.fillText("SWIPE TO REVEAL SECRETS", cvs.width/2, cvs.height/2 + 4);
+            ctx.letterSpacing = "4px";
+            ctx.fillText("RUB SURFACE TO UNVEIL DATE", cvs.width/2, cvs.height/2 + 4);
 
-            let scrub = false;
-            const drawScrub = (e) => {
-                if(!scrub) return;
+            let painting = false;
+
+            const erase = (e) => {
+                if(!painting) return;
                 const rect = cvs.getBoundingClientRect();
                 const clientX = e.touches ? e.touches[0].clientX : e.clientX;
                 const clientY = e.touches ? e.touches[0].clientY : e.clientY;
                 
+                const x = clientX - rect.left;
+                const y = clientY - rect.top;
+
                 ctx.globalCompositeOperation = 'destination-out';
                 ctx.beginPath();
-                ctx.arc(clientX - rect.left, clientY - rect.top, 32, 0, Math.PI * 2);
+                ctx.arc(x, y, 30, 0, Math.PI * 2);
                 ctx.fill();
-                evaluateScratchVolume();
+                checkThreshold();
             };
 
-            const evaluateScratchVolume = () => {
-                const map = ctx.getImageData(0, 0, cvs.width, cvs.height).data;
-                let empty = 0;
-                for(let i=3; i<map.length; i+=4) { if(map[i] === 0) empty++; }
-                if(empty > (map.length / 4) * 0.5) {
+            const checkThreshold = () => {
+                const data = ctx.getImageData(0,0,cvs.width, cvs.height).data;
+                let clearCount = 0;
+                for(let i=3; i<data.length; i+=4) { if(data[i] === 0) clearCount++; }
+                if(clearCount > (data.length/4) * 0.6) {
                     cvs.style.opacity = '0';
-                    setTimeout(() => cvs.remove(), 600);
+                    setTimeout(() => cvs.remove(), 500);
                 }
             };
 
-            cvs.addEventListener('mousedown', () => scrub = true);
-            cvs.addEventListener('touchstart', () => scrub = true);
-            window.addEventListener('mouseup', () => scrub = false);
-            window.addEventListener('touchend', () => scrub = false);
-            cvs.addEventListener('mousemove', drawScrub);
-            cvs.addEventListener('touchmove', drawScrub);
+            cvs.addEventListener('mousedown', () => painting = true);
+            cvs.addEventListener('touchstart', () => painting = true);
+            window.addEventListener('mouseup', () => painting = false);
+            window.addEventListener('touchend', () => painting = false);
+            cvs.addEventListener('mousemove', erase);
+            cvs.addEventListener('touchmove', erase);
         }
 
-        // Chronometer Precise Target Epoch Calculation Ticker
-        const epochTarget = new Date("June 13, 2026 17:30:00").getTime();
+        // --- REAL-TIME RECONVERSION TIMER COUNTER ---
+        const targetEpoch = new Date("June 13, 2026 17:30:00").getTime();
         setInterval(() => {
-            const diff = epochTarget - new Date().getTime();
-            if(diff < 0) return;
+            const gap = targetEpoch - new Date().getTime();
+            if (gap < 0) return;
 
-            document.getElementById('val-d').innerText = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(2, '0');
-            document.getElementById('val-h').innerText = String(Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
-            document.getElementById('val-m').innerText = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
-            document.getElementById('val-s').innerText = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
+            document.getElementById('lbl-days').innerText = String(Math.floor(gap / (1000 * 60 * 60 * 24))).padStart(2, '0');
+            document.getElementById('lbl-hours').innerText = String(Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+            document.getElementById('lbl-mins').innerText = String(Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+            document.getElementById('lbl-secs').innerText = String(Math.floor((gap % (1000 * 60)) / 1000)).padStart(2, '0');
         }, 1000);
     </script>
 </body>
