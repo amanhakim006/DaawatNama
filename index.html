@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Engagement Ceremony of Arbaj & Sana Kaussain</title>
+    <!-- Elegant Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Great+Vibes&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* CSS Variables for Premium Theme */
+        :root {
+            --primary-bg: #092e20; /* Deep Islamic Green */
+            --gold: #d4af37; /* Metallic Gold */
+            --gold-light: #f3e5ab;
+            --text-light: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: var(--primary-bg);
+            color: var(--gold-light);
+            overflow-x: hidden;
+        }
+
+        /* ----- DOOR ANIMATION SECTION ----- */
+        #doors-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .door {
+            position: absolute;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            background-color: #051a12;
+            background-image: radial-gradient(circle at center, #092e20 0%, #030e0a 100%);
+            border: 2px solid var(--gold);
+            transition: transform 2s cubic-bezier(0.645, 0.045, 0.355, 1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .door::before {
+            content: '';
+            position: absolute;
+            width: 80%;
+            height: 90%;
+            border: 2px solid var(--gold);
+            border-radius: 50% 50% 0 0 / 20% 20% 0 0; /* Islamic Arch feel */
+            opacity: 0.5;
+        }
+
+        .door.left { left: 0; border-right: 1px solid var(--gold); transform-origin: left; }
+        .door.right { right: 0; border-left: 1px solid var(--gold); transform-origin: right; }
+
+        .door.left.open { transform: translateX(-100%); }
+        .door.right.open { transform: translateX(100%); }
+
+        .open-btn {
+            position: relative;
+            z-index: 101;
+            padding: 15px 40px;
+            font-family: 'Amiri', serif;
+            font-size: 1.5rem;
+            color: var(--primary-bg);
+            background: linear-gradient(135deg, #d4af37, #f3e5ab, #d4af37);
+            border: 2px solid #fff;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.5);
+            transition: all 0.5s ease;
+        }
+
+        .open-btn.fade-out {
+            opacity: 0;
+            pointer-events: none;
+            transform: scale(0.8);
+        }
+
+        /* ----- MAIN CONTENT & SCROLL REVEALS ----- */
+        .main-content {
+            display: none; /* Shown after doors open */
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            padding-bottom: 50px;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease-in-out;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        section {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 90%;
+            max-width: 800px;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        /* ----- HERO SECTION ----- */
+        .islamic-border {
+            border: 2px solid var(--gold);
+            padding: 60px 40px;
+            border-radius: 50% 50% 0 0 / 30% 30% 0 0; /* Arch */
+            background: rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+            position: relative;
+        }
+        
+        .islamic-border::after {
+            content: '';
+            position: absolute;
+            top: -10px; left: -10px; right: -10px; bottom: -10px;
+            border: 1px dashed var(--gold);
+            border-radius: 50% 50% 0 0 / 30% 30% 0 0;
+            pointer-events: none;
+        }
+
+        h1 {
+            font-family: 'Amiri', serif;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--gold-light);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4rem;
+            color: var(--gold);
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* ----- SCRATCH SECTION ----- */
+        .scratch-wrapper {
+            position: relative;
+            width: 320px;
+            height: 200px;
+            margin-top: 20px;
+        }
+
+        .scratch-content {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, #111, #222);
+            border: 2px solid var(--gold);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            z-index: 1;
+        }
+
+        .scratch-content h3 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.2rem;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .scratch-content p {
+            font-family: 'Amiri', serif;
+            font-size: 1.1rem;
+            color: #fff;
+            margin: 5px 0;
+        }
+
+        canvas {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 2;
+            cursor: pointer;
+            border-radius: 15px;
+        }
+
+        .instruction {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        /* ----- FIREWORKS ----- */
+        .firework {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            animation: explode 1s ease-out forwards;
+            z-index: 10;
+        }
+
+        @keyframes explode {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(30); opacity: 0; }
+        }
+
+        /* ----- COUNTDOWN SECTION ----- */
+        .countdown-title {
+            font-family: 'Amiri', serif;
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 30px;
+        }
+
+        .timer {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .time-box {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--gold);
+            padding: 15px;
+            border-radius: 10px;
+            min-width: 80px;
+        }
+
+        .time-box span {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .time-box div {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+
+        /* ----- VENUE SECTION ----- */
+        .venue-title {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 15px;
+            font-family: 'Amiri', serif;
+        }
+
+        .venue-text {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .map-container {
+            width: 100%;
+            max-width: 600px;
+            border: 2px solid var(--gold);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 350px;
+            display: block;
+        }
+
+        /* ----- FOOTER ----- */
+        footer {
+            margin-top: 50px;
+            padding: 30px;
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5rem;
+            color: var(--gold);
+            text-align: center;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            width: 80%;
+        }
+
+        @media (max-width: 600px) {
+            h2 { font-size: 3rem; }
+            .timer { flex-wrap: wrap; }
+            .time-box { min-width: 70px; padding: 10px; }
+            .time-box span { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Door Entry Animation -->
+    <div id="doors-container">
+        <div class="door left" id="left-door"></div>
+        <div class="door right" id="right-door"></div>
+        <button class="open-btn" id="open-btn">Bismillah (Open)</button>
+    </div>
+
+    <!-- Main Invitation Content -->
+    <div class="main-content" id="main-content">
+        
+        <!-- Hero / Names Section -->
+        <section class="reveal">
+            <div class="islamic-border">
+                <h1>The Engagement Ceremony of</h1>
+                <h2>Arbaj & Sana Kaussain</h2>
+            </div>
+        </section>
+
+        <!-- Scratch to Reveal Section -->
+        <section class="reveal" style="position: relative;">
+            <div class="instruction"><i class="fas fa-hand-pointer"></i> Scratch the golden card to reveal</div>
+            <div class="scratch-wrapper" id="scratch-wrapper">
+                <div class="scratch-content">
+                    <h3>You're Invited</h3>
+                    <p><i class="far fa-calendar-alt"></i> June 13, 2026, Saturday</p>
+                    <p><i class="far fa-clock"></i> After Namaz-a-Asr at 5:30pm</p>
+                </div>
+                <canvas id="scratch-canvas"></canvas>
+            </div>
+        </section>
+
+        <!-- Countdown Section -->
+        <section class="reveal">
+            <h3 class="countdown-title">Counting Down</h3>
+            <div class="timer">
+                <div class="time-box"><span id="days">00</span><div>Days</div></div>
+                <div class="time-box"><span id="hours">00</span><div>Hours</div></div>
+                <div class="time-box"><span id="mins">00</span><div>Min</div></div>
+                <div class="time-box"><span id="secs">00</span><div>Secs</div></div>
+            </div>
+        </section>
+
+        <!-- Venue Section -->
+        <section class="reveal">
+            <h3 class="venue-title"><i class="fas fa-map-marker-alt"></i> Venue</h3>
+            <p class="venue-text">Hotel Yugvir & Garden<br>Nira-Baramati Road, Nimbut</p>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3174.9610736330874!2d74.24886167424374!3d18.10959458160069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc3ab005580541d%3A0xec01f662fe63ba08!2sHotel%20Yugveer%20Garden!5e1!3m2!1sen!2sin!4v1780923617727!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+
+        <footer>
+            Regards,<br>Hakim & Shaikh family
+        </footer>
+    </div>
+
+    <script>
+        // --- DOOR LOGIC ---
+        const openBtn = document.getElementById('open-btn');
+        const leftDoor = document.getElementById('left-door');
+        const rightDoor = document.getElementById('right-door');
+        const doorsContainer = document.getElementById('doors-container');
+        const mainContent = document.getElementById('main-content');
+
+        openBtn.addEventListener('click', () => {
+            openBtn.classList.add('fade-out');
+            leftDoor.classList.add('open');
+            rightDoor.classList.add('open');
+            
+            // Show main content immediately so it's there when doors part
+            mainContent.style.display = 'flex';
+
+            setTimeout(() => {
+                doorsContainer.style.display = 'none';
+            }, 2000); // Wait for transition to finish
+        });
+
+        // --- SCROLL REVEAL ANIMATION ---
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // --- SCRATCH CARD LOGIC ---
+        const canvas = document.getElementById('scratch-canvas');
+        const ctx = canvas.getContext('2d');
+        const scratchWrapper = document.getElementById('scratch-wrapper');
+        let isDrawing = false;
+        let isRevealed = false;
+
+        // Set canvas size to match wrapper
+        function initCanvas() {
+            canvas.width = scratchWrapper.offsetWidth;
+            canvas.height = scratchWrapper.offsetHeight;
+            
+            // Draw Premium Gold Cover
+            let gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+            gradient.addColorStop(0, '#d4af37');
+            gradient.addColorStop(0.5, '#f3e5ab');
+            gradient.addColorStop(1, '#aa7c11');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Add text overlay on the scratch cover
+            ctx.font = "20px 'Amiri'";
+            ctx.fillStyle = "#092e20";
+            ctx.textAlign = "center";
+            ctx.fillText("Scratch Here", canvas.width/2, canvas.height/2 + 5);
+
+            // Prepare for erasing
+            ctx.globalCompositeOperation = 'destination-out';
+        }
+        
+        initCanvas();
+
+        function getMousePos(e) {
+            const rect = canvas.getBoundingClientRect();
+            const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+            const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+            return {
+                x: clientX - rect.left,
+                y: clientY - rect.top
+            };
+        }
+
+        function scratch(e) {
+            if (!isDrawing || isRevealed) return;
+            e.preventDefault();
+            const pos = getMousePos(e);
+            
+            ctx.beginPath();
+            ctx.arc(pos.x, pos.y, 25, 0, Math.PI * 2);
+            ctx.fill();
+
+            checkReveal();
+        }
+
+        canvas.addEventListener('mousedown', () => isDrawing = true);
+        canvas.addEventListener('mouseup', () => isDrawing = false);
+        canvas.addEventListener('mousemove', scratch);
+        
+        canvas.addEventListener('touchstart', () => isDrawing = true);
+        canvas.addEventListener('touchend', () => isDrawing = false);
+        canvas.addEventListener('touchmove', scratch, {passive: false});
+
+        function checkReveal() {
+            // Simple approach: calculate how many pixels are clear. 
+            // For performance, we check less frequently or trigger after a set amount of scratching.
+            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            let clearPixels = 0;
+            const totalPixels = imageData.data.length / 4;
+
+            // Check every 32nd pixel to save performance
+            for (let i = 0; i < imageData.data.length; i += 128) {
+                if (imageData.data[i + 3] === 0) clearPixels++;
+            }
+
+            // If ~40% is scratched, reveal all and pop fireworks
+            if ((clearPixels / (totalPixels / 32)) > 0.4) {
+                isRevealed = true;
+                canvas.style.transition = "opacity 0.8s ease";
+                canvas.style.opacity = "0";
+                setTimeout(() => canvas.style.display = 'none', 800);
+                triggerFireworks();
+            }
+        }
+
+        // --- FIREWORKS LOGIC ---
+        function triggerFireworks() {
+            const colors = ['#d4af37', '#f3e5ab', '#ffffff', '#ff4d4d', '#4dff4d'];
+            for(let i = 0; i < 40; i++) {
+                const firework = document.createElement('div');
+                firework.className = 'firework';
+                
+                // Random positioning around the scratch wrapper
+                const x = (Math.random() - 0.5) * 300;
+                const y = (Math.random() - 0.5) * 200;
+                
+                firework.style.left = `calc(50% + ${x}px)`;
+                firework.style.top = `calc(50% + ${y}px)`;
+                firework.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                
+                scratchWrapper.appendChild(firework);
+                
+                setTimeout(() => firework.remove(), 1000);
+            }
+        }
+
+        // --- COUNTDOWN LOGIC ---
+        // Target Date: June 13, 2026, 17:30:00
+        const targetDate = new Date("June 13, 2026 17:30:00").getTime();
+
+        const timerInterval = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                clearInterval(timerInterval);
+                document.getElementById('days').innerText = "00";
+                document.getElementById('hours').innerText = "00";
+                document.getElementById('mins').innerText = "00";
+                document.getElementById('secs').innerText = "00";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const secs = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = days < 10 ? '0' + days : days;
+            document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
+            document.getElementById('mins').innerText = mins < 10 ? '0' + mins : mins;
+            document.getElementById('secs').innerText = secs < 10 ? '0' + secs : secs;
+        }, 1000);
+    </script>
+</body>
+</html>
