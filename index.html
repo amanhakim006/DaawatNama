@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Engagement Ceremony of Arbaj & Sana Kaussain</title>
+    <!-- Premium Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@700&family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -49,9 +50,9 @@
             width: 50%;
             height: 100%;
             background-color: #041a12;
-            background-image: url('https://www.transparenttextures.com/patterns/dark-matter.png'); /* Subtle texture */
+            background-image: url('https://www.transparenttextures.com/patterns/dark-matter.png');
             border: 3px solid var(--gold);
-            transition: transform 2.5s cubic-bezier(0.77, 0, 0.175, 1);
+            transition: transform 1.8s cubic-bezier(0.77, 0, 0.175, 1);
         }
 
         .door.left { 
@@ -65,7 +66,7 @@
             box-shadow: inset 10px 0 20px rgba(0,0,0,0.6);
         }
 
-        /* Elegant Arch outlines inside doors */
+        /* Elegant Arch Outlines */
         .door::after {
             content: '';
             position: absolute;
@@ -76,8 +77,9 @@
         .door.left::after { right: 5%; border-radius: 100% 0 0 100% / 50% 0 0 50%; }
         .door.right::after { left: 5%; border-radius: 0 100% 100% 0 / 0 50% 50% 0; }
 
-        .door.left.open { transform: translateX(-100%); }
-        .door.right.open { transform: translateX(100%); }
+        /* Smooth Sliders */
+        .door-open-left { transform: translateX(-100%); }
+        .door-open-right { transform: translateX(100%); }
 
         /* Small Circle Middle Button */
         .open-btn {
@@ -86,15 +88,15 @@
             width: 90px;
             height: 90px;
             border-radius: 50%;
-            font-family: 'Amiri', serif;
-            font-size: 1.2rem;
-            font-weight: bold;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
             color: #041a12;
             background: radial-gradient(circle, #fff 0%, #f3e5ab 30%, #d4af37 70%, #aa7c11 100%);
             border: 3px solid var(--gold-light);
             cursor: pointer;
             box-shadow: 0 0 25px rgba(212, 175, 55, 0.8), inset 0 0 10px rgba(255,255,255,0.5);
-            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.4s ease;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -103,13 +105,13 @@
         }
 
         .open-btn:hover {
-            transform: scale(1.1);
+            transform: scale(1.08);
             box-shadow: 0 0 35px rgba(212, 175, 55, 1);
         }
 
         .open-btn.fade-out {
             opacity: 0;
-            transform: scale(0) rotate(360deg);
+            transform: scale(0);
             pointer-events: none;
         }
 
@@ -226,7 +228,7 @@
             z-index: 2;
             cursor: pointer;
             border-radius: 15px;
-            transition: opacity 0.6s ease;
+            transition: opacity 0.5s ease-out;
         }
 
         /* ----- FIREWORKS ----- */
@@ -237,7 +239,7 @@
             border-radius: 50%;
             pointer-events: none;
             z-index: 99;
-            animation: fireworkPop 1s ease-out forwards;
+            animation: fireworkPop 1.2s ease-out forwards;
         }
 
         @keyframes fireworkPop {
@@ -274,7 +276,6 @@
             font-size: 2.2rem;
             font-weight: 600;
             color: var(--gold-light);
-            font-family: 'Montserrat', sans-serif;
         }
 
         .time-card label {
@@ -333,14 +334,17 @@
 </head>
 <body>
 
+    <!-- Door Entry Screen -->
     <div id="doors-container">
         <div class="door left" id="door-l"></div>
         <div class="door right" id="door-r"></div>
         <button class="open-btn" id="click-open-btn">Open</button>
     </div>
 
+    <!-- Main Dynamic Content -->
     <div class="main-content" id="wedding-card-content">
         
+        <!-- Frame 1: Names Section -->
         <section class="scroll-section">
             <div class="islamic-border">
                 <h1>The Engagement Ceremony of</h1>
@@ -350,8 +354,9 @@
             </div>
         </section>
 
+        <!-- Frame 2: Scratch Card -->
         <section class="scroll-section" style="position: relative;" id="scratch-section">
-            <div class="instruction"><i class="fas fa-sparkles"></i> Touch / Scratch to reveal Invitation</div>
+            <div class="instruction"><i class="fas fa-sparkles"></i> Tap / Scratch anywhere on the card to reveal</div>
             <div class="scratch-container" id="canvas-host">
                 <div class="scratch-reveal-box">
                     <h3>You're Invited</h3>
@@ -363,6 +368,7 @@
             </div>
         </section>
 
+        <!-- Frame 3: Clock Analytics -->
         <section class="scroll-section">
             <h3 class="countdown-title">Counting Down</h3>
             <div class="timer-grid">
@@ -373,6 +379,7 @@
             </div>
         </section>
 
+        <!-- Frame 4: Venue Map Integration -->
         <section class="scroll-section">
             <h3 class="venue-title"><i class="fas fa-map-marked-alt"></i> Venue</h3>
             <p class="venue-address">
@@ -390,7 +397,7 @@
     </div>
 
     <script>
-        // --- LOGIC: PREMIUM GATE OPENING ---
+        // --- HANDLER: SMOOTH DOOR REVEAL ---
         const btnOpen = document.getElementById('click-open-btn');
         const doorLeft = document.getElementById('door-l');
         const doorRight = document.getElementById('door-r');
@@ -399,33 +406,31 @@
 
         btnOpen.addEventListener('click', () => {
             btnOpen.classList.add('fade-out');
-            doorLeft.classList.add('open');
-            doorRight.classList.add('open');
+            doorLeft.classList.add('door-open-left');
+            doorRight.classList.add('door-open-right');
             
             wrapperMain.style.display = 'flex';
 
             setTimeout(() => {
                 panelContainer.style.display = 'none';
-                // Trigger scroll animation check instantly on load
                 manageScrollReveals();
-            }, 2500);
+            }, 1800);
         });
 
-        // --- LOGIC: SCROLL INTERSECTION REVEAL ---
+        // --- HANDLER: SCROLL SECTIONS ENGINE ---
         const sections = document.querySelectorAll('.scroll-section');
         
         function manageScrollReveals() {
             sections.forEach(sec => {
                 const secTop = sec.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                if (secTop < windowHeight * 0.85) {
+                if (secTop < window.innerHeight * 0.85) {
                     sec.classList.add('active');
                 }
             });
         }
         window.addEventListener('scroll', manageScrollReveals);
 
-        // --- LOGIC: INSTANT SCRATCH CARD & FIREWORKS ---
+        // --- HANDLER: GOLDEN METALLIC SHIMMER SURFACE ---
         const cvs = document.getElementById('scratch-canvas');
         const renderCtx = cvs.getContext('2d');
         const hostBox = document.getElementById('canvas-host');
@@ -435,7 +440,6 @@
             cvs.width = hostBox.offsetWidth;
             cvs.height = hostBox.offsetHeight;
 
-            // Metallic Rich Gold Gradient Base
             let gd = renderCtx.createLinearGradient(0, 0, cvs.width, cvs.height);
             gd.addColorStop(0, '#aa7c11');
             gd.addColorStop(0.3, '#f3e5ab');
@@ -446,55 +450,49 @@
             renderCtx.fillStyle = gd;
             renderCtx.fillRect(0, 0, cvs.width, cvs.height);
 
-            // Artistic Border design on scratch element
             renderCtx.strokeStyle = 'rgba(4, 26, 18, 0.3)';
             renderCtx.lineWidth = 4;
             renderCtx.strokeRect(10, 10, cvs.width - 20, cvs.height - 20);
 
-            // Premium script text on gold surface
             renderCtx.font = "bold 22px 'Amiri', serif";
             renderCtx.fillStyle = "#06261a";
             renderCtx.textAlign = "center";
             renderCtx.fillText("✨ Scratch Here ✨", cvs.width / 2, cvs.height / 2 + 7);
         }
 
-        // Initialize setup on load
-        setTimeout(setupScratchCanvas, 100);
+        window.addEventListener('load', () => {
+            setTimeout(setupScratchCanvas, 200);
+        });
 
         function executeInstantReveal() {
             if (scratchTriggered) return;
             scratchTriggered = true;
 
-            // Fade animation trigger
             cvs.style.opacity = '0';
-            
-            // Pop massive fireworks explosion
             generateFireworksMatrix();
 
             setTimeout(() => {
                 cvs.style.display = 'none';
-            }, 600);
+            }, 500);
         }
 
-        // Event listeners to handle mouse and mobile touch immediately
         cvs.addEventListener('mousedown', executeInstantReveal);
         cvs.addEventListener('touchstart', (e) => {
             e.preventDefault();
             executeInstantReveal();
         });
 
-        // --- FIREWORKS RENDER ENGINE ---
+        // --- HANDLER: FIREWORKS POPPING ---
         function generateFireworksMatrix() {
             const vibrantColors = ['#d4af37', '#f3e5ab', '#ffffff', '#ff5e62', '#ff9966', '#00ffcc'];
-            const burstCount = 60; 
+            const burstCount = 65; 
 
             for (let k = 0; k < burstCount; k++) {
                 const particle = document.createElement('div');
                 particle.className = 'fw-particle';
                 
-                // Random angle and distance vectors
                 const angle = Math.random() * Math.PI * 2;
-                const distance = 80 + Math.random() * 160;
+                const distance = 90 + Math.random() * 180;
                 
                 const moveX = Math.cos(angle) * distance;
                 const moveY = Math.sin(angle) * distance;
@@ -502,30 +500,24 @@
                 particle.style.setProperty('--mx', `${moveX}px`);
                 particle.style.setProperty('--my', `${moveY}px`);
                 
-                // Set absolute center anchor inside container
                 particle.style.left = '50%';
                 particle.style.top = '50%';
                 particle.style.backgroundColor = vibrantColors[Math.floor(Math.random() * vibrantColors.length)];
                 particle.style.boxShadow = `0 0 8px ${particle.style.backgroundColor}`;
 
                 hostBox.appendChild(particle);
-
-                // Clean memory structure
-                setTimeout(() => particle.remove(), 1000);
+                setTimeout(() => particle.remove(), 1200);
             }
         }
 
-        // --- REAL-TIME ENGINE: COUNTDOWN SYSTEM ---
+        // --- HANDLER: countdown ENGINE ---
         const eventTimeline = new Date("June 13, 2026 17:30:00").getTime();
 
-        const tracker = setInterval(() => {
+        setInterval(() => {
             const timeNow = new Date().getTime();
             const difference = eventTimeline - timeNow;
 
-            if (difference < 0) {
-                clearInterval(tracker);
-                return;
-            }
+            if (difference < 0) return;
 
             const d = Math.floor(difference / (1000 * 60 * 60 * 24));
             const h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -539,558 +531,4 @@
         }, 1000);
     </script>
 </body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Engagement Ceremony of Arbaj & Sana Kaussain</title>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cinzel+Decorative:wght@700&family=Great+Vibes&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --primary-bg: #042416; /* Dark Royal Islamic Green */
-            --gold-gradient: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
-            --gold-solid: #d4af37;
-            --text-light: #f3e5ab;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--primary-bg);
-            color: var(--text-light);
-            overflow-x: hidden;
-            background-image: url('https://www.transparenttextures.com/patterns/dark-matter.png'); /* Subtle texture */
-        }
-
-        /* ----- PREMIUM DOOR ANIMATION ----- */
-        #doors-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
-
-        .door {
-            position: absolute;
-            top: 0;
-            width: 50%;
-            height: 100%;
-            background: linear-gradient(145deg, #052e1e, #02140d);
-            border: 3px solid var(--gold-solid);
-            transition: transform 1.8s cubic-bezier(0.77, 0, 0.175, 1);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: inset 0 0 50px rgba(0,0,0,0.8);
-        }
-
-        .door::before {
-            content: '';
-            position: absolute;
-            width: 85%;
-            height: 90%;
-            border: 2px solid var(--gold-solid);
-            border-radius: 50% 50% 0 0 / 25% 25% 0 0; /* Dome Arch */
-            opacity: 0.3;
-        }
-
-        .door.left { left: 0; border-right: 1.5px solid var(--gold-solid); transform-origin: left; }
-        .door.right { right: 0; border-left: 1.5px solid var(--gold-solid); transform-origin: right; }
-
-        .door.left.open { transform: translateX(-100%); }
-        .door.right.open { transform: translateX(100%); }
-
-        .open-btn {
-            position: relative;
-            z-index: 1001;
-            padding: 18px 45px;
-            font-family: 'Amiri', serif;
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #042416;
-            background: var(--gold-gradient);
-            border: 2px solid #fff;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
-            transition: all 0.5s ease;
-        }
-
-        .open-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 40px rgba(255, 255, 255, 0.8);
-        }
-
-        .open-btn.fade-out {
-            opacity: 0;
-            pointer-events: none;
-            transform: scale(0.5);
-        }
-
-        /* ----- MAIN CONTENT & REVEALS ----- */
-        .main-content {
-            opacity: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            padding-bottom: 60px;
-            transition: opacity 1.5s ease;
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(60px);
-            transition: all 1.2s cubic-bezier(0.215, 0.610, 0.355, 1);
-        }
-        
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        section {
-            min-height: 70vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 90%;
-            max-width: 700px;
-            margin: 50px auto;
-            text-align: center;
-        }
-
-        /* ----- HERO SECTION ----- */
-        .islamic-border {
-            border: 3px double var(--gold-solid);
-            padding: 50px 30px;
-            border-radius: 50% 50% 0 0 / 35% 35% 0 0;
-            background: rgba(4, 36, 22, 0.7);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.6), inset 0 0 30px rgba(212,175,55,0.1);
-            backdrop-filter: blur(5px);
-            width: 100%;
-        }
-
-        h1 {
-            font-family: 'Amiri', serif;
-            font-size: 2rem;
-            margin-bottom: 25px;
-            color: #fff;
-            letter-spacing: 1px;
-        }
-
-        h2 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 4.5rem;
-            color: var(--gold-solid);
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
-            background: var(--gold-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
-        }
-
-        /* ----- FIXED SCRATCH SECTION ----- */
-        .instruction {
-            margin-bottom: 20px;
-            font-size: 1.3rem;
-            color: var(--gold-solid);
-            font-family: 'Amiri', serif;
-            letter-spacing: 1px;
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0% { opacity: 0.6; }
-            50% { opacity: 1; }
-            100% { opacity: 0.6; }
-        }
-
-        .scratch-wrapper {
-            position: relative;
-            width: 340px;
-            height: 220px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.7);
-            border-radius: 15px;
-            overflow: hidden;
-        }
-
-        .scratch-content {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(135deg, #031a10, #0c422a);
-            border: 2px solid var(--gold-solid);
-            border-radius: 15px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .scratch-content h3 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 2.8rem;
-            color: var(--gold-solid);
-            margin-bottom: 15px;
-        }
-
-        .scratch-content p {
-            font-size: 1.1rem;
-            color: #fff;
-            margin: 6px 0;
-            font-weight: 500;
-        }
-
-        /* Fixed Dimensions for Canvas to prevent bugs */
-        #scratch-canvas {
-            position: absolute;
-            top: 0; left: 0; 
-            width: 340px; height: 220px;
-            z-index: 10;
-            cursor: pointer;
-            border-radius: 15px;
-            box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
-        }
-
-        /* ----- FULL SCREEN FIREWORKS CONTAINER ----- */
-        #fireworks-container {
-            position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
-            pointer-events: none;
-            z-index: 999;
-        }
-
-        .particle {
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        /* ----- COUNTDOWN TIMER ----- */
-        .countdown-title {
-            font-family: 'Amiri', serif;
-            font-size: 2.2rem;
-            color: var(--gold-solid);
-            margin-bottom: 35px;
-        }
-
-        .timer {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .time-box {
-            background: rgba(212, 175, 55, 0.08);
-            border: 1px solid var(--gold-solid);
-            padding: 20px;
-            border-radius: 12px;
-            min-width: 95px;
-            backdrop-filter: blur(5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-        }
-
-        .time-box span {
-            display: block;
-            font-size: 2.8rem;
-            font-weight: 700;
-            font-family: 'Amiri', serif;
-            color: #fff;
-        }
-
-        .time-box div {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-top: 5px;
-            color: var(--gold-solid);
-        }
-
-        /* ----- VENUE & MAP ----- */
-        .venue-title {
-            font-size: 2.5rem;
-            color: var(--gold-solid);
-            margin-bottom: 20px;
-            font-family: 'Amiri', serif;
-        }
-
-        .venue-text {
-            font-size: 1.3rem;
-            margin-bottom: 35px;
-            line-height: 1.8;
-            color: #fff;
-        }
-
-        .map-container {
-            width: 100%;
-            border: 2px solid var(--gold-solid);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-        }
-
-        .map-container iframe {
-            width: 100%;
-            height: 380px;
-            display: block;
-        }
-
-        /* ----- FOOTER ----- */
-        footer {
-            margin-top: 80px;
-            padding: 40px 20px;
-            font-family: 'Great Vibes', cursive;
-            font-size: 3rem;
-            color: var(--gold-solid);
-            text-align: center;
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
-            width: 85%;
-            letter-spacing: 1px;
-        }
-
-        @media (max-width: 600px) {
-            h2 { font-size: 3.2rem; }
-            .time-box { min-width: 75px; padding: 12px; }
-            .time-box span { font-size: 2rem; }
-            .scratch-wrapper, #scratch-canvas { width: 300px; height: 200px; }
-        }
-    </style>
-</head>
-<body>
-
-    <div id="fireworks-container"></div>
-
-    <div id="doors-container">
-        <div class="door left" id="left-door"></div>
-        <div class="door right" id="right-door"></div>
-        <button class="open-btn" id="open-btn">Bismillah (Open Invitation)</button>
-    </div>
-
-    <div class="main-content" id="main-content">
-        
-        <section class="reveal">
-            <div class="islamic-border">
-                <h1>The Engagement Ceremony of</h1>
-                <h2>Arbaj & Sana Kaussain</h2>
-            </div>
-        </section>
-
-        <section class="reveal">
-            <div class="instruction"><i class="fas fa-sparkles"></i> Swipe / Scratch the Gold Card to Reveal <i class="fas fa-sparkles"></i></div>
-            <div class="scratch-wrapper" id="scratch-wrapper">
-                <div class="scratch-content">
-                    <h3>You're Invited</h3>
-                    <p><i class="far fa-calendar-alt" style="color: var(--gold-solid)"></i> June 13, 2026, Saturday</p>
-                    <p><i class="far fa-clock" style="color: var(--gold-solid)"></i> After Namaz-a-Asr at 5:30pm</p>
-                </div>
-                <canvas id="scratch-canvas" width="340" height="220"></canvas>
-            </div>
-        </section>
-
-        <section class="reveal">
-            <h3 class="countdown-title">Counting Down The Days</h3>
-            <div class="timer">
-                <div class="time-box"><span id="days">00</span><div>Days</div></div>
-                <div class="time-box"><span id="hours">00</span><div>Hours</div></div>
-                <div class="time-box"><span id="mins">00</span><div>Min</div></div>
-                <div class="time-box"><span id="secs">00</span><div>Secs</div></div>
-            </div>
-        </section>
-
-        <section class="reveal">
-            <h3 class="venue-title"><i class="fas fa-map-marker-alt"></i> Venue</h3>
-            <p class="venue-text"><strong>Hotel Yugvir & Garden</strong><br>Nira-Baramati Road, Nimbut</p>
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3174.9610736330874!2d74.24886167424374!3d18.10959458160069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc3ab005580541d%3A0xec01f662fe63ba08!2sHotel%20Yugveer%20Garden!5e1!3m2!1sen!2sin!4v1780923617727!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </section>
-
-        <footer>
-            Regards,<br>Hakim & Shaikh family
-        </footer>
-    </div>
-
-    <script>
-        // --- DOOR LOGIC ---
-        const openBtn = document.getElementById('open-btn');
-        const leftDoor = document.getElementById('left-door');
-        const rightDoor = document.getElementById('right-door');
-        const doorsContainer = document.getElementById('doors-container');
-        const mainContent = document.getElementById('main-content');
-
-        openBtn.addEventListener('click', () => {
-            openBtn.classList.add('fade-out');
-            leftDoor.classList.add('open');
-            rightDoor.classList.add('open');
-            
-            mainContent.style.display = 'flex';
-            setTimeout(() => {
-                mainContent.style.opacity = '1';
-                // Initialize canvas cover right when doors open so layout is stable
-                initCanvas();
-            }, 100);
-
-            setTimeout(() => {
-                doorsContainer.style.display = 'none';
-            }, 1800);
-        });
-
-        // --- SCROLL REVEAL ---
-        const revealElements = document.querySelectorAll('.reveal');
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        revealElements.forEach(el => revealObserver.observe(el));
-
-        // --- FIXED SCRATCH CARD LOGIC ---
-        const canvas = document.getElementById('scratch-canvas');
-        const ctx = canvas.getContext('2d');
-        let isRevealed = false;
-
-        function initCanvas() {
-            // Responsive canvas adjustment if on small screen
-            if(window.innerWidth <= 600) {
-                canvas.width = 300;
-                canvas.height = 200;
-            }
-
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            // Create Ultra Premium Metallic Gold Gradient Cover
-            let gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-            gradient.addColorStop(0, '#bf953f');
-            gradient.addColorStop(0.2, '#fcf6ba');
-            gradient.addColorStop(0.4, '#b38728');
-            gradient.addColorStop(0.6, '#fbf5b7');
-            gradient.addColorStop(0.8, '#aa771c');
-            gradient.addColorStop(1, '#bf953f');
-            
-            ctx.fillStyle = gradient;
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            // Add Royal Border inside the scratch card
-            ctx.strokeStyle = 'rgba(4, 36, 22, 0.6)';
-            ctx.lineWidth = 3;
-            ctx.strokeRect(10, 10, canvas.width - 20, canvas.height - 20);
-
-            // Add Text Overlay
-            ctx.font = "bold 24px 'Amiri', serif";
-            ctx.fillStyle = "#042416";
-            ctx.textAlign = "center";
-            ctx.fillText("✨ Scratch Here ✨", canvas.width / 2, canvas.height / 2 + 8);
-        }
-
-        // Instantly reveal everything on the first touch or swipe gesture
-        function triggerInstantReveal() {
-            if (isRevealed) return;
-            isRevealed = true;
-
-            // Smooth fade out and scale down animation
-            canvas.style.transition = "all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)";
-            canvas.style.opacity = "0";
-            canvas.style.transform = "scale(0.8)";
-            
-            setTimeout(() => {
-                canvas.style.display = 'none';
-            }, 600);
-
-            // Trigger explosive celebratory fireworks
-            triggerMassiveFireworks();
-        }
-
-        // Event listeners for both Desktop and Mobile devices
-        canvas.addEventListener('mousedown', triggerInstantReveal);
-        canvas.addEventListener('touchstart', (e) => {
-            e.preventDefault();
-            triggerInstantReveal();
-        });
-        canvas.addEventListener('mousemove', (e) => {
-            if(e.buttons === 1) triggerInstantReveal();
-        });
-        canvas.addEventListener('touchmove', triggerInstantReveal);
-
-
-        // --- CELEBRATORY FIREWORKS LOGIC ---
-        const fireworksContainer = document.getElementById('fireworks-container');
-
-        function triggerMassiveFireworks() {
-            // Launch 5 separate firework bursts across the screen
-            for (let b = 0; b < 5; b++) {
-                setTimeout(() => {
-                    const originX = Math.random() * window.innerWidth;
-                    const originY = Math.random() * (window.innerHeight * 0.7);
-                    createExplosion(originX, originY);
-                }, b * 250);
-            }
-        }
-
-        function createExplosion(x, y) {
-            const colors = ['#bf953f', '#fcf6ba', '#ffffff', '#ffdf7a', '#00ffaa', '#ff3366'];
-            const particleCount = 60;
-
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                
-                // Randomize trajectory angles and speeds
-                const angle = Math.random() * Math.PI * 2;
-                const velocity = Math.random() * 120 + 40;
-                const destinationX = Math.cos(angle) * velocity;
-                const destinationY = Math.sin(angle) * velocity;
-
-                particle.style.left = `${x}px`;
-                particle.style.top = `${y}px`;
-
-                fireworksContainer.appendChild(particle);
-
-                // Animate physics simulation via JS keyframes alternative
-                particle.animate([
-                    { transform: 'translate(0, 0)', opacity: 1 },
-                    { transform: `translate(${destinationX}px, ${destinationY}px)`, opacity: 0 }
-                ], {
-                    duration: 1200 + Math.random() * 400,
-                    easing: 'cubic-bezier(0.1, 0.8, 0.25, 1)',
-                    fill: 'forwards'
-                });
-
-                // Remove DOM elements after completion
-                setTimeout(() => particle.remove(), 1600);
-            }
-        }
-
-        // --- COUNTDOWN TIMER LOGIC ---
-        const targetDate = new Date("June 13, 2026 17:30:00").getTime();
-
-        const timerInterval = setInterval(() => {
-            const now = new Date().getTime();
-            const distance = targetDate - now;
-
-            if (distance < 0) {
-                clearInterval(timerInterval);
-                document.getElementById('days').innerText = "00";
-                document.getElementById
+</html>
