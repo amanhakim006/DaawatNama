@@ -3,499 +3,615 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Royal Engagement Celebration</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Italiana&family=Montserrat:wght@200;400;500&display=swap" rel="stylesheet">
+    <title>The Royal Engagement • Arbaj & Sana</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;1,6..96,400&family=Cinzel+Decorative:wght@400;700&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --bg-velvet: #090b11; /* Midnight Indigo Velvet */
-            --parchment-dark: #121622;
-            --rose-gold-static: #e0a98c;
-            --rose-gold-fluid: linear-gradient(135deg, #b38163 0%, #f3ceb7 25%, #cc9675 50%, #fbf0e9 75%, #a16b4e 100%);
-            --text-silver: #e2e5ec;
+            --bg-noir: #030605;
+            --velvet-jade: #02170e;
+            --rose-gold: linear-gradient(135deg, #e5b091 0%, #f7ded1 30%, #cca085 50%, #f5cfba 75%, #b8866b 100%);
+            --solid-gold: #e5b091;
+            --text-muted: rgba(245, 242, 235, 0.6);
+            --text-bright: #fdfaf5;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background-color: var(--bg-velvet);
-            color: var(--text-silver);
+            background-color: var(--bg-noir);
+            color: var(--text-bright);
             font-family: 'Montserrat', sans-serif;
             overflow-x: hidden;
             min-height: 100vh;
         }
 
-        /* --- THE CINEMATIC RITUAL SYSTEM --- */
-        #ceremony-veil {
+        /* --- LUXURY INTERACTIVE INTRO VEIL --- */
+        #ritual-container {
             position: fixed;
             inset: 0;
-            background: radial-gradient(circle at center, #151a29 0%, var(--bg-velvet) 100%);
+            background: radial-gradient(circle at center, var(--velvet-jade) 0%, var(--bg-noir) 100%);
             z-index: 3000;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            transition: all 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+            padding: 20px;
+            transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
-        .canvas-universe {
+        .ceremonial-title {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 0.8rem;
+            letter-spacing: 6px;
+            color: var(--solid-gold);
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .canvas-area {
             position: relative;
-            width: 340px;
-            height: 340px;
+            width: 300px;
+            height: 300px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        .hand-vector {
+        .hand-silhouette {
             width: 220px;
             height: 220px;
             opacity: 0.35;
-            transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .ring-cuff {
-            position: absolute;
-            width: 32px;
-            height: 32px;
-            border: 2px solid transparent;
-            border-image: var(--rose-gold-fluid) 1;
-            border-radius: 50%;
-            top: 20px;
-            left: 154px;
-            transform: translateY(0) scale(1.4);
-            opacity: 0;
-            box-shadow: 0 0 0px rgba(224, 169, 140, 0);
-            transition: transform 1.8s cubic-bezier(0.6, -0.28, 0.735, 0.045), opacity 1s, box-shadow 1s;
-        }
-
-        .ring-sparkle {
-            position: absolute;
-            top: -8px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: #fff;
-            font-size: 10px;
-            text-shadow: 0 0 8px var(--rose-gold-static);
-            opacity: 0;
+            transform: translateY(10px);
             transition: opacity 0.5s;
         }
 
-        /* Modern Actuator Button */
-        .action-button {
-            background: transparent;
-            border: 1px solid var(--rose-gold-static);
-            padding: 14px 28px;
-            font-family: 'Cinzel', serif;
-            font-size: 0.75rem;
-            letter-spacing: 4px;
-            color: var(--rose-gold-static);
-            cursor: pointer;
-            text-transform: uppercase;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s;
-            margin-top: 30px;
-        }
-
-        .action-button:hover {
-            color: var(--bg-velvet);
-            background: var(--rose-gold-static);
-            box-shadow: 0 0 20px rgba(224, 169, 140, 0.4);
-        }
-
-        /* Shockwave Energy Ripple */
-        .shockwave-ripple {
-            position: fixed;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%) scale(0);
-            width: 10px; height: 10px;
-            border: 2px solid var(--rose-gold-static);
+        .interactive-ring {
+            position: absolute;
+            width: 48px;
+            height: 48px;
+            border: 2px solid transparent;
+            border-image: var(--rose-gold) 1;
             border-radius: 50%;
-            z-index: 3500;
+            top: 10px;
+            left: 126px;
+            transform: translateY(0px) scale(1.4);
+            filter: drop-shadow(0 0 0px transparent);
+            pointer-events: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .interactive-ring::after {
+            content: '✦';
+            color: #fff;
+            font-size: 10px;
+            position: absolute;
+            top: -9px;
+            text-shadow: 0 0 8px var(--solid-gold);
+        }
+
+        /* Luxury Controller Slider Styling */
+        .slider-axis {
+            position: relative;
+            width: 260px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .custom-slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 2px;
+            background: rgba(229, 176, 145, 0.2);
+            outline: none;
+            border-radius: 2px;
+        }
+
+        .custom-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--bg-noir);
+            border: 2px solid var(--solid-gold);
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(229, 176, 145, 0.4);
+            transition: transform 0.2s;
+        }
+
+        .custom-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.1);
+        }
+
+        .slider-label {
+            font-size: 0.6rem;
+            letter-spacing: 3px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            display: block;
+            margin-top: 15px;
+        }
+
+        .flash-shutter {
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(circle, #fff 0%, var(--solid-gold) 100%);
+            z-index: 4000;
             opacity: 0;
             pointer-events: none;
+            transition: opacity 0.5s ease-out;
         }
 
-        @keyframes explodeRipple {
-            0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
-            100% { transform: translate(-50%, -50%) scale(300); opacity: 0; }
-        }
-
-        /* --- THE MASTER PARCHMENT DOCUMENT LAYOUT --- */
-        .invitation-scroller {
-            max-width: 750px;
+        /* --- THE WEDDING PLATFORM LAYOUT --- */
+        .scroller-wrapper {
+            max-width: 850px;
             margin: 0 auto;
-            padding: 100px 20px;
+            padding: 120px 20px;
             display: none;
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 2s ease, transform 2s ease;
+            flex-direction: column;
+            gap: 100px;
+            transition: opacity 2s ease-out;
         }
 
-        .bismillah-header {
-            font-family: 'Italiana', serif;
-            font-size: 1.3rem;
-            letter-spacing: 6px;
-            color: var(--rose-gold-static);
+        .bismillah {
+            font-family: 'Bodoni Moda', serif;
+            font-style: italic;
+            font-size: 1.5rem;
+            color: var(--solid-gold);
+            letter-spacing: 2px;
+            margin-bottom: 20px;
             text-align: center;
-            margin-bottom: 50px;
-            opacity: 0.8;
         }
 
-        .editorial-wrapper {
-            background: var(--parchment-dark);
-            border: 1px solid rgba(224, 169, 140, 0.15);
-            padding: 60px 40px;
+        .header-crest-card {
             text-align: center;
+            border: 1px solid rgba(229, 176, 145, 0.15);
+            padding: 80px 40px;
+            background: linear-gradient(180deg, rgba(2, 23, 14, 0.4) 0%, rgba(3, 6, 5, 0) 100%);
             position: relative;
         }
 
-        .inner-accent-border {
+        .header-crest-card::before {
+            content: '';
             position: absolute;
-            inset: 15px;
-            border: 1px dashed rgba(224, 169, 140, 0.1);
-            pointer-events: none;
+            inset: 10px;
+            border: 1px dashed rgba(229, 176, 145, 0.1);
         }
 
-        .section-label {
-            font-family: 'Cinzel', serif;
-            font-size: 0.7rem;
+        .subtitle-badge {
+            font-size: 0.65rem;
             letter-spacing: 6px;
             text-transform: uppercase;
-            color: var(--rose-gold-static);
+            color: var(--solid-gold);
+            margin-bottom: 25px;
+            display: block;
         }
 
-        .couple-moniker {
-            font-family: 'Italiana', serif;
-            font-size: clamp(2.8rem, 6vw, 4.5rem);
-            line-height: 1.2;
-            margin: 25px 0;
-            background: var(--rose-gold-fluid);
+        .royal-title {
+            font-family: 'Bodoni Moda', serif;
+            font-size: clamp(2.8rem, 7vw, 5rem);
+            font-weight: 300;
+            line-height: 1.1;
+            margin: 20px 0;
+        }
+
+        .gold-script {
+            background: var(--rose-gold);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            font-family: 'Cinzel Decorative', serif;
+            font-weight: 700;
         }
 
-        /* Scratch Foil Container Re-imagined */
-        .foil-lockbox {
+        .line-separator {
+            width: 50px;
+            height: 1px;
+            background: var(--solid-gold);
+            margin: 30px auto;
+            opacity: 0.4;
+        }
+
+        .family-mentions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            text-align: center;
+            font-size: 0.85rem;
+            max-width: 600px;
+            margin: 40px auto 0 auto;
+            letter-spacing: 1px;
+            line-height: 1.8;
+        }
+
+        .family-mentions strong {
+            color: var(--solid-gold);
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+        }
+
+        /* --- THE SCRATCH EXCLUSIVITY MASK --- */
+        .scratch-vault {
             position: relative;
             width: 100%;
-            max-width: 440px;
-            height: 200px;
-            margin: 40px auto;
-            border: 1px solid rgba(224, 169, 140, 0.2);
+            max-width: 550px;
+            height: 260px;
+            margin: 0 auto;
+            background: #010a06;
+            border: 1px solid rgba(229, 176, 145, 0.2);
+            box-shadow: 0 40px 80px rgba(0,0,0,0.6);
         }
 
-        .vault-reveal-interior {
+        .hidden-details {
             position: absolute;
             inset: 0;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: #0d111a;
+            text-align: center;
+            z-index: 1;
+            background: radial-gradient(circle, rgba(2,23,14,0.8) 0%, rgba(3,6,5,1) 100%);
         }
 
-        #scratch-foil-layer {
+        .hidden-details h3 {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 2.2rem;
+            font-weight: 400;
+            color: var(--solid-gold);
+            margin-bottom: 10px;
+        }
+
+        #scratch-canvas {
             position: absolute;
             inset: 0;
-            z-index: 5;
+            z-index: 2;
             touch-action: none;
             cursor: crosshair;
+            transition: opacity 0.5s;
         }
 
-        /* --- THE LUXURY DETAILS SHEET --- */
-        .details-timeline {
+        /* --- LUXURY CLOCK CELLS --- */
+        .ticker-row {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin: 60px 0;
-            text-align: left;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
         }
 
-        .timeline-node {
-            border-top: 1px solid rgba(224, 169, 140, 0.3);
-            padding-top: 15px;
+        .ticker-cell {
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(229, 176, 145, 0.08);
+            padding: 40px 10px;
+            text-align: center;
         }
 
-        .timeline-node h5 {
-            font-family: 'Cinzel', serif;
-            color: var(--rose-gold-static);
-            font-size: 0.85rem;
-            letter-spacing: 2px;
+        .ticker-cell span {
+            display: block;
+            font-family: 'Bodoni Moda', serif;
+            font-size: 3.5rem;
+            color: var(--solid-gold);
+            font-weight: 300;
+        }
+
+        .ticker-cell label {
+            font-size: 0.55rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        /* --- ITINERARY SCHEDULE --- */
+        .itinerary-box {
+            max-width: 600px;
+            margin: 0 auto;
+            border-left: 1px solid var(--solid-gold);
+            padding-left: 30px;
+        }
+
+        .itinerary-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .itinerary-item::before {
+            content: '✦';
+            position: absolute;
+            left: -36px;
+            top: -2px;
+            color: var(--solid-gold);
+            background: var(--bg-noir);
+            padding: 2px;
+            font-size: 10px;
+        }
+
+        .itinerary-item h4 {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: var(--solid-gold);
             margin-bottom: 5px;
         }
 
-        /* Countdown Elements */
-        .ticker-flex {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 60px 0;
+        /* --- GEOGRAPHIC CARD INTERFACE --- */
+        .destination-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 40px;
+            align-items: center;
         }
 
-        .ticker-block {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            width: 85px;
-            padding: 20px 0;
-        }
-
-        .ticker-block span {
-            display: block;
-            font-family: 'Italiana', serif;
-            font-size: 2.5rem;
-            color: var(--rose-gold-static);
-        }
-
-        .ticker-block label {
-            font-size: 0.55rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            opacity: 0.5;
-        }
-
-        /* Map Segment Override */
-        .iframe-container {
-            border: 1px solid rgba(224, 169, 140, 0.2);
-            padding: 6px;
-            background: #000;
-            margin-top: 30px;
+        .map-frame {
+            border: 1px solid rgba(229, 176, 145, 0.2);
+            padding: 10px;
+            background: rgba(255,255,255,0.01);
         }
 
         iframe {
-            width: 100%; height: 280px; border: 0;
-            filter: grayscale(1) invert(0.95) sepia(0.2) contrast(1.1);
+            width: 100%;
+            height: 320px;
+            border: 0;
+            filter: grayscale(1) invert(0.95) contrast(1.3);
         }
 
-        .rsvp-section {
-            margin-top: 60px;
-            border-top: 1px solid rgba(224, 169, 140, 0.1);
-            padding-top: 40px;
+        footer {
+            text-align: center;
+            border-top: 1px solid rgba(229, 176, 145, 0.1);
+            padding-top: 60px;
+            font-family: 'Bodoni Moda', serif;
+            font-style: italic;
+            font-size: 1.8rem;
+            color: var(--solid-gold);
         }
 
-        /* --- IMMERSION VISIBILITY ENGINE --- */
-        .lazy-reveal { opacity: 0; transform: translateY(30px); transition: 1.2s cubic-bezier(0.215, 0.61, 0.355, 1); }
-        .lazy-reveal.appeared { opacity: 1; transform: translateY(0); }
+        /* --- ARCHITECTURAL MOTION REVEALS --- */
+        .motion-fade { opacity: 0; transform: translateY(50px); transition: 1.4s cubic-bezier(0.22, 1, 0.36, 1); }
+        .motion-fade.active { opacity: 1; transform: translateY(0); }
 
-        @media (max-width: 650px) {
-            .details-timeline { grid-template-columns: 1fr; gap: 25px; }
-            .ticker-flex { display: grid; grid-template-columns: repeat(2, 1fr); }
-            .ticker-block { width: 100%; }
+        @media (max-width: 768px) {
+            .destination-grid { grid-template-columns: 1fr; gap: 30px; text-align: center; }
+            .family-mentions { grid-template-columns: 1fr; gap: 20px; }
+            .ticker-row { grid-template-columns: repeat(2, 1fr); }
+            .header-crest-card { padding: 50px 20px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="shockwave-ripple" id="shockwave"></div>
+    <div class="flash-shutter" id="flash-device"></div>
 
-    <!-- The Ring Fitting Ceremony Entrance -->
-    <div id="ceremony-veil">
-        <div class="bismillah-header" style="margin-bottom: -10px;">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
-        <div class="canvas-universe">
-            <!-- Minimalist Line Art Hands -->
-            <svg class="hand-vector" id="wedding-hands" viewBox="0 0 100 100" fill="none" stroke="#e0a98c" stroke-width="0.6">
-                <path d="M10,70 C25,65 40,55 50,42 C53,38 55,30 48,28 C42,26 39,36 43,42 C46,47 53,50 60,49 C68,48 72,40 67,37 C63,35 60,41 64,45 C68,49 80,47 90,52" />
-                <path d="M43,38 C43,32 38,31 37,35 C36,39 40,44 43,46" stroke-dasharray="0.8 0.8" />
+    <!-- Cinematic Range Slider Ring Ceremony Overlay -->
+    <div id="ritual-container">
+        <h2 class="ceremonial-title">The Ring Ceremony Prologue</h2>
+        <div class="canvas-area">
+            <svg class="hand-silhouette" id="ceremony-hands" viewBox="0 0 100 100" fill="none" stroke="#e5b091" stroke-width="0.6" stroke-linecap="round">
+                <!-- Artful Line Drawing of Intertwined Hands -->
+                <path d="M10,70 C25,65 40,55 50,45 C53,42 56,34 50,32 C45,30 42,38 45,45 C47,50 55,54 60,54 C67,54 70,45 66,42 C62,39 59,45 63,49 C67,53 80,51 90,56" />
+                <path d="M44,43 C44,36 39,35 38,40 C37,44 42,50 45,52" stroke-dasharray="1 1" />
             </svg>
-            <div class="ring-cuff" id="ceremony-ring">
-                <div class="ring-sparkle" id="diamond-shine">✦</div>
-            </div>
+            <div class="interactive-ring" id="moving-ring"></div>
         </div>
-        <button class="action-button" id="fit-ring-trigger">Adorn the Finger</button>
+        
+        <div class="slider-axis">
+            <input type="range" min="0" max="100" value="0" class="custom-slider" id="ring-slider">
+            <label class="slider-label" id="status-text">Slide to slide ring on finger</label>
+        </div>
     </div>
 
-    <!-- Primary Digital Invitation Frame Container -->
-    <div class="invitation-scroller" id="scroll-root">
-        <div class="bismillah-header">In the name of Allah, the Most Gracious, the Most Merciful</div>
+    <!-- Main Invitation Scroller Platform -->
+    <div class="scroller-wrapper" id="master-root">
+        <p class="bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
         
-        <main class="editorial-wrapper">
-            <div class="inner-accent-border"></div>
+        <header class="header-crest-card motion-fade">
+            <span class="subtitle-badge">The Imperial Engagement Decree</span>
+            <p style="font-size:0.75rem; letter-spacing: 3px; opacity:0.6; text-transform:uppercase;">Under the divine blessings of Almighty Allah</p>
             
-            <span class="section-label">HEAVEN'S DECREE IN MOTION</span>
+            <h1 class="royal-title">Arbaj <br><span class="gold-script">&</span><br> Sana Kaussain</h1>
             
-            <h1 class="couple-moniker">Arbaj <br> & <br> Sana Kaussain</h1>
-            
-            <p style="font-size: 0.85rem; letter-spacing: 3px; font-weight: 200; line-height: 2; max-width: 500px; margin: 0 auto; opacity: 0.8;">
-                Together with our families, we cordially invite you to share in the joy of our blissful engagement union.
+            <div class="line-separator"></div>
+            <p style="font-size:0.85rem; letter-spacing:3px; max-width:500px; margin:0 auto; line-height:1.8; opacity:0.8;">
+                Together with their families, invite you to share in the joy of their beautiful new chapter.
             </p>
 
-            <!-- Foil Block Layer -->
-            <div class="lazy-reveal">
-                <div class="foil-lockbox" id="foil-anchor">
-                    <div class="vault-reveal-interior">
-                        <span class="section-label" style="font-size:0.55rem; opacity:0.6;">DATE CONFIRMED</span>
-                        <p style="font-family: 'Italiana', serif; font-size: 1.8rem; color: var(--rose-gold-static); margin: 5px 0;">Saturday, June 13, 2026</p>
-                        <p style="font-size: 0.75rem; letter-spacing: 2px; opacity: 0.7;">TIMING: AFTER NAMAZ-A-ASR AT 5:30 PM</p>
-                    </div>
-                    <canvas id="scratch-foil-layer"></canvas>
+            <div class="family-mentions">
+                <div>
+                    <strong>With Best Compliments:</strong>
+                    Hakim Family
+                </div>
+                <div>
+                    <strong>& Cordially Invited By:</strong>
+                    Shaikh Family
                 </div>
             </div>
+        </header>
 
-            <!-- Schedule & Coordinates Timeline Matrix -->
-            <div class="details-timeline lazy-reveal">
-                <div class="timeline-node">
-                    <h5>THE PROTOCOL</h5>
-                    <p style="font-size: 0.8rem; opacity: 0.7; line-height: 1.6;">Ring Exchange & Ceremony followed precisely by Dinner Festivities.</p>
+        <!-- Timetable Itinerary Logic Block -->
+        <section class="motion-fade">
+            <div class="itinerary-box">
+                <div class="itinerary-item">
+                    <h4>The Formal Exchange</h4>
+                    <p style="font-size:0.85rem; opacity:0.6;">The ring-wearing ceremony will commence promptly in the evening arena.</p>
                 </div>
-                <div class="timeline-node">
-                    <h5>THE QUARTERS</h5>
-                    <p style="font-size: 0.8rem; opacity: 0.7; line-height: 1.6;"><strong>Hotel Yugvir & Garden</strong><br>Nira-Baramati Road, Nimbut.</p>
+                <div class="itinerary-item">
+                    <h4>Namaz-a-Asr</h4>
+                    <p style="font-size:0.85rem; opacity:0.6;">Prayer observation and alignment prior to the celebrations.</p>
                 </div>
             </div>
+        </section>
 
-            <!-- Live Chronology Engine Counter Blocks -->
-            <div class="ticker-flex lazy-reveal">
-                <div class="ticker-block"><span id="metric-d">00</span><label>Days</label></div>
-                <div class="ticker-block"><span id="metric-h">00</span><label>Hours</label></div>
-                <div class="ticker-block"><span id="metric-m">00</span><label>Mins</label></div>
-                <div class="ticker-block"><span id="metric-s">00</span><label>Secs</label></div>
+        <!-- Interactive Scratch Mechanism for Timing Matrix -->
+        <section class="motion-fade">
+            <p style="text-align: center; font-size: 0.6rem; letter-spacing: 4px; margin-bottom: 25px; color: var(--solid-gold);">WIPE CANVAS WITH VELVET TO DISPLAY DATE</p>
+            <div class="scratch-vault" id="canvas-anchor">
+                <div class="hidden-details">
+                    <h3>Saturday, June 13, 2026</h3>
+                    <p style="font-size: 0.75rem; letter-spacing: 4px; opacity: 0.7;">AFTER NAMAZ-A-ASR AT 5:30 PM</p>
+                </div>
+                <canvas id="scratch-canvas"></canvas>
             </div>
+        </section>
 
-            <!-- Location Architecture Module Frame -->
-            <div class="lazy-reveal">
-                <span class="section-label" style="font-size: 0.6rem;">SATELLITE COORDINATES NAVIGATION</span>
-                <div class="iframe-container">
+        <!-- Chronometer Ticker Platform -->
+        <section class="motion-fade">
+            <div class="ticker-row">
+                <div class="ticker-cell"><span id="days-node">00</span><label>Days</label></div>
+                <div class="ticker-cell"><span id="hours-node">00</span><label>Hours</label></div>
+                <div class="ticker-cell"><span id="mins-node">00</span><label>Mins</label></div>
+                <div class="ticker-cell"><span id="secs-node">00</span><label>Secs</label></div>
+            </div>
+        </section>
+
+        <!-- Venue Geometry Column Blocks -->
+        <section class="motion-fade">
+            <div class="destination-grid">
+                <div>
+                    <span style="color: var(--solid-gold); font-size: 0.65rem; letter-spacing: 5px; display:block; margin-bottom:15px;">THE LOCATION MATRIX</span>
+                    <h3 style="font-family:'Bodoni Moda', serif; font-size: 2.6rem; font-weight:300; margin-bottom:20px; line-height:1.2;">Hotel Yugvir & Garden</h3>
+                    <p style="font-size:0.85rem; opacity:0.6; line-height:1.8; margin-bottom:10px;">Nira-Baramati Road, Nimbut.</p>
+                    <p style="font-size:0.8rem; color:var(--solid-gold); font-style:italic;">Ample premium parking and guest reception available at the main gate.</p>
+                </div>
+                <div class="map-frame">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3174.9610736330874!2d74.24886167424374!3d18.10959458160069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc3ab005580541d%3A0xec01f662fe63ba08!2sHotel%20Yugveer%20Garden!5e1!3m2!1sen!2sin!4v1780923617727!5m2!1sen!2sin"></iframe>
                 </div>
             </div>
+        </section>
 
-            <!-- Attending Signatures Section Layer -->
-            <div class="rsvp-section lazy-reveal">
-                <span class="section-label" style="font-size: 0.55rem; opacity: 0.5;">WITH GRATIUDE & RESPECT</span>
-                <p style="font-family: 'Italiana', serif; font-size: 1.5rem; margin-top: 10px; color: var(--rose-gold-static);">Hakim & Shaikh Families</p>
-                <p style="font-size: 0.7rem; opacity: 0.4; letter-spacing: 1px; margin-top: 5px;">Compliments from Near & Dear Ones</p>
-            </div>
-
-        </main>
+        <footer>
+            Warm Regards, Hakim & Shaikh Families
+        </footer>
     </div>
 
     <script>
-        const ringTrigger = document.getElementById('fit-ring-trigger');
-        const internalRing = document.getElementById('ceremony-ring');
-        const coreHands = document.getElementById('wedding-hands');
-        const veilStage = document.getElementById('ceremony-veil');
-        const shockwave = document.getElementById('shockwave');
-        const scrollRoot = document.getElementById('scroll-root');
-        const spark = document.getElementById('diamond-shine');
+        // Precision Linear Slide Controller Engine
+        const slider = document.getElementById('ring-slider');
+        const ring = document.getElementById('moving-ring');
+        const hands = document.getElementById('ceremony-hands');
+        const statusText = document.getElementById('status-text');
+        const introVeil = document.getElementById('ritual-container');
+        const shutter = document.getElementById('flash-device');
+        const masterScroller = document.getElementById('master-root');
 
-        // Cinematic Ring Slide Execution Thread
-        ringTrigger.addEventListener('click', () => {
-            ringTrigger.style.pointerEvents = 'none';
-            ringTrigger.style.opacity = '0';
+        slider.addEventListener('input', (e) => {
+            const val = parseInt(e.target.value);
             
-            // Step 1: Slide ring dynamically down line path vector
-            internalRing.style.opacity = '1';
-            internalRing.style.transform = 'translateY(55px) scale(1)';
-            coreHands.style.opacity = '0.9';
-            coreHands.style.transform = 'scale(1.03)';
+            // Map slider value smoothly to pixel translation offsets
+            const translateY = (val / 100) * 58; 
+            const scale = 1.4 - ((val / 100) * 0.4); 
+            
+            ring.style.transform = `translateY(${translateY}px) scale(${scale})`;
+            hands.style.opacity = 0.35 + ((val / 100) * 0.45);
 
-            // Step 2: Flash diamond glint shine accent
-            setTimeout(() => {
-                spark.style.opacity = '1';
-                internalRing.style.boxShadow = '0 0 30px 10px rgba(255,255,255,0.6)';
-            }, 1400);
-
-            // Step 3: Unleash blast shockwave and wipe layout open
-            setTimeout(() => {
-                shockwave.style.animation = 'explodeRipple 1s forwards cubic-bezier(0.1, 0.8, 0.3, 1)';
-                
-                setTimeout(() => {
-                    veilStage.style.opacity = '0';
-                    scrollRoot.style.display = 'block';
-                    window.scrollTo(0,0);
-                    
-                    setTimeout(() => {
-                        veilStage.style.display = 'none';
-                        scrollRoot.style.style = 'none';
-                        scrollRoot.style.opacity = '1';
-                        scrollRoot.style.transform = 'translateY(0)';
-                        setupIntersectionObserver();
-                        runScratchFoilLogic();
-                    }, 600);
-                }, 300);
-            }, 1800);
+            if (val === 100) {
+                statusText.innerText = "ENGAGED PERMANENTLY";
+                executeGrandTransition();
+            } else {
+                statusText.innerText = `Placing Ring... ${val}%`;
+            }
         });
 
-        // Modular Lazy Scroll Display Loop Engine
-        function setupIntersectionObserver() {
-            const structuralElements = document.querySelectorAll('.lazy-reveal');
-            const visibilityWatcher = new IntersectionObserver((entries) => {
-                entries.forEach(item => {
-                    if(item.isIntersecting) item.target.classList.add('appeared');
-                });
-            }, { threshold: 0.12 });
-            structuralElements.forEach(el => visibilityWatcher.observe(el));
+        function executeGrandTransition() {
+            slider.disabled = true;
+            shutter.style.opacity = '1';
+            ring.style.boxShadow = '0 0 80px 30px #fff';
+
+            setTimeout(() => {
+                introVeil.style.display = 'none';
+                masterScroller.style.display = 'flex';
+                window.scrollTo(0,0);
+                
+                setTimeout(() => {
+                    shutter.style.opacity = '0';
+                    masterScroller.style.opacity = '1';
+                    initializeIntersectionObservers();
+                    setupScratchModule();
+                }, 400);
+            }, 600);
         }
 
-        // Matte Charcoal Foil Destruction Scratch Matrix Engine
-        function runScratchFoilLogic() {
-            const canvas = document.getElementById('scratch-foil-layer');
-            const renderingContext = canvas.getContext('2d');
-            const hostBox = document.getElementById('foil-anchor');
+        // Structural Geometric Intersection Engine
+        function initializeIntersectionObservers() {
+            const nodes = document.querySelectorAll('.motion-fade');
+            const observe = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+            nodes.forEach(n => observe.observe(n));
+        }
+
+        // Premium Canvas Foil Scratch Engine Matrix
+        function setupScratchModule() {
+            const canvas = document.getElementById('scratch-canvas');
+            const ctx = canvas.getContext('2d');
+            const anchor = document.getElementById('canvas-anchor');
             
-            canvas.width = hostBox.offsetWidth;
-            canvas.height = hostBox.offsetHeight;
+            canvas.width = anchor.offsetWidth;
+            canvas.height = anchor.offsetHeight;
 
-            // Texture Coat Painting Layer
-            renderingContext.fillStyle = '#1b2030';
-            renderingContext.fillRect(0, 0, canvas.width, canvas.height);
+            // Matte Slate Charcoal Cover Layer
+            ctx.fillStyle = '#03140e';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            // Fine Delicate Golden Foil Accent Trace Framing
-            renderingContext.strokeStyle = 'rgba(224, 169, 140, 0.3)';
-            renderingContext.lineWidth = 1;
-            renderingContext.strokeRect(8, 8, canvas.width - 16, canvas.height - 16);
+            // Elegantly render instruction typography inside native canvas space
+            ctx.font = "300 10px Montserrat";
+            ctx.fillStyle = "#e5b091";
+            ctx.textAlign = "center";
+            ctx.letterSpacing = "3px";
+            ctx.fillText("SWIPE TO DISCOVER TIMING ARCHIVE", canvas.width/2, canvas.height/2 + 5);
 
-            renderingContext.font = "600 10px Montserrat";
-            renderingContext.fillStyle = "#e0a98c";
-            renderingContext.textAlign = "center";
-            renderingContext.letterSpacing = "3px";
-            renderingContext.fillText("CLEAR THE FOIL TO VIEW TIMINGS", canvas.width / 2, canvas.height / 2 + 4);
+            let rubbing = false;
 
-            let cleaningActive = false;
-            
-            const wipeAction = (e) => {
-                if(!cleaningActive) return;
-                const matrixBounds = canvas.getBoundingClientRect();
-                const preciseX = (e.clientX || e.touches[0].clientX) - matrixBounds.left;
-                const preciseY = (e.clientY || e.touches[0].clientY) - matrixBounds.top;
+            const traceMovement = (e) => {
+                if(!rubbing) return;
+                const box = canvas.getBoundingClientRect();
+                const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+                const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+                
+                const posX = clientX - box.left;
+                const posY = clientY - box.top;
 
-                renderingContext.globalCompositeOperation = 'destination-out';
-                renderingContext.beginPath();
-                renderingContext.arc(preciseX, preciseY, 26, 0, Math.PI * 2);
-                renderingContext.fill();
+                ctx.globalCompositeOperation = 'destination-out';
+                ctx.beginPath();
+                ctx.arc(posX, posY, 32, 0, Math.PI * 2);
+                ctx.fill();
                 evaluateFoilClearance();
             };
 
             const evaluateFoilClearance = () => {
-                const surfaceData = renderingContext.getImageData(0, 0, canvas.width, canvas.height).data;
-                let negativeSpaces = 0;
-                for (let i = 3; i < surfaceData.length; i += 4) { if (surfaceData[i] === 0) negativeSpaces++; }
-                if (negativeSpaces > (surfaceData.length / 4) * 0.50) {
+                const mapData = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+                let voidCount = 0;
+                for (let i = 3; i < mapData.length; i += 4) { if (mapData[i] === 0) voidCount++; }
+                if (voidCount > (mapData.length / 4) * 0.5) {
                     canvas.style.opacity = '0';
                     setTimeout(() => canvas.remove(), 500);
                 }
             };
 
-            canvas.addEventListener('mousedown', () => cleaningActive = true);
-            canvas.addEventListener('touchstart', () => cleaningActive = true);
-            window.addEventListener('mouseup', () => cleaningActive = false);
-            window.addEventListener('touchend', () => cleaningActive = false);
-            canvas.addEventListener('mousemove', wipeAction);
-            canvas.addEventListener('touchmove', wipeAction);
+            canvas.addEventListener('mousedown', () => rubbing = true);
+            canvas.addEventListener('touchstart', () => rubbing = true);
+            window.addEventListener('mouseup', () => rubbing = false);
+            window.addEventListener('touchend', () => rubbing = false);
+            canvas.addEventListener('mousemove', traceMovement);
+            canvas.addEventListener('touchmove', traceMovement);
         }
 
-        // Countdown Chronometer Temporal Calculations Engine
-        const terminalDateEpoch = new Date("June 13, 2026 17:30:00").getTime();
+        // High Precision Countdown Chrono Pipeline
+        const epochEnd = new Date("June 13, 2026 17:30:00").getTime();
         setInterval(() => {
-            const timeDelta = terminalDateEpoch - new Date().getTime();
-            if(timeDelta < 0) return;
+            const diff = epochEnd - new Date().getTime();
+            if(diff < 0) return;
 
-            document.getElementById('metric-d').innerText = String(Math.floor(timeDelta / (1000 * 60 * 60 * 24))).padStart(2, '0');
-            document.getElementById('metric-h').innerText = String(Math.floor((timeDelta % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
-            document.getElementById('metric-m').innerText = String(Math.floor((timeDelta % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
-            document.getElementById('metric-s').innerText = String(Math.floor((timeDelta % (1000 * 60)) / 1000)).padStart(2, '0');
+            document.getElementById('days-node').innerText = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(2, '0');
+            document.getElementById('hours-node').innerText = String(Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+            document.getElementById('mins-node').innerText = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+            document.getElementById('secs-node').innerText = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
         }, 1000);
     </script>
 </body>
