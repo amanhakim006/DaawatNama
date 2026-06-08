@@ -4,17 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Engagement Ceremony of Arbaj & Sana Kaussain</title>
-    <!-- Elegant Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Great+Vibes&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cinzel+Decorative:wght@700&family=Great+Vibes&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* CSS Variables for Premium Theme */
         :root {
-            --primary-bg: #092e20; /* Deep Islamic Green */
-            --gold: #d4af37; /* Metallic Gold */
-            --gold-light: #f3e5ab;
-            --text-light: #f8f9fa;
+            --primary-bg: #042416; /* Dark Royal Islamic Green */
+            --gold-gradient: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+            --gold-solid: #d4af37;
+            --text-light: #f3e5ab;
         }
 
         * {
@@ -24,20 +22,21 @@
         }
 
         body {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Montserrat', sans-serif;
             background-color: var(--primary-bg);
-            color: var(--gold-light);
+            color: var(--text-light);
             overflow-x: hidden;
+            background-image: url('https://www.transparenttextures.com/patterns/dark-matter.png'); /* Subtle texture */
         }
 
-        /* ----- DOOR ANIMATION SECTION ----- */
+        /* ----- PREMIUM DOOR ANIMATION ----- */
         #doors-container {
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
-            z-index: 100;
+            z-index: 1000;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -49,65 +48,73 @@
             top: 0;
             width: 50%;
             height: 100%;
-            background-color: #051a12;
-            background-image: radial-gradient(circle at center, #092e20 0%, #030e0a 100%);
-            border: 2px solid var(--gold);
-            transition: transform 2s cubic-bezier(0.645, 0.045, 0.355, 1);
+            background: linear-gradient(145deg, #052e1e, #02140d);
+            border: 3px solid var(--gold-solid);
+            transition: transform 1.8s cubic-bezier(0.77, 0, 0.175, 1);
             display: flex;
             justify-content: center;
             align-items: center;
+            box-shadow: inset 0 0 50px rgba(0,0,0,0.8);
         }
 
         .door::before {
             content: '';
             position: absolute;
-            width: 80%;
+            width: 85%;
             height: 90%;
-            border: 2px solid var(--gold);
-            border-radius: 50% 50% 0 0 / 20% 20% 0 0; /* Islamic Arch feel */
-            opacity: 0.5;
+            border: 2px solid var(--gold-solid);
+            border-radius: 50% 50% 0 0 / 25% 25% 0 0; /* Dome Arch */
+            opacity: 0.3;
         }
 
-        .door.left { left: 0; border-right: 1px solid var(--gold); transform-origin: left; }
-        .door.right { right: 0; border-left: 1px solid var(--gold); transform-origin: right; }
+        .door.left { left: 0; border-right: 1.5px solid var(--gold-solid); transform-origin: left; }
+        .door.right { right: 0; border-left: 1.5px solid var(--gold-solid); transform-origin: right; }
 
         .door.left.open { transform: translateX(-100%); }
         .door.right.open { transform: translateX(100%); }
 
         .open-btn {
             position: relative;
-            z-index: 101;
-            padding: 15px 40px;
+            z-index: 1001;
+            padding: 18px 45px;
             font-family: 'Amiri', serif;
-            font-size: 1.5rem;
-            color: var(--primary-bg);
-            background: linear-gradient(135deg, #d4af37, #f3e5ab, #d4af37);
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #042416;
+            background: var(--gold-gradient);
             border: 2px solid #fff;
-            border-radius: 30px;
+            border-radius: 50px;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.5);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
             transition: all 0.5s ease;
+        }
+
+        .open-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.8);
         }
 
         .open-btn.fade-out {
             opacity: 0;
             pointer-events: none;
-            transform: scale(0.8);
+            transform: scale(0.5);
         }
 
-        /* ----- MAIN CONTENT & SCROLL REVEALS ----- */
+        /* ----- MAIN CONTENT & REVEALS ----- */
         .main-content {
-            display: none; /* Shown after doors open */
+            opacity: 0;
+            display: flex;
             flex-direction: column;
             align-items: center;
             width: 100%;
-            padding-bottom: 50px;
+            padding-bottom: 60px;
+            transition: opacity 1.5s ease;
         }
 
         .reveal {
             opacity: 0;
-            transform: translateY(50px);
-            transition: all 1s ease-in-out;
+            transform: translateY(60px);
+            transition: all 1.2s cubic-bezier(0.215, 0.610, 0.355, 1);
         }
         
         .reveal.active {
@@ -116,218 +123,229 @@
         }
 
         section {
-            min-height: 80vh;
+            min-height: 70vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             width: 90%;
-            max-width: 800px;
-            margin: 40px auto;
+            max-width: 700px;
+            margin: 50px auto;
             text-align: center;
         }
 
         /* ----- HERO SECTION ----- */
         .islamic-border {
-            border: 2px solid var(--gold);
-            padding: 60px 40px;
-            border-radius: 50% 50% 0 0 / 30% 30% 0 0; /* Arch */
-            background: rgba(0, 0, 0, 0.2);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
-            position: relative;
-        }
-        
-        .islamic-border::after {
-            content: '';
-            position: absolute;
-            top: -10px; left: -10px; right: -10px; bottom: -10px;
-            border: 1px dashed var(--gold);
-            border-radius: 50% 50% 0 0 / 30% 30% 0 0;
-            pointer-events: none;
+            border: 3px double var(--gold-solid);
+            padding: 50px 30px;
+            border-radius: 50% 50% 0 0 / 35% 35% 0 0;
+            background: rgba(4, 36, 22, 0.7);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6), inset 0 0 30px rgba(212,175,55,0.1);
+            backdrop-filter: blur(5px);
+            width: 100%;
         }
 
         h1 {
             font-family: 'Amiri', serif;
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: var(--gold-light);
-            letter-spacing: 2px;
-            text-transform: uppercase;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: #fff;
+            letter-spacing: 1px;
         }
 
         h2 {
             font-family: 'Great Vibes', cursive;
-            font-size: 4rem;
-            color: var(--gold);
+            font-size: 4.5rem;
+            color: var(--gold-solid);
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
-        /* ----- SCRATCH SECTION ----- */
+        /* ----- FIXED SCRATCH SECTION ----- */
+        .instruction {
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            color: var(--gold-solid);
+            font-family: 'Amiri', serif;
+            letter-spacing: 1px;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+
         .scratch-wrapper {
             position: relative;
-            width: 320px;
-            height: 200px;
-            margin-top: 20px;
+            width: 340px;
+            height: 220px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+            border-radius: 15px;
+            overflow: hidden;
         }
 
         .scratch-content {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(135deg, #111, #222);
-            border: 2px solid var(--gold);
+            background: linear-gradient(135deg, #031a10, #0c422a);
+            border: 2px solid var(--gold-solid);
             border-radius: 15px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             padding: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            z-index: 1;
         }
 
         .scratch-content h3 {
             font-family: 'Great Vibes', cursive;
-            font-size: 2.2rem;
-            color: var(--gold);
-            margin-bottom: 10px;
+            font-size: 2.8rem;
+            color: var(--gold-solid);
+            margin-bottom: 15px;
         }
 
         .scratch-content p {
-            font-family: 'Amiri', serif;
             font-size: 1.1rem;
             color: #fff;
-            margin: 5px 0;
+            margin: 6px 0;
+            font-weight: 500;
         }
 
-        canvas {
+        /* Fixed Dimensions for Canvas to prevent bugs */
+        #scratch-canvas {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: 2;
+            top: 0; left: 0; 
+            width: 340px; height: 220px;
+            z-index: 10;
             cursor: pointer;
             border-radius: 15px;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
         }
 
-        .instruction {
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-            color: var(--gold);
-            font-style: italic;
+        /* ----- FULL SCREEN FIREWORKS CONTAINER ----- */
+        #fireworks-container {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            pointer-events: none;
+            z-index: 999;
         }
 
-        /* ----- FIREWORKS ----- */
-        .firework {
+        .particle {
             position: absolute;
             width: 6px;
             height: 6px;
             border-radius: 50%;
-            animation: explode 1s ease-out forwards;
-            z-index: 10;
+            pointer-events: none;
         }
 
-        @keyframes explode {
-            0% { transform: scale(1); opacity: 1; }
-            100% { transform: scale(30); opacity: 0; }
-        }
-
-        /* ----- COUNTDOWN SECTION ----- */
+        /* ----- COUNTDOWN TIMER ----- */
         .countdown-title {
             font-family: 'Amiri', serif;
-            font-size: 2rem;
-            color: var(--gold);
-            margin-bottom: 30px;
+            font-size: 2.2rem;
+            color: var(--gold-solid);
+            margin-bottom: 35px;
         }
 
         .timer {
             display: flex;
-            gap: 15px;
+            gap: 20px;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         .time-box {
-            background: rgba(212, 175, 55, 0.1);
-            border: 1px solid var(--gold);
-            padding: 15px;
-            border-radius: 10px;
-            min-width: 80px;
+            background: rgba(212, 175, 55, 0.08);
+            border: 1px solid var(--gold-solid);
+            padding: 20px;
+            border-radius: 12px;
+            min-width: 95px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
         }
 
         .time-box span {
             display: block;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 700;
-            color: var(--gold);
+            font-family: 'Amiri', serif;
+            color: #fff;
         }
 
         .time-box div {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             margin-top: 5px;
+            color: var(--gold-solid);
         }
 
-        /* ----- VENUE SECTION ----- */
+        /* ----- VENUE & MAP ----- */
         .venue-title {
             font-size: 2.5rem;
-            color: var(--gold);
-            margin-bottom: 15px;
+            color: var(--gold-solid);
+            margin-bottom: 20px;
             font-family: 'Amiri', serif;
         }
 
         .venue-text {
             font-size: 1.3rem;
-            margin-bottom: 30px;
-            line-height: 1.6;
+            margin-bottom: 35px;
+            line-height: 1.8;
+            color: #fff;
         }
 
         .map-container {
             width: 100%;
-            max-width: 600px;
-            border: 2px solid var(--gold);
+            border: 2px solid var(--gold-solid);
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
         }
 
         .map-container iframe {
             width: 100%;
-            height: 350px;
+            height: 380px;
             display: block;
         }
 
         /* ----- FOOTER ----- */
         footer {
-            margin-top: 50px;
-            padding: 30px;
+            margin-top: 80px;
+            padding: 40px 20px;
             font-family: 'Great Vibes', cursive;
-            font-size: 2.5rem;
-            color: var(--gold);
+            font-size: 3rem;
+            color: var(--gold-solid);
             text-align: center;
-            border-top: 1px solid rgba(212, 175, 55, 0.3);
-            width: 80%;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            width: 85%;
+            letter-spacing: 1px;
         }
 
         @media (max-width: 600px) {
-            h2 { font-size: 3rem; }
-            .timer { flex-wrap: wrap; }
-            .time-box { min-width: 70px; padding: 10px; }
-            .time-box span { font-size: 1.8rem; }
+            h2 { font-size: 3.2rem; }
+            .time-box { min-width: 75px; padding: 12px; }
+            .time-box span { font-size: 2rem; }
+            .scratch-wrapper, #scratch-canvas { width: 300px; height: 200px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Door Entry Animation -->
+    <div id="fireworks-container"></div>
+
     <div id="doors-container">
         <div class="door left" id="left-door"></div>
         <div class="door right" id="right-door"></div>
-        <button class="open-btn" id="open-btn">Bismillah (Open)</button>
+        <button class="open-btn" id="open-btn">Bismillah (Open Invitation)</button>
     </div>
 
-    <!-- Main Invitation Content -->
     <div class="main-content" id="main-content">
         
-        <!-- Hero / Names Section -->
         <section class="reveal">
             <div class="islamic-border">
                 <h1>The Engagement Ceremony of</h1>
@@ -335,22 +353,20 @@
             </div>
         </section>
 
-        <!-- Scratch to Reveal Section -->
-        <section class="reveal" style="position: relative;">
-            <div class="instruction"><i class="fas fa-hand-pointer"></i> Scratch the golden card to reveal</div>
+        <section class="reveal">
+            <div class="instruction"><i class="fas fa-sparkles"></i> Swipe / Scratch the Gold Card to Reveal <i class="fas fa-sparkles"></i></div>
             <div class="scratch-wrapper" id="scratch-wrapper">
                 <div class="scratch-content">
                     <h3>You're Invited</h3>
-                    <p><i class="far fa-calendar-alt"></i> June 13, 2026, Saturday</p>
-                    <p><i class="far fa-clock"></i> After Namaz-a-Asr at 5:30pm</p>
+                    <p><i class="far fa-calendar-alt" style="color: var(--gold-solid)"></i> June 13, 2026, Saturday</p>
+                    <p><i class="far fa-clock" style="color: var(--gold-solid)"></i> After Namaz-a-Asr at 5:30pm</p>
                 </div>
-                <canvas id="scratch-canvas"></canvas>
+                <canvas id="scratch-canvas" width="340" height="220"></canvas>
             </div>
         </section>
 
-        <!-- Countdown Section -->
         <section class="reveal">
-            <h3 class="countdown-title">Counting Down</h3>
+            <h3 class="countdown-title">Counting Down The Days</h3>
             <div class="timer">
                 <div class="time-box"><span id="days">00</span><div>Days</div></div>
                 <div class="time-box"><span id="hours">00</span><div>Hours</div></div>
@@ -359,10 +375,9 @@
             </div>
         </section>
 
-        <!-- Venue Section -->
         <section class="reveal">
             <h3 class="venue-title"><i class="fas fa-map-marker-alt"></i> Venue</h3>
-            <p class="venue-text">Hotel Yugvir & Garden<br>Nira-Baramati Road, Nimbut</p>
+            <p class="venue-text"><strong>Hotel Yugvir & Garden</strong><br>Nira-Baramati Road, Nimbut</p>
             <div class="map-container">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3174.9610736330874!2d74.24886167424374!3d18.10959458160069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc3ab005580541d%3A0xec01f662fe63ba08!2sHotel%20Yugveer%20Garden!5e1!3m2!1sen!2sin!4v1780923617727!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
@@ -386,15 +401,19 @@
             leftDoor.classList.add('open');
             rightDoor.classList.add('open');
             
-            // Show main content immediately so it's there when doors part
             mainContent.style.display = 'flex';
+            setTimeout(() => {
+                mainContent.style.opacity = '1';
+                // Initialize canvas cover right when doors open so layout is stable
+                initCanvas();
+            }, 100);
 
             setTimeout(() => {
                 doorsContainer.style.display = 'none';
-            }, 2000); // Wait for transition to finish
+            }, 1800);
         });
 
-        // --- SCROLL REVEAL ANIMATION ---
+        // --- SCROLL REVEAL ---
         const revealElements = document.querySelectorAll('.reveal');
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -406,113 +425,124 @@
 
         revealElements.forEach(el => revealObserver.observe(el));
 
-        // --- SCRATCH CARD LOGIC ---
+        // --- FIXED SCRATCH CARD LOGIC ---
         const canvas = document.getElementById('scratch-canvas');
         const ctx = canvas.getContext('2d');
-        const scratchWrapper = document.getElementById('scratch-wrapper');
-        let isDrawing = false;
         let isRevealed = false;
 
-        // Set canvas size to match wrapper
         function initCanvas() {
-            canvas.width = scratchWrapper.offsetWidth;
-            canvas.height = scratchWrapper.offsetHeight;
+            // Responsive canvas adjustment if on small screen
+            if(window.innerWidth <= 600) {
+                canvas.width = 300;
+                canvas.height = 200;
+            }
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
             
-            // Draw Premium Gold Cover
+            // Create Ultra Premium Metallic Gold Gradient Cover
             let gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-            gradient.addColorStop(0, '#d4af37');
-            gradient.addColorStop(0.5, '#f3e5ab');
-            gradient.addColorStop(1, '#aa7c11');
+            gradient.addColorStop(0, '#bf953f');
+            gradient.addColorStop(0.2, '#fcf6ba');
+            gradient.addColorStop(0.4, '#b38728');
+            gradient.addColorStop(0.6, '#fbf5b7');
+            gradient.addColorStop(0.8, '#aa771c');
+            gradient.addColorStop(1, '#bf953f');
+            
             ctx.fillStyle = gradient;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            // Add text overlay on the scratch cover
-            ctx.font = "20px 'Amiri'";
-            ctx.fillStyle = "#092e20";
+            // Add Royal Border inside the scratch card
+            ctx.strokeStyle = 'rgba(4, 36, 22, 0.6)';
+            ctx.lineWidth = 3;
+            ctx.strokeRect(10, 10, canvas.width - 20, canvas.height - 20);
+
+            // Add Text Overlay
+            ctx.font = "bold 24px 'Amiri', serif";
+            ctx.fillStyle = "#042416";
             ctx.textAlign = "center";
-            ctx.fillText("Scratch Here", canvas.width/2, canvas.height/2 + 5);
-
-            // Prepare for erasing
-            ctx.globalCompositeOperation = 'destination-out';
-        }
-        
-        initCanvas();
-
-        function getMousePos(e) {
-            const rect = canvas.getBoundingClientRect();
-            const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-            const clientY = e.touches ? e.touches[0].clientY : e.clientY;
-            return {
-                x: clientX - rect.left,
-                y: clientY - rect.top
-            };
+            ctx.fillText("✨ Scratch Here ✨", canvas.width / 2, canvas.height / 2 + 8);
         }
 
-        function scratch(e) {
-            if (!isDrawing || isRevealed) return;
-            e.preventDefault();
-            const pos = getMousePos(e);
+        // Instantly reveal everything on the first touch or swipe gesture
+        function triggerInstantReveal() {
+            if (isRevealed) return;
+            isRevealed = true;
+
+            // Smooth fade out and scale down animation
+            canvas.style.transition = "all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)";
+            canvas.style.opacity = "0";
+            canvas.style.transform = "scale(0.8)";
             
-            ctx.beginPath();
-            ctx.arc(pos.x, pos.y, 25, 0, Math.PI * 2);
-            ctx.fill();
+            setTimeout(() => {
+                canvas.style.display = 'none';
+            }, 600);
 
-            checkReveal();
+            // Trigger explosive celebratory fireworks
+            triggerMassiveFireworks();
         }
 
-        canvas.addEventListener('mousedown', () => isDrawing = true);
-        canvas.addEventListener('mouseup', () => isDrawing = false);
-        canvas.addEventListener('mousemove', scratch);
-        
-        canvas.addEventListener('touchstart', () => isDrawing = true);
-        canvas.addEventListener('touchend', () => isDrawing = false);
-        canvas.addEventListener('touchmove', scratch, {passive: false});
+        // Event listeners for both Desktop and Mobile devices
+        canvas.addEventListener('mousedown', triggerInstantReveal);
+        canvas.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            triggerInstantReveal();
+        });
+        canvas.addEventListener('mousemove', (e) => {
+            if(e.buttons === 1) triggerInstantReveal();
+        });
+        canvas.addEventListener('touchmove', triggerInstantReveal);
 
-        function checkReveal() {
-            // Simple approach: calculate how many pixels are clear. 
-            // For performance, we check less frequently or trigger after a set amount of scratching.
-            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-            let clearPixels = 0;
-            const totalPixels = imageData.data.length / 4;
 
-            // Check every 32nd pixel to save performance
-            for (let i = 0; i < imageData.data.length; i += 128) {
-                if (imageData.data[i + 3] === 0) clearPixels++;
-            }
+        // --- CELEBRATORY FIREWORKS LOGIC ---
+        const fireworksContainer = document.getElementById('fireworks-container');
 
-            // If ~40% is scratched, reveal all and pop fireworks
-            if ((clearPixels / (totalPixels / 32)) > 0.4) {
-                isRevealed = true;
-                canvas.style.transition = "opacity 0.8s ease";
-                canvas.style.opacity = "0";
-                setTimeout(() => canvas.style.display = 'none', 800);
-                triggerFireworks();
+        function triggerMassiveFireworks() {
+            // Launch 5 separate firework bursts across the screen
+            for (let b = 0; b < 5; b++) {
+                setTimeout(() => {
+                    const originX = Math.random() * window.innerWidth;
+                    const originY = Math.random() * (window.innerHeight * 0.7);
+                    createExplosion(originX, originY);
+                }, b * 250);
             }
         }
 
-        // --- FIREWORKS LOGIC ---
-        function triggerFireworks() {
-            const colors = ['#d4af37', '#f3e5ab', '#ffffff', '#ff4d4d', '#4dff4d'];
-            for(let i = 0; i < 40; i++) {
-                const firework = document.createElement('div');
-                firework.className = 'firework';
+        function createExplosion(x, y) {
+            const colors = ['#bf953f', '#fcf6ba', '#ffffff', '#ffdf7a', '#00ffaa', '#ff3366'];
+            const particleCount = 60;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
                 
-                // Random positioning around the scratch wrapper
-                const x = (Math.random() - 0.5) * 300;
-                const y = (Math.random() - 0.5) * 200;
-                
-                firework.style.left = `calc(50% + ${x}px)`;
-                firework.style.top = `calc(50% + ${y}px)`;
-                firework.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                
-                scratchWrapper.appendChild(firework);
-                
-                setTimeout(() => firework.remove(), 1000);
+                // Randomize trajectory angles and speeds
+                const angle = Math.random() * Math.PI * 2;
+                const velocity = Math.random() * 120 + 40;
+                const destinationX = Math.cos(angle) * velocity;
+                const destinationY = Math.sin(angle) * velocity;
+
+                particle.style.left = `${x}px`;
+                particle.style.top = `${y}px`;
+
+                fireworksContainer.appendChild(particle);
+
+                // Animate physics simulation via JS keyframes alternative
+                particle.animate([
+                    { transform: 'translate(0, 0)', opacity: 1 },
+                    { transform: `translate(${destinationX}px, ${destinationY}px)`, opacity: 0 }
+                ], {
+                    duration: 1200 + Math.random() * 400,
+                    easing: 'cubic-bezier(0.1, 0.8, 0.25, 1)',
+                    fill: 'forwards'
+                });
+
+                // Remove DOM elements after completion
+                setTimeout(() => particle.remove(), 1600);
             }
         }
 
-        // --- COUNTDOWN LOGIC ---
-        // Target Date: June 13, 2026, 17:30:00
+        // --- COUNTDOWN TIMER LOGIC ---
         const targetDate = new Date("June 13, 2026 17:30:00").getTime();
 
         const timerInterval = setInterval(() => {
@@ -522,22 +552,4 @@
             if (distance < 0) {
                 clearInterval(timerInterval);
                 document.getElementById('days').innerText = "00";
-                document.getElementById('hours').innerText = "00";
-                document.getElementById('mins').innerText = "00";
-                document.getElementById('secs').innerText = "00";
-                return;
-            }
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const secs = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById('days').innerText = days < 10 ? '0' + days : days;
-            document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
-            document.getElementById('mins').innerText = mins < 10 ? '0' + mins : mins;
-            document.getElementById('secs').innerText = secs < 10 ? '0' + secs : secs;
-        }, 1000);
-    </script>
-</body>
-</html>
+                document.getElementById
