@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Engagement Ceremony of Arbaj & Sana Kaussain</title>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@700&family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Premium Curated Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@700&family=Great+Vibes&family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --primary-bg: #041f14; /* Royal Dark Emerald */
-            --gold: #d4af37; /* Burnished Gold */
-            --gold-light: #fbeba7;
-            --text-light: #ffffff;
+            --gold-base: #cfa83d;
+            --gold-linear: linear-gradient(135deg, #aa7c11 0%, #fbeba7 30%, #d4af37 50%, #fbeba7 80%, #946b07 100%);
+            --dark-emerald: #021a11; /* Dark Rich Green for Cards & Boxes */
+            --emerald-light: #063825;
+            --gold-text: #f3e5ab;
+            --white: #ffffff;
         }
 
         * {
@@ -23,16 +26,16 @@
         }
 
         body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--primary-bg);
-            color: var(--text-light);
+            font-family: 'Cinzel', serif;
+            /* Premium Metallic Gold Texture Pattern Overlaid Background */
+            background-color: var(--gold-base);
+            background-image: radial-gradient(circle at center, rgba(251, 235, 167, 0.4) 0%, rgba(170, 124, 17, 0.85) 100%), 
+                              url('https://www.transparenttextures.com/patterns/decorative-subtle-weave.png');
+            color: var(--dark-emerald);
             overflow-x: hidden;
-            /* Premium Islamic Ornament Pattern Overlay Background */
-            background-image: radial-gradient(circle at center, rgba(10,61,42,0.9) 0%, rgba(3,20,14,0.98) 100%), 
-                              url('https://www.transparenttextures.com/patterns/arabesque.png');
         }
 
-        /* ----- PREMIUM ISLAMIC GEOMETRIC DOORS ----- */
+        /* ----- LUXURY METALLIC GATE DOORS ----- */
         #doors-container {
             position: fixed;
             top: 0;
@@ -51,64 +54,64 @@
             top: 0;
             width: 50%;
             height: 100%;
-            background-color: #03170e;
-            background-image: linear-gradient(135deg, rgba(4,31,20,0.5) 0%, rgba(1,10,6,0.8) 100%), 
-                              url('https://www.transparenttextures.com/patterns/arabesque.png'); /* Pattern on doors */
-            border: 4px solid var(--gold);
-            transition: transform 2.2s cubic-bezier(0.77, 0, 0.175, 1);
+            background-color: #946b07;
+            background-image: linear-gradient(135deg, rgba(148, 107, 7, 0.4) 0%, rgba(40, 30, 2, 0.9) 100%), 
+                              url('https://www.transparenttextures.com/patterns/arabesque.png');
+            border: 5px solid var(--dark-emerald);
+            transition: transform 2.4s cubic-bezier(0.76, 0, 0.175, 1);
         }
 
         .door.left { 
             left: 0; 
-            border-right: 2px solid var(--gold); 
-            box-shadow: inset -15px 0 30px rgba(0,0,0,0.8);
+            border-right: 2.5px solid var(--dark-emerald); 
+            box-shadow: inset -20px 0 40px rgba(0,0,0,0.7);
         }
         .door.right { 
             right: 0; 
-            border-left: 2px solid var(--gold); 
-            box-shadow: inset 15px 0 30px rgba(0,0,0,0.8);
+            border-left: 2.5px solid var(--dark-emerald); 
+            box-shadow: inset 20px 0 40px rgba(0,0,0,0.7);
         }
 
-        /* Premium Ornamental Gold Arch Overlay */
+        /* Intricate Arabesque Border Framing Inside Doors */
         .door::after {
             content: '';
             position: absolute;
-            top: 8%; bottom: 8%;
-            width: 80%;
-            border: 2px solid rgba(212, 175, 55, 0.5);
-            box-shadow: 0 0 15px rgba(212,175,55,0.1);
+            top: 6%; bottom: 6%;
+            width: 82%;
+            border: 2px double var(--dark-emerald);
         }
-        .door.left::after { right: 8%; border-radius: 120px 0 0 120px; border-right: none; }
-        .door.right::after { left: 8%; border-radius: 0 120px 120px 0; border-left: none; }
+        .door.left::after { right: 6%; border-radius: 200px 0 0 200px; }
+        .door.right::after { left: 6%; border-radius: 0 200px 200px 0; }
 
         .door-open-left { transform: translateX(-100%); }
         .door-open-right { transform: translateX(100%); }
 
-        /* Middle Pure Open Text Circle Button */
+        /* Pure Open Text Center Trigger Button */
         .open-btn {
             position: relative;
             z-index: 101;
-            width: 95px;
-            height: 95px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Cinzel', serif;
             font-size: 1.1rem;
-            font-weight: bold;
-            color: #03170e;
-            background: radial-gradient(circle, #fff 0%, #fbeba7 40%, #d4af37 85%, #946b07 100%);
-            border: 3px solid #fff;
+            font-weight: 700;
+            color: var(--gold-text);
+            background: radial-gradient(circle, #063825 0%, #021a11 100%);
+            border: 3px solid var(--gold-base);
             cursor: pointer;
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.9), inset 0 0 12px rgba(255,255,255,0.6);
-            transition: all 0.4s ease;
+            box-shadow: 0 0 35px rgba(2, 26, 17, 0.8), inset 0 0 15px rgba(212, 175, 55, 0.4);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.1);
             display: flex;
             justify-content: center;
             align-items: center;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
         }
 
         .open-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 45px rgba(212, 175, 55, 1);
+            transform: scale(1.12);
+            box-shadow: 0 0 45px rgba(2, 26, 17, 1);
+            color: var(--white);
         }
 
         .open-btn.fade-out {
@@ -117,22 +120,22 @@
             pointer-events: none;
         }
 
-        /* ----- MAIN CONTENT TEMPLATE ----- */
+        /* ----- SCROLL CONTENT MODULES ----- */
         .main-content {
             display: none;
             flex-direction: column;
             align-items: center;
             width: 100%;
-            padding: 30px 15px 80px 15px;
+            padding: 40px 15px 100px 15px;
         }
 
         section {
             opacity: 0;
-            transform: translateY(50px);
-            transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform: translateY(60px);
+            transition: all 1.3s cubic-bezier(0.215, 0.610, 0.355, 1);
             width: 100%;
             max-width: 650px;
-            margin: 45px auto;
+            margin: 50px auto;
             text-align: center;
         }
         
@@ -141,248 +144,269 @@
             transform: translateY(0);
         }
 
-        /* ----- HERO CONTENT FRAME ----- */
-        .islamic-border {
-            border: 3px solid var(--gold);
-            padding: 60px 30px;
-            border-radius: 150px 150px 0 0;
-            background: rgba(3, 23, 14, 0.85);
-            backdrop-filter: blur(8px);
-            box-shadow: 0 20px 45px rgba(0,0,0,0.5);
+        /* ----- THE ROYAL CREST MAIN FRAMES ----- */
+        .islamic-box-frame {
+            border: 3px solid var(--dark-emerald);
+            padding: 60px 35px;
+            border-radius: 200px 200px 30px 30px;
+            background: var(--dark-emerald);
+            background-image: radial-gradient(circle at center, var(--emerald-light) 0%, var(--dark-emerald) 100%),
+                              url('https://www.transparenttextures.com/patterns/dark-matter.png');
+            box-shadow: 0 25px 55px rgba(40, 30, 2, 0.4);
             position: relative;
         }
         
-        .islamic-border::before {
+        .islamic-box-frame::before {
             content: '';
             position: absolute;
-            top: -10px; left: -10px; right: -10px; bottom: -10px;
-            border: 1px dashed var(--gold);
-            border-radius: 160px 160px 0 0;
+            top: 6px; left: 6px; right: 6px; bottom: 6px;
+            border: 1px dashed var(--gold-base);
+            border-radius: 194px 194px 24px 24px;
+            pointer-events: none;
         }
 
-        h1 {
+        .islamic-box-frame h1 {
             font-family: 'Amiri', serif;
             font-size: 1.5rem;
             margin-bottom: 25px;
-            color: var(--gold-light);
+            color: var(--gold-text);
             letter-spacing: 3px;
+            font-weight: 400;
         }
 
-        h2 {
+        .islamic-box-frame h2 {
             font-family: 'Great Vibes', cursive;
-            font-size: 3.8rem;
-            color: var(--gold);
-            text-shadow: 0 3px 6px rgba(0,0,0,0.6);
-            margin: 10px 0;
+            font-size: 4.2rem;
+            color: var(--gold-base);
+            background: var(--gold-linear);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 3px 4px rgba(0,0,0,0.5));
+            margin: 5px 0;
         }
 
-        /* ----- TRUE REALTIME SCRATCH LAYER ----- */
+        /* ----- DARK EMERALD SCRATCH SURFACE ENGINE ----- */
         .instruction {
-            font-size: 1.2rem;
-            color: var(--gold-light);
+            font-size: 1.1rem;
+            color: var(--dark-emerald);
+            font-weight: 700;
             margin-bottom: 15px;
-            font-family: 'Amiri', serif;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
         }
 
-        .scratch-container {
+        .scratch-outer-shield {
             position: relative;
             width: 100%;
-            max-width: 400px;
-            height: 230px;
+            max-width: 410px;
+            height: 240px;
             margin: 0 auto;
-            border-radius: 15px;
-            box-shadow: 0 15px 45px rgba(0,0,0,0.7);
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
             overflow: hidden;
-            background: #051d14;
-            border: 2px solid var(--gold);
+            border: 4px solid var(--dark-emerald);
         }
 
-        .scratch-reveal-box {
+        .invitation-reveal-vault {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding: 25px;
             z-index: 1;
-            background: radial-gradient(circle, #083321 0%, #03170e 100%);
+            background: linear-gradient(135deg, #04261a 0%, #010d08 100%);
         }
 
-        .scratch-reveal-box h3 {
+        .invitation-reveal-vault h3 {
             font-family: 'Cinzel Decorative', serif;
             font-size: 1.6rem;
-            color: var(--gold);
+            color: var(--gold-base);
             margin-bottom: 15px;
             letter-spacing: 1px;
         }
 
-        .scratch-reveal-box p {
+        .invitation-reveal-vault p {
             font-family: 'Amiri', serif;
-            font-size: 1.3rem;
-            margin: 4px 0;
-            color: #ffffff;
+            font-size: 1.4rem;
+            margin: 5px 0;
+            color: var(--white);
         }
 
         #scratch-canvas {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
             z-index: 2;
-            cursor: url('https://img.icons8.com/ios-filled/32/d4af37/sparkling-diamond.png'), pointer;
-            transition: opacity 0.8s ease;
+            cursor: pointer;
+            transition: opacity 0.8s ease-in-out;
         }
 
-        /* ----- 5-SECOND FIREWORKS ANIMATIONS ----- */
+        /* ----- PYROTECHNIC PARTICLES GENERATOR (5 SECONDS) ----- */
         .fw-particle {
             position: absolute;
-            width: 5px;
-            height: 5px;
+            width: 6px;
+            height: 6px;
             border-radius: 50%;
             pointer-events: none;
             z-index: 99;
-            animation: fireworkSpread 1.2s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+            animation: fireworkFly 1.3s cubic-bezier(0.05, 0.7, 0.1, 1) forwards;
         }
 
-        @keyframes fireworkSpread {
-            0% { transform: translate(0,0) scale(1.5); opacity: 1; }
+        @keyframes fireworkFly {
+            0% { transform: translate(0,0) scale(1.8); opacity: 1; }
             100% { transform: translate(var(--mx), var(--my)) scale(0); opacity: 0; }
         }
 
-        /* ----- COUNTDOWN MATRIX ----- */
+        /* ----- LUXURY COUNTER PANELS ----- */
         .countdown-title {
             font-family: 'Amiri', serif;
-            font-size: 1.8rem;
-            color: var(--gold);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark-emerald);
             margin-bottom: 25px;
+            letter-spacing: 1px;
         }
 
-        .timer-grid {
+        .timer-flex-row {
             display: flex;
             gap: 15px;
             justify-content: center;
             flex-wrap: wrap;
         }
 
-        .time-card {
-            background: rgba(212, 175, 55, 0.08);
-            border: 1px solid var(--gold);
-            padding: 15px;
-            border-radius: 12px;
-            min-width: 85px;
-            backdrop-filter: blur(2px);
+        .time-box-shield {
+            background: var(--dark-emerald);
+            background-image: radial-gradient(circle at top, var(--emerald-light) 0%, var(--dark-emerald) 100%);
+            border: 2px solid var(--gold-base);
+            padding: 18px 10px;
+            border-radius: 15px;
+            min-width: 95px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.25);
         }
 
-        .time-card span {
+        .time-box-shield span {
             display: block;
-            font-size: 2.2rem;
-            font-weight: 600;
-            color: var(--gold-light);
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--gold-base);
+            font-family: 'Cinzel', serif;
         }
 
-        .time-card label {
-            font-size: 0.8rem;
-            letter-spacing: 1px;
+        .time-box-shield label {
+            font-size: 0.75rem;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            color: #a0bca0;
+            color: var(--white);
+            display: block;
+            margin-top: 5px;
         }
 
-        /* ----- MAP VIEW INTEGRATION ----- */
+        /* ----- GEOGRAPHIC MAP SEGMENT ----- */
         .venue-title {
             font-family: 'Amiri', serif;
-            font-size: 2rem;
-            color: var(--gold);
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: var(--dark-emerald);
             margin-bottom: 15px;
         }
 
-        .venue-address {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 25px;
-            color: #e0e0e0;
+        .venue-address-box {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            color: var(--dark-emerald);
+            font-weight: 500;
         }
 
-        .map-wrapper {
-            border: 2px solid var(--gold);
-            border-radius: 15px;
+        .map-frame-wrapper {
+            border: 4px solid var(--dark-emerald);
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.35);
         }
 
-        .map-wrapper iframe {
+        .map-frame-wrapper iframe {
             width: 100%;
-            height: 300px;
+            height: 330px;
             display: block;
         }
 
-        /* ----- FOOTER ----- */
+        /* ----- PREMIUM SIGNATURE FOOTER ----- */
         footer {
-            margin-top: 60px;
-            padding: 30px 10px;
+            margin-top: 80px;
+            padding: 35px 10px;
             font-family: 'Great Vibes', cursive;
-            font-size: 2.4rem;
-            color: var(--gold);
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
-            width: 80%;
+            font-size: 2.8rem;
+            color: var(--dark-emerald);
+            border-top: 2px double var(--dark-emerald);
+            width: 85%;
             text-align: center;
+            font-weight: bold;
         }
 
         @media (max-width: 480px) {
-            h2 { font-size: 2.6rem; }
-            .time-card { min-width: 70px; padding: 10px; }
-            .time-card span { font-size: 1.6rem; }
+            .islamic-box-frame h2 { font-size: 3.2rem; }
+            .time-box-shield { min-width: 75px; padding: 12px 5px; }
+            .time-box-shield span { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Metallic Royal Front Doors Screen -->
     <div id="doors-container">
         <div class="door left" id="door-l"></div>
         <div class="door right" id="door-r"></div>
         <button class="open-btn" id="click-open-btn">OPEN</button>
     </div>
 
+    <!-- Core Layout System -->
     <div class="main-content" id="wedding-card-content">
         
+        <!-- Frame Section 1: Main Monogram -->
         <section class="scroll-section">
-            <div class="islamic-border">
+            <div class="islamic-box-frame">
                 <h1>The Engagement Ceremony of</h1>
                 <h2>Arbaj</h2>
-                <p style="font-family:'Great Vibes'; font-size:2.2rem; color:var(--gold-light);">and</p>
+                <p style="font-family:'Great Vibes'; font-size:2.5rem; color:var(--gold-text); margin: 10px 0;">and</p>
                 <h2>Sana Kaussain</h2>
             </div>
         </section>
 
-        <section class="scroll-section" style="position: relative;" id="scratch-section">
-            <div class="instruction"><i class="fas fa-sparkles"></i> Scratch over the golden surface to reveal date</div>
-            <div class="scratch-container" id="canvas-host">
-                <div class="scratch-reveal-box">
+        <!-- Frame Section 2: Emerald Green Scratch Card Grid -->
+        <section class="scroll-section" style="position: relative;">
+            <div class="instruction"><i class="fas fa-fingerprint"></i> Rub on card to unveil invitation</div>
+            <div class="scratch-outer-shield" id="canvas-host">
+                <div class="invitation-reveal-vault">
                     <h3>You're Invited</h3>
-                    <p><i class="far fa-calendar-check" style="color:var(--gold);"></i> June 13, 2026</p>
+                    <p><i class="far fa-calendar-alt" style="color:var(--gold-base);"></i> June 13, 2026</p>
                     <p>Saturday</p>
-                    <p><i class="far fa-clock" style="color:var(--gold);"></i> After Namaz-a-Asr at 5:30pm</p>
+                    <p><i class="far fa-clock" style="color:var(--gold-base);"></i> After Namaz-a-Asr at 5:30pm</p>
                 </div>
                 <canvas id="scratch-canvas"></canvas>
             </div>
         </section>
 
+        <!-- Frame Section 3: Live Chronometer Ticker -->
         <section class="scroll-section">
             <h3 class="countdown-title">Counting Down</h3>
-            <div class="timer-grid">
-                <div class="time-card"><span id="lbl-days">00</span><label>Days</label></div>
-                <div class="time-card"><span id="lbl-hours">00</span><label>Hours</label></div>
-                <div class="time-card"><span id="lbl-mins">00</span><label>Min</label></div>
-                <div class="time-card"><span id="lbl-secs">00</span><label>Secs</label></div>
+            <div class="timer-flex-row">
+                <div class="time-box-shield"><span id="lbl-days">00</span><label>Days</label></div>
+                <div class="time-box-shield"><span id="lbl-hours">00</span><label>Hours</label></div>
+                <div class="time-box-shield"><span id="lbl-mins">00</span><label>Min</label></div>
+                <div class="time-box-shield"><span id="lbl-secs">00</span><label>Secs</label></div>
             </div>
         </section>
 
+        <!-- Frame Section 4: Geographic Coordinate Matrix -->
         <section class="scroll-section">
-            <h3 class="venue-title"><i class="fas fa-map-marked-alt"></i> Venue</h3>
-            <p class="venue-address">
-                <strong>Hotel Yugvir & Garden</strong><br>
+            <h3 class="venue-title"><i class="fas fa-map-marker-alt"></i> Venue</h3>
+            <div class="venue-address-box">
+                <strong style="font-size: 1.4rem;">Hotel Yugvir & Garden</strong><br>
                 Nira-Baramati Road, Nimbut
-            </p>
-            <div class="map-wrapper">
+            </div>
+            <div class="map-frame-wrapper">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3174.9610736330874!2d74.24886167424374!3d18.10959458160069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc3ab005580541d%3A0xec01f662fe63ba08!2sHotel%20Yugveer%20Garden!5e1!3m2!1sen!2sin!4v1780923617727!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </section>
@@ -393,7 +417,7 @@
     </div>
 
     <script>
-        // --- MOTOR CONTROL: SLIDING DOORS ---
+        // --- DRIVER MECHANICS: GATE EXTRACTION ---
         const btnOpen = document.getElementById('click-open-btn');
         const doorLeft = document.getElementById('door-l');
         const doorRight = document.getElementById('door-r');
@@ -410,10 +434,10 @@
             setTimeout(() => {
                 panelContainer.style.display = 'none';
                 manageScrollReveals();
-            }, 2200);
+            }, 2400);
         });
 
-        // --- MOTOR CONTROL: VIEWPORT MONITORS ---
+        // --- DRIVER MECHANICS: ANIMATION SCROLL INTERSECTIONS ---
         const sections = document.querySelectorAll('.scroll-section');
         function manageScrollReveals() {
             sections.forEach(sec => {
@@ -425,50 +449,47 @@
         }
         window.addEventListener('scroll', manageScrollReveals);
 
-        // --- MOTOR CONTROL: INTERACTIVE CANVAS SCRATCH SYSTEM ---
+        // --- DRIVER MECHANICS: EMERALD GREEN CANVAS SCRATCH UNIT ---
         const cvs = document.getElementById('scratch-canvas');
         const renderCtx = cvs.getContext('2d');
         const hostBox = document.getElementById('canvas-host');
-        let totalScratchedPixels = 0;
+        let scratchStrokeCounter = 0;
         let scratchTriggered = false;
         let isDrawing = false;
 
-        function buildScratchInterface() {
+        function buildDarkGreenScratchSurface() {
             cvs.width = hostBox.offsetWidth;
             cvs.height = hostBox.offsetHeight;
 
-            // Shimmer Golden Texture Core Layout
+            // Deep Emerald Green Shimmer Gradient Matrix Cover
             let gd = renderCtx.createLinearGradient(0, 0, cvs.width, cvs.height);
-            gd.addColorStop(0, '#946b07');
-            gd.addColorStop(0.2, '#fbeba7');
-            gd.addColorStop(0.5, '#d4af37');
-            gd.addColorStop(0.8, '#fbeba7');
-            gd.addColorStop(1, '#aa7c11');
+            gd.addColorStop(0, '#010a06');
+            gd.addColorStop(0.4, '#042b1d');
+            gd.addColorStop(0.7, '#021a11');
+            gd.addColorStop(1, '#000503');
             
             renderCtx.fillStyle = gd;
             renderCtx.fillRect(0, 0, cvs.width, cvs.height);
 
-            // Vintage Islamic Frame Border lines on Golden Canvas Overlay
-            renderCtx.strokeStyle = 'rgba(3, 23, 14, 0.4)';
-            renderCtx.lineWidth = 4;
+            // Fine Golden Intricate Border Linework on Canvas Layer
+            renderCtx.strokeStyle = 'rgba(214, 175, 55, 0.4)';
+            renderCtx.lineWidth = 3;
             renderCtx.strokeRect(12, 12, cvs.width - 24, cvs.height - 24);
 
-            // Typographical Guidelines
-            renderCtx.font = "bold 20px 'Amiri', serif";
-            renderCtx.fillStyle = "#03170e";
+            // Clean, specified premium text overlay lines
+            renderCtx.font = "bold 18px 'Cinzel', serif";
+            renderCtx.fillStyle = "#d4af37";
             renderCtx.textAlign = "center";
-            renderCtx.fillText("✨ Scratch Here to Open ✨", cvs.width / 2, cvs.height / 2 + 7);
+            renderCtx.fillText("Scratch to Open Date", cvs.width / 2, cvs.height / 2 + 6);
         }
 
-        window.addEventListener('resize', buildScratchInterface);
-        // Direct init setup verification
-        setTimeout(buildScratchInterface, 300);
+        window.addEventListener('resize', buildDarkGreenScratchSurface);
+        setTimeout(buildDarkGreenScratchSurface, 350);
 
-        function handleScratchDraw(e) {
+        function processScratchMovement(e) {
             if (scratchTriggered) return;
             
             const rect = cvs.getBoundingClientRect();
-            // Unified coordinates mapping engine for Desktop & Mobile clients
             const clientX = e.touches ? e.touches[0].clientX : e.clientX;
             const clientY = e.touches ? e.touches[0].clientY : e.clientY;
             
@@ -477,96 +498,96 @@
 
             renderCtx.globalCompositeOperation = 'destination-out';
             renderCtx.beginPath();
-            renderCtx.arc(currentX, currentY, 30, 0, Math.PI * 2);
+            renderCtx.arc(currentX, currentY, 28, 0, Math.PI * 2);
             renderCtx.fill();
 
-            totalScratchedPixels++;
+            scratchStrokeCounter++;
             
-            // Auto-complete validation metrics once user scratches a few strokes
-            if (totalScratchedPixels > 25) {
-                triggerAutomatedSequence();
+            // Once user triggers minimal scratching strokes, automate instant full smooth opacity reveal
+            if (scratchStrokeCounter > 15) {
+                initiateGrandPyroFinale();
             }
         }
 
-        function triggerAutomatedSequence() {
+        function initiateGrandPyroFinale() {
             if (scratchTriggered) return;
             scratchTriggered = true;
 
             cvs.style.opacity = '0';
             
-            // Run 5-Seconds Nonstop Fireworks Generator Engine Loop
-            const fireworksLoopInterval = setInterval(() => {
-                generateBurstNode();
-            }, 400);
+            // Launch Nonstop 5-Second Fireworks Matrix Sequence
+            const fireworksEngineInterval = setInterval(() => {
+                triggerClusterExplosion();
+            }, 350);
 
-            // Terminate loops perfectly on 5000 milliseconds milestone
+            // Safe memory clean unbinding exactly after 5000 milliseconds loop
             setTimeout(() => {
-                clearInterval(fireworksLoopInterval);
+                clearInterval(fireworksEngineInterval);
                 cvs.remove();
             }, 5000);
         }
 
-        // Tracking Desktop Mouse Clicks
-        cvs.addEventListener('mousedown', (e) => { isDrawing = true; handleScratchDraw(e); });
-        cvs.addEventListener('mousemove', (e) => { if(isDrawing) handleScratchDraw(e); });
+        // Connect Desktop Mouse Observers
+        cvs.addEventListener('mousedown', (e) => { isDrawing = true; processScratchMovement(e); });
+        cvs.addEventListener('mousemove', (e) => { if(isDrawing) processScratchMovement(e); });
         window.addEventListener('mouseup', () => isDrawing = false);
 
-        // Tracking Mobile Device Touch inputs
-        cvs.addEventListener('touchstart', (e) => { isDrawing = true; handleScratchDraw(e); });
-        cvs.addEventListener('touchmove', (e) => { if(isDrawing) handleScratchDraw(e); });
+        // Connect Mobile Touch Observers
+        cvs.addEventListener('touchstart', (e) => { isDrawing = true; processScratchMovement(e); });
+        cvs.addEventListener('touchmove', (e) => { if(isDrawing) processScratchMovement(e); });
         window.addEventListener('touchend', () => isDrawing = false);
 
 
-        // --- ENGINE: PYROTECHNIC EXPLOSION DESIGNS (FIREWORKS) ---
-        function generateBurstNode() {
-            const vibrantColors = ['#d4af37', '#fbeba7', '#ffffff', '#ff3366', '#33ffcc', '#ff9933'];
-            const clusterWeight = 45; 
+        // --- ENGINE LAYER: PYROTECHNIC STRUCTURAL GENERATOR ---
+        function triggerClusterExplosion() {
+            const richColors = ['#d4af37', '#fbeba7', '#ffffff', '#ff4757', '#2ed573', '#ffa502'];
+            const singleBurstVolume = 45; 
 
-            // Create explosion node anchors randomly distributed inside card wrapper viewport
-            const rootX = 20 + Math.random() * (hostBox.offsetWidth - 40);
-            const rootY = 20 + Math.random() * (hostBox.offsetHeight - 40);
+            // Calculate randomized multi-node coordinate centers across the wrapper zone
+            const pivotX = 30 + Math.random() * (hostBox.offsetWidth - 60);
+            const pivotY = 30 + Math.random() * (hostBox.offsetHeight - 60);
 
-            for (let k = 0; k < clusterWeight; k++) {
+            for (let i = 0; i < singleBurstVolume; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'fw-particle';
                 
                 const angle = Math.random() * Math.PI * 2;
-                const distance = 40 + Math.random() * 140;
+                const force = 50 + Math.random() * 150;
                 
-                const moveX = Math.cos(angle) * distance;
-                const moveY = Math.sin(angle) * distance;
+                const moveX = Math.cos(angle) * force;
+                const moveY = Math.sin(angle) * force;
 
                 particle.style.setProperty('--mx', `${moveX}px`);
                 particle.style.setProperty('--my', `${moveY}px`);
                 
-                particle.style.left = `${rootX}px`;
-                particle.style.top = `${rootY}px`;
-                particle.style.backgroundColor = vibrantColors[Math.floor(Math.random() * vibrantColors.length)];
-                particle.style.boxShadow = `0 0 10px ${particle.style.backgroundColor}`;
+                particle.style.left = `${pivotX}px`;
+                particle.style.top = `${pivotY}px`;
+                particle.style.backgroundColor = richColors[Math.floor(Math.random() * richColors.length)];
+                particle.style.boxShadow = `0 0 12px ${particle.style.backgroundColor}`;
 
                 hostBox.appendChild(particle);
-                setTimeout(() => particle.remove(), 1200);
+                setTimeout(() => particle.remove(), 1300);
             }
         }
 
-        // --- ENGINE: LIVE EVENT CHRONOMETER COUNTER ---
-        const eventTimeline = new Date("June 13, 2026 17:30:00").getTime();
+        // --- REAL-TIME ENGINE: CHRONO TIMELINE CALCULATOR ---
+        const TargetTimelineEpoch = new Date("June 13, 2026 17:30:00").getTime();
 
         setInterval(() => {
-            const timeNow = new Date().getTime();
-            const difference = eventTimeline - timeNow;
+            const currentEpoch = new Date().getTime();
+            const gapDelta = TargetTimelineEpoch - currentEpoch;
 
-            if (difference < 0) return;
+            if (gapDelta < 0) return;
 
-            const d = Math.floor(difference / (1000 * 60 * 60 * 24));
-            const h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-            const s = Math.floor((difference % (1000 * 60)) / 1000);
+            const days = Math.floor(gapDelta / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((gapDelta % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const mins = Math.floor((gapDelta % (1000 * 60 * 60)) / (1000 * 60));
+            const secs = Math.floor((gapDelta % (1000 * 60)) / 1000);
 
-            document.getElementById('lbl-days').innerText = d < 10 ? '0' + d : d;
-            document.getElementById('lbl-hours').innerText = h < 10 ? '0' + h : h;
-            document.getElementById('lbl-mins').innerText = m < 10 ? '0' + m : m;
-            document.getElementById('lbl-secs').innerText = s < 10 ? '0' + s : s;
+            document.getElementById('lbl-days').innerText = days < 10 ? '0' + days : days;
+            document.getElementById('lbl-hours').innerText = hours < 10 ? '0' + hours : hours;
+            document.getElementById('lbl-mins').innerText = mins < 10 ? '0' + mins : mins;
+            document.getElementById('lbl-secs').innerText = secs < 10 ? '0' + secs : secs;
         }, 1000);
     </script>
 </body>
