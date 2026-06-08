@@ -4,6 +4,498 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arbaj & Sana | The Engagement</title>
+    <!-- Premium Editorial Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-dark: #031710;
+            --panel-emerald: #052218;
+            --accent-gold: #e5c158;
+            --pale-gold: #f3e1a9;
+            --text-light: #f4f7f5;
+            --glass-border: rgba(229, 193, 88, 0.15);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+            /* Premium Micro-Grain Film Overlay */
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.015'/%3E%3C/svg%3E");
+        }
+
+        /* --- THE EMERALD VEIL ENTRANCE --- */
+        #curtain-wrapper {
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: var(--bg-dark);
+            transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1), visibility 1.2s;
+        }
+
+        /* Continuous Line Art Couple Path Animation */
+        .couple-svg {
+            width: 180px;
+            height: 180px;
+            margin-bottom: 30px;
+        }
+
+        .couple-path {
+            stroke: var(--accent-gold);
+            stroke-width: 1.5;
+            fill: none;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: drawLine 4s ease-in-out forwards;
+        }
+
+        @keyframes drawLine {
+            to { stroke-dashoffset: 0; }
+        }
+
+        .unlock-trigger {
+            background: none;
+            border: 1px solid var(--accent-gold);
+            padding: 14px 36px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            color: var(--pale-gold);
+            letter-spacing: 4px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s;
+        }
+
+        .unlock-trigger::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+            transition: 0.6s;
+        }
+
+        .unlock-trigger:hover::before { left: 100%; }
+        .unlock-trigger:hover { background: rgba(229, 193, 88, 0.1); box-shadow: 0 0 20px rgba(229, 193, 88, 0.2); }
+
+        /* --- THE INTERACTIVE MAIN CANVAS --- */
+        .viewport {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 24px 120px 24px;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1.5s cubic-bezier(0.25, 1, 0.5, 1), transform 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        /* --- PARALLAX RING SACRED HERO --- */
+        .hero-ring-depth {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            perspective: 1000px;
+        }
+
+        .ring-container {
+            position: relative;
+            width: 280px;
+            height: 280px;
+            transform-style: preserve-3d;
+            margin-bottom: 40px;
+            animation: floatGently 6s ease-in-out infinite;
+        }
+
+        /* Overlapping interlocking metallic rings design */
+        .ring-element {
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            border: 6px solid transparent;
+            background: linear-gradient(var(--bg-dark), var(--bg-dark)) padding-box,
+                        linear-gradient(135deg, #a67c00 0%, #f3e1a9 50%, #ba942a 100%) border-box;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+
+        .ring-element.masculine {
+            transform: rotateY(-20deg) rotateX(15deg);
+        }
+
+        .ring-element.feminine {
+            transform: rotateY(25deg) rotateX(-10deg) translateZ(20px);
+            border-width: 4px;
+            background: linear-gradient(var(--bg-dark), var(--bg-dark)) padding-box,
+                        linear-gradient(135deg, #f3e1a9 0%, #ffffff 50%, #e5c158 100%) border-box;
+        }
+
+        /* Sparkling Ring Halo Flare */
+        .sparkle-flare {
+            position: absolute;
+            top: 20%; right: 20%;
+            color: #fff;
+            font-size: 1.5rem;
+            text-shadow: 0 0 15px #fff;
+            animation: pulseSparkle 2.5s infinite alternate;
+        }
+
+        @keyframes floatGently {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(2deg); }
+        }
+
+        @keyframes pulseSparkle {
+            0% { opacity: 0.2; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1.2) rotate(45deg); }
+        }
+
+        .hero-title-block h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            font-size: clamp(2.2rem, 7vw, 4rem);
+            line-height: 1.1;
+            letter-spacing: -1px;
+            text-align: center;
+            background: linear-gradient(to bottom, #fff, var(--pale-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            color: var(--accent-gold);
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* --- PREMIUM PARCHMENT SECTIONS --- */
+        .editorial-panel {
+            background: var(--panel-emerald);
+            border: 1px solid var(--glass-border);
+            padding: 50px 35px;
+            margin-top: 60px;
+            position: relative;
+        }
+
+        /* --- CINEMATIC SCRATCH VEIL --- */
+        .scratch-architecture {
+            position: relative;
+            width: 100%;
+            height: 240px;
+            margin-top: 30px;
+        }
+
+        .hidden-revelation-space {
+            position: absolute;
+            inset: 0;
+            background: #020f0a;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px dashed rgba(229,193,88,0.3);
+        }
+
+        .hidden-revelation-space h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: var(--pale-gold);
+            margin-bottom: 8px;
+        }
+
+        #scratch-canvas {
+            position: absolute;
+            inset: 0;
+            z-index: 5;
+            touch-action: none;
+            cursor: pointer;
+        }
+
+        /* --- TIMELINE COUNTER --- */
+        .chronometer-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: 40px;
+        }
+
+        .chrono-node {
+            border: 1px solid var(--glass-border);
+            padding: 20px 5px;
+            text-align: center;
+            position: relative;
+        }
+
+        .chrono-node span {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.4rem;
+            display: block;
+            color: var(--pale-gold);
+            font-weight: 300;
+        }
+
+        .chrono-node label {
+            font-size: 0.6rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.6;
+        }
+
+        /* --- GEOMETRIC VENUE FRAME --- */
+        .venue-structural-box {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .venue-details h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: var(--accent-gold);
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+
+        .map-wrapper {
+            position: relative;
+            border: 1px solid var(--glass-border);
+            padding: 6px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: 0;
+            filter: grayscale(1) invert(0.92) contrast(1.1) brightness(0.9);
+        }
+
+        /* --- ARCHITECTURAL SCROLL REVEALS --- */
+        .scroll-reveal-agent {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1.2s cubic-bezier(0.215, 0.610, 0.355, 1);
+        }
+
+        .scroll-reveal-agent.awoken {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 100px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-style: italic;
+            color: var(--pale-gold);
+            opacity: 0.7;
+        }
+
+        @media (max-width: 500px) {
+            .chronometer-row { grid-template-columns: repeat(2, 1fr); }
+            .editorial-panel { padding: 35px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Curtain Screening Zone -->
+    <div id="curtain-wrapper">
+        <!-- Elegant Minimalist Line-Art Couple Profile Portrait -->
+        <svg class="couple-svg" viewBox="0 0 100 100">
+            <path class="couple-path" d="M35,25 C40,20 45,22 48,28 C50,25 55,20 62,24 C68,28 65,38 60,45 C55,52 50,65 50,75 M45,35 C42,42 46,50 42,58 C38,65 30,68 32,75 M48,28 C47,40 52,48 49,60" />
+        </svg>
+        <button class="unlock-trigger" id="enter-portal">ENTER EXPERIENCE</button>
+    </div>
+
+    <!-- Core Layout System -->
+    <div class="viewport" id="main-scroller">
+        
+        <!-- PARALLAX HERO DEEP PANEL -->
+        <header class="hero-ring-depth">
+            <div class="ring-container">
+                <div class="ring-element masculine"></div>
+                <div class="ring-element feminine"></div>
+                <i class="fa-solid fa-sparkles sparkle-flare"></i>
+            </div>
+            <div class="hero-title-block">
+                <p class="hero-subtitle">The Engagement Union of</p>
+                <h1 style="margin-top: 15px;">Arbaj <span style="font-family:'Cormorant Garamond'; font-style:italic; font-weight:300; font-size:2.5rem; background:none; -webkit-text-fill-color:var(--pale-gold);">&</span><br>Sana Kaussain</h1>
+            </div>
+        </header>
+
+        <!-- THE INVITATION ARCHITECTURE -->
+        <section class="editorial-panel scroll-reveal-agent">
+            <p style="text-align: center; font-size: 0.75rem; letter-spacing: 4px; color: var(--accent-gold); text-transform: uppercase; margin-bottom: 15px;">THE DATE REVELATION</p>
+            <p style="text-align: center; font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic; opacity: 0.8;">Interact with the metallic shield to unlock ceremony metrics.</p>
+            
+            <div class="scratch-architecture" id="scratch-boundary">
+                <div class="hidden-revelation-space">
+                    <h3>Saturday, June 13, 2026</h3>
+                    <p style="font-size: 0.8rem; letter-spacing: 2px; opacity: 0.7; text-transform: uppercase;">After Namaz-a-Asr • 5:30 PM</p>
+                </div>
+                <canvas id="scratch-canvas"></canvas>
+            </div>
+        </section>
+
+        <!-- THE COUNTER ARCHITECTURE -->
+        <section class="scroll-reveal-agent" style="margin-top: 60px;">
+            <div class="chronometer-row">
+                <div class="chrono-node"><span id="metric-d">00</span><label>Days</label></div>
+                <div class="chrono-node"><span id="metric-h">00</span><label>Hrs</label></div>
+                <div class="chrono-node"><span id="metric-m">00</span><label>Mins</label></div>
+                <div class="chrono-node"><span id="metric-s">00</span><label>Secs</label></div>
+            </div>
+        </section>
+
+        <!-- GEOMETRIC COORDINATE ZONE -->
+        <section class="editorial-panel scroll-reveal-agent">
+            <div class="venue-structural-box">
+                <div class="venue-details">
+                    <p style="font-size: 0.65rem; letter-spacing: 4px; color: var(--accent-gold); text-transform: uppercase; margin-bottom: 5px;">LOCATION DATA</p>
+                    <h4>Hotel Yugvir & Garden</h4>
+                    <p style="opacity: 0.7; font-size: 0.9rem; font-weight: 300; line-height: 1.6;">Nira-Baramati Road,<br>Nimbut, Maharashtra</p>
+                </div>
+                <div class="map-wrapper">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3174.9610736330874!2d74.24886167424374!3d18.10959458160069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc3ab005580541d%3A0xec01f662fe63ba08!2sHotel%20Yugveer%20Garden!5e1!3m2!1sen!2sin!4v1780923617727!5m2!1sen!2sin"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            Warm Regards — Hakim & Shaikh Family
+        </footer>
+    </div>
+
+    <script>
+        // Portal Gate Unlock Sequences
+        const enterBtn = document.getElementById('enter-portal');
+        const mainView = document.getElementById('main-scroller');
+        const curtain = document.getElementById('curtain-wrapper');
+
+        enterBtn.addEventListener('click', () => {
+            curtain.style.opacity = '0';
+            curtain.style.visibility = 'hidden';
+            mainView.style.opacity = '1';
+            mainView.style.transform = 'translateY(0)';
+            
+            setTimeout(() => {
+                awakenScrollReveals();
+                setupScratchShield();
+            }, 400);
+        });
+
+        // Architectural Scroll Reveal Processor
+        const revealNodes = document.querySelectorAll('.scroll-reveal-agent');
+        function awakenScrollReveals() {
+            revealNodes.forEach(node => {
+                const elementTop = node.getBoundingClientRect().top;
+                if (elementTop < window.innerHeight * 0.88) {
+                    node.classList.add('awoken');
+                }
+            });
+        }
+        window.addEventListener('scroll', awakenScrollReveals);
+
+        // Premium Canvas Texture Layer Process
+        function setupScratchShield() {
+            const canvas = document.getElementById('scratch-canvas');
+            const ctx = canvas.getContext('2d');
+            const container = document.getElementById('scratch-boundary');
+
+            canvas.width = container.offsetWidth;
+            canvas.height = container.offsetHeight;
+
+            // Matte Metallic Deep Gold Layer Gradient Matrix
+            const surfaceGrad = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+            surfaceGrad.addColorStop(0, '#bd9a3a');
+            surfaceGrad.addColorStop(0.5, '#e5c158');
+            surfaceGrad.addColorStop(1, '#947425');
+            ctx.fillStyle = surfaceGrad;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Fine Diamond Cross-Hatch Textured Pattern Grids
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
+            ctx.lineWidth = 1;
+            for (let i = 0; i < canvas.width; i += 12) {
+                ctx.beginPath(); ctx.moveTo(i, 0); ctx.lineTo(i + canvas.height, canvas.height); ctx.stroke();
+            }
+
+            ctx.font = "300 12px 'Plus Jakarta Sans'";
+            ctx.fillStyle = "#fff";
+            ctx.letterSpacing = "4px";
+            ctx.textAlign = "center";
+            ctx.fillText("SCRATCH GOLD VEIL", canvas.width / 2, canvas.height / 2 + 4);
+
+            let paintingState = false;
+            
+            const wipeAction = (e) => {
+                if (!paintingState) return;
+                const rect = canvas.getBoundingClientRect();
+                const pointerX = (e.pageX || e.touches[0].pageX) - rect.left - window.scrollX;
+                const pointerY = (e.pageY || e.touches[0].pageY) - rect.top - window.scrollY;
+
+                ctx.globalCompositeOperation = 'destination-out';
+                ctx.beginPath();
+                ctx.arc(pointerX, pointerY, 32, 0, Math.PI * 2);
+                ctx.fill();
+                evaluateClearance();
+            };
+
+            const evaluateClearance = () => {
+                const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+                let nullPixels = 0;
+                for (let i = 3; i < imgData.length; i += 4) {
+                    if (imgData[i] === 0) nullPixels++;
+                }
+                if (nullPixels > (imgData.length / 4) * 0.55) {
+                    canvas.style.transition = 'opacity 1s ease';
+                    canvas.style.opacity = '0';
+                    setTimeout(() => canvas.remove(), 1000);
+                }
+            };
+
+            canvas.addEventListener('mousedown', () => paintingState = true);
+            canvas.addEventListener('touchstart', () => paintingState = true);
+            window.addEventListener('mouseup', () => paintingState = false);
+            window.addEventListener('touchend', () => paintingState = false);
+            canvas.addEventListener('mousemove', wipeAction);
+            canvas.addEventListener('touchmove', wipeAction);
+        }
+
+        // Live Real-Time Epoch Chronometer
+        const targetedEpoch = new Date("June 13, 2026 17:30:00").getTime();
+        setInterval(() => {
+            const differenceDelta = targetedEpoch - new Date().getTime();
+            if (differenceDelta < 0) return;
+
+            document.getElementById('metric-d').innerText = Math.floor(differenceDelta / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+            document.getElementById('metric-h').innerText = Math.floor((differenceDelta % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+            document.getElementById('metric-m').innerText = Math.floor((differenceDelta % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+            document.getElementById('metric-s').innerText = Math.floor((differenceDelta % (1000 * 60)) / 1000).toString().padStart(2, '0');
+        }, 1000);
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arbaj & Sana | The Engagement</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;500&family=Pinyon+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
