@@ -3,372 +3,349 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arbaj & Sana | The Engagement</title>
-    <!-- Premium Editorial Typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>The Engagement of Arbaj & Sana</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --bg-dark: #031710;
-            --panel-emerald: #052218;
-            --accent-gold: #e5c158;
-            --pale-gold: #f3e1a9;
-            --text-light: #f4f7f5;
-            --glass-border: rgba(229, 193, 88, 0.15);
+            --bg-velvet: #020f0a;
+            --jade-premium: #042316;
+            --gold-primary: #dfba6b;
+            --gold-shimmer: linear-gradient(90deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+            --text-light: #f5f2eb;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background-color: var(--bg-dark);
+            background-color: var(--bg-velvet);
             color: var(--text-light);
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             overflow-x: hidden;
             min-height: 100vh;
-            /* Premium Micro-Grain Film Overlay */
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.015'/%3E%3C/svg%3E");
         }
 
-        /* --- THE EMERALD VEIL ENTRANCE --- */
-        #curtain-wrapper {
+        /* --- THE CINEMATIC RING COUTURE VEIL --- */
+        #ritual-veil {
             position: fixed;
             inset: 0;
+            background: radial-gradient(circle at center, var(--jade-premium) 0%, var(--bg-velvet) 100%);
             z-index: 2000;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: var(--bg-dark);
-            transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1), visibility 1.2s;
-        }
-
-        /* Continuous Line Art Couple Path Animation */
-        .couple-svg {
-            width: 180px;
-            height: 180px;
-            margin-bottom: 30px;
-        }
-
-        .couple-path {
-            stroke: var(--accent-gold);
-            stroke-width: 1.5;
-            fill: none;
-            stroke-dasharray: 1000;
-            stroke-dashoffset: 1000;
-            animation: drawLine 4s ease-in-out forwards;
-        }
-
-        @keyframes drawLine {
-            to { stroke-dashoffset: 0; }
-        }
-
-        .unlock-trigger {
-            background: none;
-            border: 1px solid var(--accent-gold);
-            padding: 14px 36px;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.1rem;
-            color: var(--pale-gold);
-            letter-spacing: 4px;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s;
-        }
-
-        .unlock-trigger::before {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%;
-            width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
-            transition: 0.6s;
-        }
-
-        .unlock-trigger:hover::before { left: 100%; }
-        .unlock-trigger:hover { background: rgba(229, 193, 88, 0.1); box-shadow: 0 0 20px rgba(229, 193, 88, 0.2); }
-
-        /* --- THE INTERACTIVE MAIN CANVAS --- */
-        .viewport {
-            max-width: 680px;
-            margin: 0 auto;
-            padding: 0 24px 120px 24px;
-            opacity: 0;
-            transform: translateY(40px);
             transition: opacity 1.5s cubic-bezier(0.25, 1, 0.5, 1), transform 1.5s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
-        /* --- PARALLAX RING SACRED HERO --- */
-        .hero-ring-depth {
-            height: 100vh;
+        .canvas-interactive-zone {
+            position: relative;
+            width: 320px;
+            height: 320px;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            position: relative;
-            perspective: 1000px;
         }
 
-        .ring-container {
-            position: relative;
-            width: 280px;
-            height: 280px;
-            transform-style: preserve-3d;
-            margin-bottom: 40px;
-            animation: floatGently 6s ease-in-out infinite;
+        /* Pure CSS Hand & Ring Line Art */
+        .hand-svg {
+            width: 180px;
+            height: 180px;
+            opacity: 0.25;
+            transition: opacity 1s, transform 1s;
         }
 
-        /* Overlapping interlocking metallic rings design */
         .ring-element {
             position: absolute;
-            inset: 0;
+            width: 42px;
+            height: 42px;
+            border: 3px solid transparent;
+            border-image: var(--gold-shimmer) 1;
             border-radius: 50%;
-            border: 6px solid transparent;
-            background: linear-gradient(var(--bg-dark), var(--bg-dark)) padding-box,
-                        linear-gradient(135deg, #a67c00 0%, #f3e1a9 50%, #ba942a 100%) border-box;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            top: 40px;
+            left: 139px;
+            transform: translateY(-80px) scale(1.3);
+            opacity: 0;
+            box-shadow: 0 0 0px rgba(223, 186, 107, 0);
+            transition: transform 2.5s cubic-bezier(0.1, 0.8, 0.2, 1), opacity 2s, box-shadow 1s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-
-        .ring-element.masculine {
-            transform: rotateY(-20deg) rotateX(15deg);
-        }
-
-        .ring-element.feminine {
-            transform: rotateY(25deg) rotateX(-10deg) translateZ(20px);
-            border-width: 4px;
-            background: linear-gradient(var(--bg-dark), var(--bg-dark)) padding-box,
-                        linear-gradient(135deg, #f3e1a9 0%, #ffffff 50%, #e5c158 100%) border-box;
-        }
-
-        /* Sparkling Ring Halo Flare */
-        .sparkle-flare {
-            position: absolute;
-            top: 20%; right: 20%;
+        
+        .ring-element::before {
+            content: '✦';
             color: #fff;
-            font-size: 1.5rem;
-            text-shadow: 0 0 15px #fff;
-            animation: pulseSparkle 2.5s infinite alternate;
+            font-size: 14px;
+            position: absolute;
+            top: -12px;
+            text-shadow: 0 0 10px var(--gold-primary);
+            opacity: 0;
+            transition: opacity 1s;
         }
 
-        @keyframes floatGently {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-12px) rotate(2deg); }
+        /* Interactive Trigger */
+        .ritual-trigger-btn {
+            margin-top: 40px;
+            background: transparent;
+            border: 1px solid var(--gold-primary);
+            padding: 16px 32px;
+            font-size: 0.75rem;
+            letter-spacing: 5px;
+            color: var(--gold-primary);
+            cursor: pointer;
+            z-index: 2002;
+            text-transform: uppercase;
+            transition: all 0.4s;
+            outline: none;
         }
 
-        @keyframes pulseSparkle {
-            0% { opacity: 0.2; transform: scale(0.8); }
-            100% { opacity: 1; transform: scale(1.2) rotate(45deg); }
+        .ritual-trigger-btn:active {
+            background: rgba(223, 186, 107, 0.1);
+            transform: scale(0.96);
         }
 
-        .hero-title-block h1 {
+        /* Flash Effect */
+        .flash-bang {
+            position: fixed;
+            inset: 0;
+            background: #fff;
+            z-index: 3000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease-out;
+        }
+
+        /* --- EXCLUSIVE LUXURY LAYOUT --- */
+        .main-scroller {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 140px 24px;
+            display: none;
+            opacity: 0;
+            transform: scale(1.02);
+            transition: opacity 2s cubic-bezier(0.25, 1, 0.5, 1), transform 2s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .editorial-frame {
+            text-align: center;
+            margin-bottom: 120px;
+            position: relative;
+        }
+
+        .badge-crest {
+            font-size: 0.7rem;
+            letter-spacing: 7px;
+            text-transform: uppercase;
+            color: var(--gold-primary);
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .curated-serif-title {
             font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
             font-weight: 300;
-            font-size: clamp(2.2rem, 7vw, 4rem);
             line-height: 1.1;
             letter-spacing: -1px;
-            text-align: center;
-            background: linear-gradient(to bottom, #fff, var(--pale-gold));
+            margin: 20px 0;
+        }
+
+        .gold-fluid-text {
+            background: var(--gold-shimmer);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            font-style: italic;
         }
 
-        .hero-subtitle {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 6px;
-            color: var(--accent-gold);
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        /* --- PREMIUM PARCHMENT SECTIONS --- */
-        .editorial-panel {
-            background: var(--panel-emerald);
-            border: 1px solid var(--glass-border);
-            padding: 50px 35px;
-            margin-top: 60px;
-            position: relative;
-        }
-
-        /* --- CINEMATIC SCRATCH VEIL --- */
-        .scratch-architecture {
+        /* --- THE GLASS SCRATCH VAULT --- */
+        .glass-vault-box {
             position: relative;
             width: 100%;
-            height: 240px;
-            margin-top: 30px;
+            max-width: 500px;
+            height: 280px;
+            margin: 0 auto;
+            border-radius: 0px;
+            overflow: hidden;
+            border: 1px solid rgba(223, 186, 107, 0.2);
+            background: rgba(4, 35, 22, 0.4);
+            backdrop-filter: blur(20px);
         }
 
-        .hidden-revelation-space {
+        .hidden-details-layout {
             position: absolute;
             inset: 0;
-            background: #020f0a;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            border: 1px dashed rgba(229,193,88,0.3);
+            letter-spacing: 2px;
+            z-index: 1;
         }
 
-        .hidden-revelation-space h3 {
+        .hidden-details-layout h4 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
-            color: var(--pale-gold);
+            font-size: 2.2rem;
+            font-weight: 400;
+            color: var(--gold-primary);
             margin-bottom: 8px;
         }
 
-        #scratch-canvas {
+        #scratch-surface {
             position: absolute;
             inset: 0;
-            z-index: 5;
+            z-index: 2;
             touch-action: none;
             cursor: pointer;
+            transition: opacity 0.6s;
         }
 
-        /* --- TIMELINE COUNTER --- */
-        .chronometer-row {
+        /* --- PREMIUM CHRONO BLOCKS --- */
+        .chrono-row {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 16px;
-            margin-top: 40px;
+            margin: 100px 0;
         }
 
-        .chrono-node {
-            border: 1px solid var(--glass-border);
-            padding: 20px 5px;
+        .chrono-tile {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 35px 10px;
             text-align: center;
             position: relative;
         }
 
-        .chrono-node span {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.4rem;
+        .chrono-tile::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; width: 100%; height: 2px;
+            background: var(--gold-shimmer);
+            transform: scaleX(0);
+            transition: transform 0.8s ease;
+        }
+
+        .chrono-tile.active-line::after { transform: scaleX(1); }
+
+        .chrono-tile span {
             display: block;
-            color: var(--pale-gold);
-            font-weight: 300;
-        }
-
-        .chrono-node label {
-            font-size: 0.6rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            opacity: 0.6;
-        }
-
-        /* --- GEOMETRIC VENUE FRAME --- */
-        .venue-structural-box {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-        }
-
-        .venue-details h4 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
-            color: var(--accent-gold);
-            font-weight: 400;
-            margin-bottom: 10px;
+            font-size: 3rem;
+            font-weight: 300;
+            color: var(--gold-primary);
+        }
+
+        .chrono-tile label {
+            font-size: 0.6rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: 0.5;
+        }
+
+        /* --- MINIMALIST GEOGRAPHIC ARCHITECTURE --- */
+        .venue-editorial {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            text-align: left;
+            margin-top: 100px;
         }
 
         .map-wrapper {
             position: relative;
-            border: 1px solid var(--glass-border);
-            padding: 6px;
+            border: 1px solid rgba(223, 186, 107, 0.15);
+            padding: 8px;
+            background: rgba(255,255,255,0.01);
         }
 
         iframe {
             width: 100%;
             height: 300px;
             border: 0;
-            filter: grayscale(1) invert(0.92) contrast(1.1) brightness(0.9);
-        }
-
-        /* --- ARCHITECTURAL SCROLL REVEALS --- */
-        .scroll-reveal-agent {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 1.2s cubic-bezier(0.215, 0.610, 0.355, 1);
-        }
-
-        .scroll-reveal-agent.awoken {
-            opacity: 1;
-            transform: translateY(0);
+            filter: grayscale(1) invert(0.92) contrast(1.1);
         }
 
         footer {
+            margin-top: 140px;
             text-align: center;
-            margin-top: 100px;
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.6rem;
             font-style: italic;
-            color: var(--pale-gold);
+            font-size: 2rem;
+            color: var(--gold-primary);
             opacity: 0.7;
         }
 
-        @media (max-width: 500px) {
-            .chronometer-row { grid-template-columns: repeat(2, 1fr); }
-            .editorial-panel { padding: 35px 20px; }
+        /* --- MOTION REVEALS --- */
+        .scroll-reveal { opacity: 0; transform: translateY(40px); transition: 1.5s cubic-bezier(0.25, 1, 0.5, 1); }
+        .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 768px) {
+            .venue-editorial { grid-template-columns: 1fr; gap: 20px; text-align: center; }
+            .chrono-row { grid-template-columns: repeat(2, 1fr); }
+            .main-scroller { padding: 80px 16px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Curtain Screening Zone -->
-    <div id="curtain-wrapper">
-        <!-- Elegant Minimalist Line-Art Couple Profile Portrait -->
-        <svg class="couple-svg" viewBox="0 0 100 100">
-            <path class="couple-path" d="M35,25 C40,20 45,22 48,28 C50,25 55,20 62,24 C68,28 65,38 60,45 C55,52 50,65 50,75 M45,35 C42,42 46,50 42,58 C38,65 30,68 32,75 M48,28 C47,40 52,48 49,60" />
-        </svg>
-        <button class="unlock-trigger" id="enter-portal">ENTER EXPERIENCE</button>
+    <div class="flash-bang" id="flash"></div>
+
+    <!-- Cinematic Ring Ceremony Entrance Screen -->
+    <div id="ritual-veil">
+        <span style="font-size: 0.65rem; letter-spacing: 4px; opacity: 0.6; margin-bottom: -20px; text-transform: uppercase;">The Union of Hearts</span>
+        <div class="canvas-interactive-zone">
+            <!-- Intercepted Minimalist Art Vector Representation -->
+            <svg class="hand-svg" id="ritual-hands" viewBox="0 0 100 100" fill="none" stroke="#dfba6b" stroke-width="0.7" stroke-linecap="round">
+                <!-- Left Hand Vector Point Line -->
+                <path d="M5,65 C20,60 35,52 45,42 C48,39 51,32 46,30 C42,28 39,36 42,42 C44,46 51,50 56,50 C62,50 65,42 61,40 C58,38 56,43 59,46 C62,49 75,48 85,52" />
+                <!-- Receiving Finger Indicator Point Line -->
+                <path d="M41,40 C41,34 37,33 36,37 C35,40 39,45 42,47" stroke-dasharray="1 1" />
+            </svg>
+            <div class="ring-element" id="ritual-ring"></div>
+        </div>
+        <p style="font-size: 0.7rem; letter-spacing: 2px; color: #fff; opacity: 0.4; margin-top: -30px; margin-bottom: 20px;">PRESS & HOLD TO ENGAGE</p>
+        <button class="ritual-trigger-btn" id="hold-trigger-btn">Place Ring</button>
     </div>
 
-    <!-- Core Layout System -->
-    <div class="viewport" id="main-scroller">
-        
-        <!-- PARALLAX HERO DEEP PANEL -->
-        <header class="hero-ring-depth">
-            <div class="ring-container">
-                <div class="ring-element masculine"></div>
-                <div class="ring-element feminine"></div>
-                <i class="fa-solid fa-sparkles sparkle-flare"></i>
-            </div>
-            <div class="hero-title-block">
-                <p class="hero-subtitle">The Engagement Union of</p>
-                <h1 style="margin-top: 15px;">Arbaj <span style="font-family:'Cormorant Garamond'; font-style:italic; font-weight:300; font-size:2.5rem; background:none; -webkit-text-fill-color:var(--pale-gold);">&</span><br>Sana Kaussain</h1>
-            </div>
+    <!-- Core Curated Presentation -->
+    <div class="main-scroller" id="scroller-root">
+        <header class="editorial-frame">
+            <div class="badge-crest">The Celebration Continuum</div>
+            <h2 class="curated-serif-title">Arbaj <br><span class="gold-fluid-text">&</span><br> Sana Kaussain</h2>
+            <p style="letter-spacing: 6px; font-size: 0.75rem; text-transform: uppercase; opacity: 0.6; margin-top: 30px;">Request the honour of your presence</p>
         </header>
 
-        <!-- THE INVITATION ARCHITECTURE -->
-        <section class="editorial-panel scroll-reveal-agent">
-            <p style="text-align: center; font-size: 0.75rem; letter-spacing: 4px; color: var(--accent-gold); text-transform: uppercase; margin-bottom: 15px;">THE DATE REVELATION</p>
-            <p style="text-align: center; font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic; opacity: 0.8;">Interact with the metallic shield to unlock ceremony metrics.</p>
-            
-            <div class="scratch-architecture" id="scratch-boundary">
-                <div class="hidden-revelation-space">
-                    <h3>Saturday, June 13, 2026</h3>
-                    <p style="font-size: 0.8rem; letter-spacing: 2px; opacity: 0.7; text-transform: uppercase;">After Namaz-a-Asr • 5:30 PM</p>
+        <!-- Scratch Ritual Layer -->
+        <section class="scroll-reveal" style="margin-bottom: 120px;">
+            <p style="text-align: center; font-size: 0.65rem; letter-spacing: 3px; margin-bottom: 20px; opacity: 0.6;">BRUSH THE VEIL TO UNCOVER TIMING</p>
+            <div class="glass-vault-box" id="vault-anchor">
+                <div class="hidden-details-layout">
+                    <h4>Saturday, June 13, 2026</h4>
+                    <p style="font-size: 0.75rem; opacity: 0.7;">AFTER NAMAZ-A-ASR AT 5:30 PM</p>
                 </div>
-                <canvas id="scratch-canvas"></canvas>
+                <canvas id="scratch-surface"></canvas>
             </div>
         </section>
 
-        <!-- THE COUNTER ARCHITECTURE -->
-        <section class="scroll-reveal-agent" style="margin-top: 60px;">
-            <div class="chronometer-row">
-                <div class="chrono-node"><span id="metric-d">00</span><label>Days</label></div>
-                <div class="chrono-node"><span id="metric-h">00</span><label>Hrs</label></div>
-                <div class="chrono-node"><span id="metric-m">00</span><label>Mins</label></div>
-                <div class="chrono-node"><span id="metric-s">00</span><label>Secs</label></div>
+        <!-- Dynamic Ticker Engine Layout -->
+        <section class="scroll-reveal">
+            <div class="chrono-row">
+                <div class="chrono-tile" id="t1"><span id="lbl-d">00</span><label>Days</label></div>
+                <div class="chrono-tile" id="t2"><span id="lbl-h">00</span><label>Hours</label></div>
+                <div class="chrono-tile" id="t3"><span id="lbl-m">00</span><label>Mins</label></div>
+                <div class="chrono-tile" id="t4"><span id="lbl-s">00</span><label>Secs</label></div>
             </div>
         </section>
 
-        <!-- GEOMETRIC COORDINATE ZONE -->
-        <section class="editorial-panel scroll-reveal-agent">
-            <div class="venue-structural-box">
-                <div class="venue-details">
-                    <p style="font-size: 0.65rem; letter-spacing: 4px; color: var(--accent-gold); text-transform: uppercase; margin-bottom: 5px;">LOCATION DATA</p>
-                    <h4>Hotel Yugvir & Garden</h4>
-                    <p style="opacity: 0.7; font-size: 0.9rem; font-weight: 300; line-height: 1.6;">Nira-Baramati Road,<br>Nimbut, Maharashtra</p>
+        <!-- Geographic Structural Matrix -->
+        <section class="scroll-reveal">
+            <div class="venue-editorial">
+                <div>
+                    <span style="color: var(--gold-primary); font-size: 0.7rem; letter-spacing: 4px; display:block; margin-bottom:15px;">RENDEZVOUS DESTINATION</span>
+                    <h3 style="font-family:'Cormorant Garamond', serif; font-size: 2.5rem; font-weight:300; line-height:1.2; margin-bottom:15px;">Hotel Yugvir & Garden</h3>
+                    <p style="font-size:0.85rem; opacity:0.6; line-height:1.8;">Nira-Baramati Road, Nimbut.<br>Join us as we write the prologue to our forever.</p>
                 </div>
                 <div class="map-wrapper">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3174.9610736330874!2d74.24886167424374!3d18.10959458160069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc3ab005580541d%3A0xec01f662fe63ba08!2sHotel%20Yugveer%20Garden!5e1!3m2!1sen!2sin!4v1780923617727!5m2!1sen!2sin"></iframe>
@@ -377,505 +354,152 @@
         </section>
 
         <footer>
-            Warm Regards — Hakim & Shaikh Family
+            Regards, Hakim & Shaikh Families
         </footer>
     </div>
 
     <script>
-        // Portal Gate Unlock Sequences
-        const enterBtn = document.getElementById('enter-portal');
-        const mainView = document.getElementById('main-scroller');
-        const curtain = document.getElementById('curtain-wrapper');
+        // Interactive Ritual Engine Mechanic
+        const triggerBtn = document.getElementById('hold-trigger-btn');
+        const ring = document.getElementById('ritual-ring');
+        const hands = document.getElementById('ritual-hands');
+        const veil = document.getElementById('ritual-veil');
+        const flash = document.getElementById('flash');
+        const rootUI = document.getElementById('scroller-root');
 
-        enterBtn.addEventListener('click', () => {
-            curtain.style.opacity = '0';
-            curtain.style.visibility = 'hidden';
-            mainView.style.opacity = '1';
-            mainView.style.transform = 'translateY(0)';
+        let interactionTimer;
+        let animationActive = false;
+
+        function startRitualAnimation() {
+            if (animationActive) return;
+            animationActive = true;
             
-            setTimeout(() => {
-                awakenScrollReveals();
-                setupScratchShield();
-            }, 400);
-        });
+            // Slide ring onto finger location flawlessly
+            ring.style.opacity = '1';
+            ring.style.transform = 'translateY(43px) scale(1)';
+            hands.style.transform = 'scale(1.05)';
+            hands.style.opacity = '0.7';
 
-        // Architectural Scroll Reveal Processor
-        const revealNodes = document.querySelectorAll('.scroll-reveal-agent');
-        function awakenScrollReveals() {
-            revealNodes.forEach(node => {
-                const elementTop = node.getBoundingClientRect().top;
-                if (elementTop < window.innerHeight * 0.88) {
-                    node.classList.add('awoken');
-                }
-            });
+            interactionTimer = setTimeout(() => {
+                // Flash blast climax state
+                flash.style.opacity = '1';
+                ring.style.boxShadow = '0 0 60px 20px #fff';
+                
+                setTimeout(() => {
+                    veil.style.display = 'none';
+                    rootUI.style.display = 'block';
+                    window.scrollTo(0,0);
+                    
+                    setTimeout(() => {
+                        flash.style.opacity = '0';
+                        rootUI.style.opacity = '1';
+                        triggerIntersectionObserver();
+                        initPremiumScratch();
+                        document.querySelectorAll('.chrono-tile').forEach(t => t.classList.add('active-line'));
+                    }, 400);
+                }, 500);
+
+            }, 2500); // Animation cycle speed calibration duration
         }
-        window.addEventListener('scroll', awakenScrollReveals);
 
-        // Premium Canvas Texture Layer Process
-        function setupScratchShield() {
-            const canvas = document.getElementById('scratch-canvas');
+        function abortRitualAnimation() {
+            if (!animationActive) return;
+            clearTimeout(interactionTimer);
+            animationActive = false;
+            
+            // Snap back beautifully
+            ring.style.opacity = '0';
+            ring.style.transform = 'translateY(-80px) scale(1.3)';
+            hands.style.transform = 'scale(1)';
+            hands.style.opacity = '0.25';
+        }
+
+        // Support for both desktop holding and mobile pressing gestures
+        triggerBtn.addEventListener('mousedown', startRitualAnimation);
+        triggerBtn.addEventListener('mouseup', abortRitualAnimation);
+        triggerBtn.addEventListener('touchstart', (e) => { e.preventDefault(); startRitualAnimation(); });
+        triggerBtn.addEventListener('touchend', abortRitualAnimation);
+
+
+        // Refined Core Scroll Reveal Engine
+        function triggerIntersectionObserver() {
+            const elements = document.querySelectorAll('.scroll-reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.15 });
+            elements.forEach(el => observer.observe(el));
+        }
+
+        // High Fluid Scratch Panel Engine
+        function initPremiumScratch() {
+            const canvas = document.getElementById('scratch-surface');
             const ctx = canvas.getContext('2d');
-            const container = document.getElementById('scratch-boundary');
+            const anchor = document.getElementById('vault-anchor');
+            
+            canvas.width = anchor.offsetWidth;
+            canvas.height = anchor.offsetHeight;
 
-            canvas.width = container.offsetWidth;
-            canvas.height = container.offsetHeight;
-
-            // Matte Metallic Deep Gold Layer Gradient Matrix
-            const surfaceGrad = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-            surfaceGrad.addColorStop(0, '#bd9a3a');
-            surfaceGrad.addColorStop(0.5, '#e5c158');
-            surfaceGrad.addColorStop(1, '#947425');
-            ctx.fillStyle = surfaceGrad;
+            // Matte Jade Overcoat Surface
+            ctx.fillStyle = '#052216';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            // Fine Diamond Cross-Hatch Textured Pattern Grids
-            ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
-            ctx.lineWidth = 1;
-            for (let i = 0; i < canvas.width; i += 12) {
-                ctx.beginPath(); ctx.moveTo(i, 0); ctx.lineTo(i + canvas.height, canvas.height); ctx.stroke();
-            }
-
-            ctx.font = "300 12px 'Plus Jakarta Sans'";
-            ctx.fillStyle = "#fff";
+            // Fine Golden Typography Trace
+            ctx.font = "300 10px Montserrat";
+            ctx.fillStyle = "#dfba6b";
+            ctx.textAlign = "center";
             ctx.letterSpacing = "4px";
-            ctx.textAlign = "center";
-            ctx.fillText("SCRATCH GOLD VEIL", canvas.width / 2, canvas.height / 2 + 4);
+            ctx.fillText("BRUSH WITH FINGER TO REVEAL TIME", canvas.width/2, canvas.height/2 + 4);
 
-            let paintingState = false;
+            let erasing = false;
             
-            const wipeAction = (e) => {
-                if (!paintingState) return;
-                const rect = canvas.getBoundingClientRect();
-                const pointerX = (e.pageX || e.touches[0].pageX) - rect.left - window.scrollX;
-                const pointerY = (e.pageY || e.touches[0].pageY) - rect.top - window.scrollY;
+            const brushMove = (e) => {
+                if(!erasing) return;
+                const bounds = canvas.getBoundingClientRect();
+                const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+                const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+                
+                const x = clientX - bounds.left;
+                const y = clientY - bounds.top;
 
                 ctx.globalCompositeOperation = 'destination-out';
                 ctx.beginPath();
-                ctx.arc(pointerX, pointerY, 32, 0, Math.PI * 2);
+                ctx.arc(x, y, 30, 0, Math.PI * 2);
                 ctx.fill();
-                evaluateClearance();
+                checkEraseThreshold();
             };
 
-            const evaluateClearance = () => {
+            const checkEraseThreshold = () => {
                 const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
-                let nullPixels = 0;
-                for (let i = 3; i < imgData.length; i += 4) {
-                    if (imgData[i] === 0) nullPixels++;
-                }
-                if (nullPixels > (imgData.length / 4) * 0.55) {
-                    canvas.style.transition = 'opacity 1s ease';
+                let voidPixels = 0;
+                for (let i = 3; i < imgData.length; i += 4) { if (imgData[i] === 0) voidPixels++; }
+                if (voidPixels > (imgData.length / 4) * 0.55) {
                     canvas.style.opacity = '0';
-                    setTimeout(() => canvas.remove(), 1000);
+                    setTimeout(() => canvas.remove(), 600);
                 }
             };
 
-            canvas.addEventListener('mousedown', () => paintingState = true);
-            canvas.addEventListener('touchstart', () => paintingState = true);
-            window.addEventListener('mouseup', () => paintingState = false);
-            window.addEventListener('touchend', () => paintingState = false);
-            canvas.addEventListener('mousemove', wipeAction);
-            canvas.addEventListener('touchmove', wipeAction);
+            canvas.addEventListener('mousedown', () => erasing = true);
+            canvas.addEventListener('touchstart', () => erasing = true);
+            window.addEventListener('mouseup', () => erasing = false);
+            window.addEventListener('touchend', () => erasing = false);
+            canvas.addEventListener('mousemove', brushMove);
+            canvas.addEventListener('touchmove', brushMove);
         }
 
-        // Live Real-Time Epoch Chronometer
-        const targetedEpoch = new Date("June 13, 2026 17:30:00").getTime();
+        // Precision Chronometer Chrono Math Core Engine
+        const epochTarget = new Date("June 13, 2026 17:30:00").getTime();
         setInterval(() => {
-            const differenceDelta = targetedEpoch - new Date().getTime();
-            if (differenceDelta < 0) return;
+            const spanDelta = epochTarget - new Date().getTime();
+            if(spanDelta < 0) return;
 
-            document.getElementById('metric-d').innerText = Math.floor(differenceDelta / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
-            document.getElementById('metric-h').innerText = Math.floor((differenceDelta % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
-            document.getElementById('metric-m').innerText = Math.floor((differenceDelta % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
-            document.getElementById('metric-s').innerText = Math.floor((differenceDelta % (1000 * 60)) / 1000).toString().padStart(2, '0');
-        }, 1000);
-    </script>
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arbaj & Sana | The Engagement</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;500&family=Pinyon+Script&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --royal-emerald: #042f1e;
-            --deep-forest: #011a10;
-            --liquid-gold: linear-gradient(75deg, #a67c00 0%, #ffbf00 45%, #ffffff 50%, #ffbf00 55%, #a67c00 100%);
-            --static-gold: #d4af37;
-            --soft-cream: #fdfaf1;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            background-color: var(--deep-forest);
-            background-image: 
-                radial-gradient(circle at 50% 50%, rgba(4, 47, 30, 0.7) 0%, rgba(1, 26, 16, 1) 100%),
-                url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3 Visual Noise %3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-            color: var(--soft-cream);
-            font-family: 'Montserrat', sans-serif;
-            overflow-x: hidden;
-            min-height: 100vh;
-        }
-
-        /* --- THE CEREMONIAL ENTRANCE --- */
-        #gate-overlay {
-            position: fixed;
-            inset: 0;
-            z-index: 1000;
-            display: flex;
-            transition: transform 1.5s cubic-bezier(0.7, 0, 0.3, 1);
-        }
-
-        .gate-wing {
-            flex: 1;
-            background: var(--royal-emerald);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .gate-wing::before {
-            content: '';
-            position: absolute;
-            inset: 20px;
-            border: 2px solid var(--static-gold);
-            opacity: 0.2;
-        }
-
-        .center-seal {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            width: 140px;
-            height: 140px;
-            background: var(--deep-forest);
-            border: 4px solid var(--static-gold);
-            border-radius: 50%;
-            z-index: 1001;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 0 50px rgba(0,0,0,0.8);
-            transition: 0.5s;
-        }
-
-        .center-seal:hover { transform: translate(-50%, -50%) scale(1.1); box-shadow: 0 0 30px var(--static-gold); }
-        .center-seal i { font-size: 2rem; color: var(--static-gold); margin-bottom: 5px; }
-        .center-seal span { font-size: 0.7rem; letter-spacing: 3px; color: var(--static-gold); font-weight: bold; }
-
-        /* --- CONTENT STYLING --- */
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 100px 20px;
-            display: none;
-            flex-direction: column;
-            gap: 80px;
-            opacity: 0;
-            transition: 2s ease-out;
-        }
-
-        .hero-section {
-            text-align: center;
-            padding: 60px 20px;
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 4px;
-            position: relative;
-        }
-
-        .hero-section::after {
-            content: '';
-            position: absolute;
-            top: -10px; left: -10px; right: -10px; bottom: -10px;
-            border: 1px solid var(--static-gold);
-            pointer-events: none;
-            clip-path: polygon(0 0, 15% 0, 15% 5%, 5% 5%, 5% 15%, 0 15%, 0 0, 85% 0, 85% 5%, 95% 5%, 95% 15%, 100% 15%, 100% 0, 100% 100%, 85% 100%, 85% 95%, 95% 95%, 95% 85%, 100% 85%, 100% 100%, 0 100%, 0 85%, 5% 85%, 5% 95%, 15% 95%, 15% 100%, 0 100%);
-        }
-
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-            letter-spacing: 8px;
-            text-transform: uppercase;
-            color: var(--static-gold);
-            margin-bottom: 40px;
-        }
-
-        .names {
-            font-family: 'Pinyon Script', cursive;
-            font-size: clamp(3.5rem, 10vw, 5.5rem);
-            background: var(--liquid-gold);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin: 20px 0;
-            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
-        }
-
-        /* --- THE SCRATCH CARD RE-IMAGINED --- */
-        .scratch-container {
-            position: relative;
-            width: 100%;
-            height: 300px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
-            background: #05140f;
-        }
-
-        .invitation-details {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            z-index: 1;
-        }
-
-        .invitation-details p {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            margin: 10px 0;
-        }
-
-        #scratch-canvas {
-            position: absolute;
-            top: 0; left: 0;
-            z-index: 2;
-            touch-action: none;
-            cursor: url('https://cdn-icons-png.flaticon.com/32/1041/1041916.png'), auto;
-        }
-
-        /* --- COUNTDOWN PANEL --- */
-        .countdown-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .count-box {
-            background: linear-gradient(145deg, #05261a, #010d08);
-            padding: 30px 10px;
-            border-radius: 4px;
-            border-bottom: 3px solid var(--static-gold);
-            text-align: center;
-        }
-
-        .count-box span {
-            display: block;
-            font-size: 2.5rem;
-            font-weight: 300;
-            color: var(--static-gold);
-        }
-
-        .count-box label {
-            font-size: 0.6rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            opacity: 0.7;
-        }
-
-        /* --- MAP & FOOTER --- */
-        .venue-card {
-            border-left: 1px solid var(--static-gold);
-            padding-left: 30px;
-            margin-bottom: 40px;
-        }
-
-        iframe {
-            filter: grayscale(1) invert(0.9) contrast(1.2);
-            border-radius: 4px;
-            width: 100%;
-            height: 350px;
-            border: 0;
-        }
-
-        footer {
-            text-align: center;
-            padding: 60px 0;
-            font-family: 'Pinyon Script', cursive;
-            font-size: 2.5rem;
-            color: var(--static-gold);
-            opacity: 0.6;
-        }
-
-        /* --- ANIMATIONS --- */
-        .reveal { opacity: 0; transform: translateY(30px); transition: 1.2s; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-
-        @media (max-width: 600px) {
-            .countdown-grid { grid-template-columns: repeat(2, 1fr); }
-            .names { font-size: 3.5rem; }
-        }
-    </style>
-</head>
-<body>
-
-    <div id="gate-overlay">
-        <div class="gate-wing" id="left-gate"></div>
-        <div class="center-seal" id="open-btn">
-            <i class="fa-solid fa-envelope-open-text"></i>
-            <span>REVEAL</span>
-        </div>
-        <div class="gate-wing" id="right-gate"></div>
-    </div>
-
-    <div class="container" id="main-ui">
-        <header class="hero-section reveal">
-            <h1>The Engagement Ceremony</h1>
-            <div class="names">Arbaj</div>
-            <p style="font-size: 1.2rem; letter-spacing: 4px; opacity: 0.8;">&</p>
-            <div class="names">Sana Kaussain</div>
-        </header>
-
-        <section class="reveal">
-            <h2 style="text-align: center; margin-bottom: 20px; font-weight: 300; letter-spacing: 3px;">SAVE THE DATE</h2>
-            <div class="scratch-container" id="scratch-box">
-                <div class="invitation-details">
-                    <p>Saturday, June 13, 2026</p>
-                    <p style="font-size: 1.1rem; opacity: 0.7; font-family: 'Montserrat';">After Namaz-a-Asr • 5:30 PM</p>
-                </div>
-                <canvas id="scratch-canvas"></canvas>
-            </div>
-        </section>
-
-        <section class="reveal">
-            <div class="countdown-grid">
-                <div class="count-box"><span id="days">00</span><label>Days</label></div>
-                <div class="count-box"><span id="hours">00</span><label>Hours</label></div>
-                <div class="count-box"><span id="mins">00</span><label>Minutes</label></div>
-                <div class="count-box"><span id="secs">00</span><label>Seconds</label></div>
-            </div>
-        </section>
-
-        <section class="reveal">
-            <div class="venue-card">
-                <h3 style="color: var(--static-gold); letter-spacing: 2px; margin-bottom: 10px;">THE VENUE</h3>
-                <p style="font-size: 1.4rem; font-family: 'Playfair Display';">Hotel Yugvir & Garden</p>
-                <p style="opacity: 0.7;">Nira-Baramati Road, Nimbut</p>
-            </div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3174.9610736330874!2d74.24886167424374!3d18.10959458160069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc3ab005580541d%3A0xec01f662fe63ba08!2sHotel%20Yugveer%20Garden!5e1!3m2!1sen!2sin!4v1780923617727!5m2!1sen!2sin"></iframe>
-        </section>
-
-        <footer>
-            Hakim & Shaikh Family
-        </footer>
-    </div>
-
-    <script>
-        // Opening Logic
-        const openBtn = document.getElementById('open-btn');
-        const mainUI = document.getElementById('main-ui');
-        
-        openBtn.addEventListener('click', () => {
-            document.getElementById('left-gate').style.transform = 'translateX(-100%)';
-            document.getElementById('right-gate').style.transform = 'translateX(100%)';
-            openBtn.style.opacity = '0';
-            setTimeout(() => {
-                document.getElementById('gate-overlay').style.display = 'none';
-                mainUI.style.display = 'flex';
-                setTimeout(() => { 
-                    mainUI.style.opacity = '1';
-                    handleReveal();
-                    initScratch();
-                }, 100);
-            }, 1000);
-        });
-
-        // Scroll Reveal
-        function handleReveal() {
-            const reveals = document.querySelectorAll('.reveal');
-            reveals.forEach(el => {
-                const windowHeight = window.innerHeight;
-                const elementTop = el.getBoundingClientRect().top;
-                if (elementTop < windowHeight - 100) el.classList.add('active');
-            });
-        }
-        window.addEventListener('scroll', handleReveal);
-
-        // Scratch Card Logic
-        function initScratch() {
-            const canvas = document.getElementById('scratch-canvas');
-            const ctx = canvas.getContext('2d');
-            const box = document.getElementById('scratch-box');
-            
-            canvas.width = box.offsetWidth;
-            canvas.height = box.offsetHeight;
-
-            // Paint elegant gold cover
-            const grad = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-            grad.addColorStop(0, '#a67c00');
-            grad.addColorStop(0.5, '#d4af37');
-            grad.addColorStop(1, '#8a6d1c');
-            ctx.fillStyle = grad;
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            
-            // Add texture to scratch layer
-            ctx.globalAlpha = 0.1;
-            for(let i=0; i<500; i++) {
-                ctx.fillStyle = '#fff';
-                ctx.fillRect(Math.random()*canvas.width, Math.random()*canvas.height, 2, 2);
-            }
-            ctx.globalAlpha = 1.0;
-            ctx.font = "bold 14px Montserrat";
-            ctx.fillStyle = "rgba(255,255,255,0.8)";
-            ctx.textAlign = "center";
-            ctx.fillText("RUB TO REVEAL DATE", canvas.width/2, canvas.height/2 + 50);
-
-            let isDrawing = false;
-            const scratch = (e) => {
-                if(!isDrawing) return;
-                const rect = canvas.getBoundingClientRect();
-                const x = (e.pageX || e.touches[0].pageX) - rect.left - window.scrollX;
-                const y = (e.pageY || e.touches[0].pageY) - rect.top - window.scrollY;
-                
-                ctx.globalCompositeOperation = 'destination-out';
-                ctx.beginPath();
-                ctx.arc(x, y, 35, 0, Math.PI * 2);
-                ctx.fill();
-                
-                checkScratch();
-            };
-
-            const checkScratch = () => {
-                const data = ctx.getImageData(0,0,canvas.width, canvas.height).data;
-                let count = 0;
-                for(let i=0; i<data.length; i+=4) { if(data[i+3] === 0) count++; }
-                if(count > (data.length/4) * 0.6) canvas.style.opacity = '0';
-            };
-
-            canvas.addEventListener('mousedown', () => isDrawing = true);
-            canvas.addEventListener('touchstart', () => isDrawing = true);
-            window.addEventListener('mouseup', () => isDrawing = false);
-            window.addEventListener('touchend', () => isDrawing = false);
-            canvas.addEventListener('mousemove', scratch);
-            canvas.addEventListener('touchmove', scratch);
-        }
-
-        // Countdown Timer
-        const target = new Date("June 13, 2026 17:30:00").getTime();
-        setInterval(() => {
-            const now = new Date().getTime();
-            const diff = target - now;
-            if(diff < 0) return;
-
-            document.getElementById('days').innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
-            document.getElementById('hours').innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            document.getElementById('mins').innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            document.getElementById('secs').innerText = Math.floor((diff % (1000 * 60)) / 1000);
+            document.getElementById('lbl-d').innerText = String(Math.floor(spanDelta / (1000 * 60 * 60 * 24))).padStart(2, '0');
+            document.getElementById('lbl-h').innerText = String(Math.floor((spanDelta % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+            document.getElementById('lbl-m').innerText = String(Math.floor((spanDelta % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+            document.getElementById('lbl-s').innerText = String(Math.floor((spanDelta % (1000 * 60)) / 1000)).padStart(2, '0');
         }, 1000);
     </script>
 </body>
