@@ -68,7 +68,7 @@
         }
 
         .music-pulse {
-            animation: pulseDisc 2s infinite linear;
+            animation: pulseDisc 4s infinite linear;
         }
 
         @keyframes pulseDisc {
@@ -317,7 +317,6 @@
             font-weight: 800;
         }
 
-        /* Upgraded Premium Font Family for Regards Hierarchy Section */
         .signature-names {
             font-family: 'Pinyon Script', cursive;
             font-size: 3.8rem;
@@ -369,7 +368,7 @@
             </div>
         </section>
 
-        <!-- Dynamic Tilted Axis Ring Node 1: Sliding Right & Left Outwards -->
+        <!-- Dynamic Tilted Axis Ring Node 1 -->
         <section class="scroll-section" style="margin: 0 auto;">
             <div class="tilted-cross-axis pattern-out">
                 <div class="axis-line"></div>
@@ -398,7 +397,7 @@
             </div>
         </section>
 
-        <!-- Dynamic Tilted Axis Ring Node 2: Sliding Opposite Towards Middle Inwards -->
+        <!-- Dynamic Tilted Axis Ring Node 2 -->
         <section class="scroll-section" style="margin: 0 auto;">
             <div class="tilted-cross-axis pattern-in">
                 <div class="axis-line"></div>
@@ -420,7 +419,7 @@
             </div>
         </section>
 
-        <!-- Dynamic Tilted Axis Ring Node 3: Back to Outward Slide Vector Frame -->
+        <!-- Dynamic Tilted Axis Ring Node 3 -->
         <section class="scroll-section" style="margin: 0 auto;">
             <div class="tilted-cross-axis pattern-out">
                 <div class="axis-line"></div>
@@ -443,7 +442,7 @@
             </div>
         </section>
 
-        <!-- Revised Regards Structural Panel Layout -->
+        <!-- Revised Regards Panel -->
         <div class="royal-signature-panel scroll-section">
             <h5>With Best Compliments From</h5>
             <div class="signature-names">Hakim & Shaikh Family</div>
@@ -458,7 +457,6 @@
         const panelContainer = document.getElementById('doors-container');
         const wrapperMain = document.getElementById('wedding-card-content');
         
-        // Media Variables
         const bgAudio = document.getElementById('invite-bg-audio');
         const floatingAudioBtn = document.getElementById('audio-floating-control');
         const audioIcon = document.getElementById('audio-state-icon');
@@ -470,16 +468,14 @@
             doorRight.classList.add('door-open-right');
             
             wrapperMain.style.display = 'flex';
-            
-            // Unhide Audio Floating Controller Option Once Door Opens
             floatingAudioBtn.classList.add('visible');
 
-            // Attempting Background Music Stream Autoplay
+            // Force interaction sequence to safely bypass browser locks
             bgAudio.play().then(() => {
                 audioPlaying = true;
                 floatingAudioBtn.classList.add('music-pulse');
             }).catch((err) => {
-                console.log("Autoplay bound block intercepted, awaiting hardware interface click.");
+                console.log("Browser policy restricted seamless autoplay. Manual toggle active.");
             });
 
             setTimeout(() => {
@@ -488,7 +484,7 @@
             }, 2400);
         });
 
-        // Toggle Event Processing for Background Sound Track
+        // Toggle handling
         floatingAudioBtn.addEventListener('click', () => {
             if (audioPlaying) {
                 bgAudio.pause();
@@ -496,10 +492,11 @@
                 floatingAudioBtn.classList.remove('music-pulse');
                 audioPlaying = false;
             } else {
-                bgAudio.play();
-                audioIcon.className = 'fas fa-music';
-                floatingAudioBtn.classList.add('music-pulse');
-                audioPlaying = true;
+                bgAudio.play().then(() => {
+                    audioIcon.className = 'fas fa-music';
+                    floatingAudioBtn.classList.add('music-pulse');
+                    audioPlaying = true;
+                });
             }
         });
 
