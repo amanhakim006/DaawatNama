@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Engagement Ceremony of Arbaj & Sana Kaussain</title>
     <!-- Premium Curated Fonts & FontAwesome -->
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@700&family=Great+Vibes&family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@700&family=Great+Vibes&family=Cinzel:wght@500;700&family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -16,6 +16,7 @@
             --emerald-light: #063825;
             --gold-text: #f3e5ab;
             --white: #ffffff;
+            --purple-scratch: linear-gradient(135deg, #2d0b4e 0%, #4a157d 40%, #631e9a 70%, #1e0536 100%);
         }
 
         * {
@@ -29,8 +30,8 @@
             font-family: 'Cinzel', serif;
             /* Premium Metallic Gold Texture Pattern Overlaid Background */
             background-color: var(--gold-base);
-            background-image: radial-gradient(circle at center, rgba(251, 235, 167, 0.4) 0%, rgba(170, 124, 17, 0.85) 100%), 
-                              url('https://www.transparenttextures.com/patterns/decorative-subtle-weave.png');
+            background-image: radial-gradient(circle at center, rgba(251, 235, 167, 0.45) 0%, rgba(170, 124, 17, 0.85) 100%), 
+                              url('https://www.transparenttextures.com/patterns/royal-feather.png');
             color: var(--dark-emerald);
             overflow-x: hidden;
         }
@@ -72,7 +73,6 @@
             box-shadow: inset 20px 0 40px rgba(0,0,0,0.7);
         }
 
-        /* Intricate Arabesque Border Framing Inside Doors */
         .door::after {
             content: '';
             position: absolute;
@@ -108,12 +108,6 @@
             letter-spacing: 2px;
         }
 
-        .open-btn:hover {
-            transform: scale(1.12);
-            box-shadow: 0 0 45px rgba(2, 26, 17, 1);
-            color: var(--white);
-        }
-
         .open-btn.fade-out {
             opacity: 0;
             transform: scale(0);
@@ -135,7 +129,7 @@
             transition: all 1.3s cubic-bezier(0.215, 0.610, 0.355, 1);
             width: 100%;
             max-width: 650px;
-            margin: 50px auto;
+            margin: 40px auto;
             text-align: center;
         }
         
@@ -147,11 +141,11 @@
         /* ----- THE ROYAL CREST MAIN FRAMES ----- */
         .islamic-box-frame {
             border: 3px solid var(--dark-emerald);
-            padding: 60px 35px;
+            padding: 50px 35px;
             border-radius: 200px 200px 30px 30px;
             background: var(--dark-emerald);
             background-image: radial-gradient(circle at center, var(--emerald-light) 0%, var(--dark-emerald) 100%),
-                              url('https://www.transparenttextures.com/patterns/dark-matter.png');
+                              url('https://www.transparenttextures.com/patterns/royal-feather.png');
             box-shadow: 0 25px 55px rgba(40, 30, 2, 0.4);
             position: relative;
         }
@@ -165,25 +159,102 @@
             pointer-events: none;
         }
 
+        .bismillah-text {
+            font-family: 'Amiri', serif;
+            font-size: 1.8rem;
+            color: var(--gold-text);
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .bismillah-sub {
+            font-family: 'Cinzel', serif;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            color: var(--white);
+            opacity: 0.8;
+            display: block;
+            margin-bottom: 25px;
+        }
+
         .islamic-box-frame h1 {
             font-family: 'Amiri', serif;
-            font-size: 1.5rem;
-            margin-bottom: 25px;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
             color: var(--gold-text);
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             font-weight: 400;
         }
 
-        .islamic-box-frame h2 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 4.2rem;
-            color: var(--gold-base);
+        .calligraphy-title {
+            font-family: 'Monsieur La Doulaise', cursive;
+            font-size: 5.5rem;
+            font-weight: 400;
             background: var(--gold-linear);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             filter: drop-shadow(0 3px 4px rgba(0,0,0,0.5));
-            margin: 5px 0;
+            line-height: 1.1;
+            display: block;
         }
+
+        /* Crossed Lines Styling */
+        .crossed-divider {
+            position: relative;
+            width: 160px;
+            height: 20px;
+            margin: 20px auto;
+        }
+
+        .crossed-divider::before, .crossed-divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            height: 1px;
+            background: var(--gold-base);
+        }
+
+        .crossed-divider::before { transform: rotate(4deg); }
+        .crossed-divider::after { transform: rotate(-4deg); }
+
+        .crossed-divider i {
+            position: absolute;
+            left: 50%; top: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--dark-emerald);
+            padding: 0 8px;
+            color: var(--gold-text);
+            font-size: 0.8rem;
+            z-index: 2;
+        }
+
+        /* ----- FINGER RINGS SCROLL ANIMATIONS ----- */
+        .rings-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            width: 100%;
+            height: 50px;
+            margin: 20px 0;
+            perspective: 500px;
+            overflow: hidden;
+        }
+
+        .ring-icon {
+            font-size: 2rem;
+            color: #d4af37;
+            filter: drop-shadow(0 2px 5px rgba(0,0,0,0.3));
+            transition: transform 1.2s cubic-bezier(0.1, 0.8, 0.2, 1);
+        }
+
+        /* Default standard scroll rotation vectors */
+        .scroll-section.active .ring-up { transform: translateY(-15px) rotateX(180deg); }
+        .scroll-section.active .ring-down { transform: translateY(15px) rotateX(-180deg); }
+
+        /* Opposite rotation vectors for specific sections */
+        .scroll-section.active .ring-opp-up { transform: translateY(-15px) rotateX(-180deg); }
+        .scroll-section.active .ring-opp-down { transform: translateY(15px) rotateX(180deg); }
 
         /* ----- DARK EMERALD SCRATCH SURFACE ENGINE ----- */
         .instruction {
@@ -191,18 +262,18 @@
             color: var(--dark-emerald);
             font-weight: 700;
             margin-bottom: 15px;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
             text-transform: uppercase;
         }
 
         .scratch-outer-shield {
             position: relative;
             width: 100%;
-            max-width: 410px;
-            height: 240px;
+            max-width: 440px;
+            height: 250px;
             margin: 0 auto;
             border-radius: 20px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.35);
             overflow: hidden;
             border: 4px solid var(--dark-emerald);
         }
@@ -216,22 +287,32 @@
             align-items: center;
             padding: 25px;
             z-index: 1;
-            background: linear-gradient(135deg, #04261a 0%, #010d08 100%);
+            background: linear-gradient(135deg, #04261a 0%, #010d08 100%),
+                        url('https://www.transparenttextures.com/patterns/royal-feather.png');
         }
 
         .invitation-reveal-vault h3 {
             font-family: 'Cinzel Decorative', serif;
-            font-size: 1.6rem;
+            font-size: 2rem;
             color: var(--gold-base);
-            margin-bottom: 15px;
+            margin-top: 15px;
+            margin-bottom: 20px;
             letter-spacing: 1px;
         }
 
-        .invitation-reveal-vault p {
+        .single-line-row {
             font-family: 'Amiri', serif;
             font-size: 1.4rem;
-            margin: 5px 0;
             color: var(--white);
+            width: 100%;
+            border-bottom: 1px dashed rgba(212, 175, 55, 0.25);
+            padding: 8px 0;
+            letter-spacing: 0.5px;
+        }
+
+        .single-line-row:last-child {
+            border-bottom: none;
+            color: var(--gold-text);
         }
 
         #scratch-canvas {
@@ -242,7 +323,7 @@
             transition: opacity 0.8s ease-in-out;
         }
 
-        /* ----- PYROTECHNIC PARTICLES GENERATOR (5 SECONDS) ----- */
+        /* ----- PYROTECHNIC PARTICLES GENERATOR ----- */
         .fw-particle {
             position: absolute;
             width: 6px;
@@ -346,9 +427,10 @@
         }
 
         @media (max-width: 480px) {
-            .islamic-box-frame h2 { font-size: 3.2rem; }
+            .calligraphy-title { font-size: 4.2rem; }
             .time-box-shield { min-width: 75px; padding: 12px 5px; }
             .time-box-shield span { font-size: 1.8rem; }
+            .scratch-outer-shield { height: 270px; }
         }
     </style>
 </head>
@@ -367,26 +449,49 @@
         <!-- Frame Section 1: Main Monogram -->
         <section class="scroll-section">
             <div class="islamic-box-frame">
+                <span class="bismillah-text">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</span>
+                <span class="bismillah-sub">In the name of Allah, the Most Gracious, the Most Merciful</span>
+                
                 <h1>The Engagement Ceremony of</h1>
-                <h2>Arbaj</h2>
-                <p style="font-family:'Great Vibes'; font-size:2.5rem; color:var(--gold-text); margin: 10px 0;">and</p>
-                <h2>Sana Kaussain</h2>
+                <span class="calligraphy-title">Arbaj</span>
+                <p style="font-family:'Great Vibes'; font-size:2.5rem; color:var(--gold-text); margin: 5px 0;">and</p>
+                <span class="calligraphy-title">Sana Kaussain</span>
+                
+                <!-- Crossed Geometric Lines -->
+                <div class="crossed-divider">
+                    <i class="fas fa-heart"></i>
+                </div>
             </div>
         </section>
 
+        <!-- Ring Animation Node 1: Post Core Details -->
+        <div class="rings-wrapper scroll-section">
+            <i class="fas fa-ring ring-icon ring-up"></i>
+            <i class="fas fa-ring ring-icon ring-down"></i>
+        </div>
+
         <!-- Frame Section 2: Emerald Green Scratch Card Grid -->
         <section class="scroll-section" style="position: relative;">
-            <div class="instruction"><i class="fas fa-fingerprint"></i> Rub on card to unveil invitation</div>
+            <div class="instruction"><i class="fas fa-hand-sparkles"></i> Rub on card to unveil invitation</div>
             <div class="scratch-outer-shield" id="canvas-host">
                 <div class="invitation-reveal-vault">
                     <h3>You're Invited</h3>
-                    <p><i class="far fa-calendar-alt" style="color:var(--gold-base);"></i> June 13, 2026</p>
-                    <p>Saturday</p>
-                    <p><i class="far fa-clock" style="color:var(--gold-base);"></i> After Namaz-a-Asr at 5:30pm</p>
+                    <div class="single-line-row">
+                        <i class="far fa-calendar-alt" style="color:var(--gold-base); margin-right: 8px;"></i> June 13, 2026, Saturday
+                    </div>
+                    <div class="single-line-row">
+                        <i class="far fa-clock" style="color:var(--gold-base); margin-right: 8px;"></i> After Namaz-a-Asr at 5:30pm
+                    </div>
                 </div>
                 <canvas id="scratch-canvas"></canvas>
             </div>
         </section>
+
+        <!-- Ring Animation Node 2: Post Scratch Card (Rolls Opposite) -->
+        <div class="rings-wrapper scroll-section">
+            <i class="fas fa-ring ring-icon ring-opp-down"></i>
+            <i class="fas fa-ring ring-icon ring-opp-up"></i>
+        </div>
 
         <!-- Frame Section 3: Live Chronometer Ticker -->
         <section class="scroll-section">
@@ -399,11 +504,17 @@
             </div>
         </section>
 
+        <!-- Ring Animation Node 3: Post Countdown Frame -->
+        <div class="rings-wrapper scroll-section">
+            <i class="fas fa-ring ring-icon ring-up"></i>
+            <i class="fas fa-ring ring-icon ring-down"></i>
+        </div>
+
         <!-- Frame Section 4: Geographic Coordinate Matrix -->
         <section class="scroll-section">
             <h3 class="venue-title"><i class="fas fa-map-marker-alt"></i> Venue</h3>
             <div class="venue-address-box">
-                <strong style="font-size: 1.4rem;">Hotel Yugvir & Garden</strong><br>
+                <strong style="font-size: 1.4rem;">Hotel Yugveer & Garden</strong><br>
                 Nira-Baramati Road, Nimbut
             </div>
             <div class="map-frame-wrapper">
@@ -442,14 +553,14 @@
         function manageScrollReveals() {
             sections.forEach(sec => {
                 const secTop = sec.getBoundingClientRect().top;
-                if (secTop < window.innerHeight * 0.85) {
+                if (secTop < window.innerHeight * 0.88) {
                     sec.classList.add('active');
                 }
             });
         }
         window.addEventListener('scroll', manageScrollReveals);
 
-        // --- DRIVER MECHANICS: EMERALD GREEN CANVAS SCRATCH UNIT ---
+        // --- DRIVER MECHANICS: LUXURY PURPLE CANVAS SCRATCH UNIT ---
         const cvs = document.getElementById('scratch-canvas');
         const renderCtx = cvs.getContext('2d');
         const hostBox = document.getElementById('canvas-host');
@@ -457,34 +568,37 @@
         let scratchTriggered = false;
         let isDrawing = false;
 
-        function buildDarkGreenScratchSurface() {
+        function buildPurpleScratchSurface() {
             cvs.width = hostBox.offsetWidth;
             cvs.height = hostBox.offsetHeight;
 
-            // Deep Emerald Green Shimmer Gradient Matrix Cover
+            // Deep Velvet Purple Shimmer Metallic Cover
             let gd = renderCtx.createLinearGradient(0, 0, cvs.width, cvs.height);
-            gd.addColorStop(0, '#010a06');
-            gd.addColorStop(0.4, '#042b1d');
-            gd.addColorStop(0.7, '#021a11');
-            gd.addColorStop(1, '#000503');
+            gd.addColorStop(0, '#1c0433');
+            gd.addColorStop(0.4, '#4a127a');
+            gd.addColorStop(0.7, '#5e179c');
+            gd.addColorStop(1, '#0f021f');
             
             renderCtx.fillStyle = gd;
             renderCtx.fillRect(0, 0, cvs.width, cvs.height);
 
             // Fine Golden Intricate Border Linework on Canvas Layer
-            renderCtx.strokeStyle = 'rgba(214, 175, 55, 0.4)';
-            renderCtx.lineWidth = 3;
-            renderCtx.strokeRect(12, 12, cvs.width - 24, cvs.height - 24);
+            renderCtx.strokeStyle = 'rgba(214, 175, 55, 0.5)';
+            renderCtx.lineWidth = 2;
+            renderCtx.strokeRect(14, 14, cvs.width - 28, cvs.height - 28);
 
             // Clean, specified premium text overlay lines
             renderCtx.font = "bold 18px 'Cinzel', serif";
             renderCtx.fillStyle = "#d4af37";
             renderCtx.textAlign = "center";
+            renderCtx.shadowColor = "rgba(0, 0, 0, 0.6)";
+            renderCtx.shadowBlur = 4;
             renderCtx.fillText("Scratch to Open Date", cvs.width / 2, cvs.height / 2 + 6);
+            renderCtx.shadowBlur = 0;
         }
 
-        window.addEventListener('resize', buildDarkGreenScratchSurface);
-        setTimeout(buildDarkGreenScratchSurface, 350);
+        window.addEventListener('resize', buildPurpleScratchSurface);
+        setTimeout(buildPurpleScratchSurface, 350);
 
         function processScratchMovement(e) {
             if (scratchTriggered) return;
@@ -498,13 +612,13 @@
 
             renderCtx.globalCompositeOperation = 'destination-out';
             renderCtx.beginPath();
-            renderCtx.arc(currentX, currentY, 28, 0, Math.PI * 2);
+            renderCtx.arc(currentX, currentY, 32, 0, Math.PI * 2);
             renderCtx.fill();
 
             scratchStrokeCounter++;
             
-            // Once user triggers minimal scratching strokes, automate instant full smooth opacity reveal
-            if (scratchStrokeCounter > 15) {
+            // Auto-complete transparency reveal on real interaction limit
+            if (scratchStrokeCounter > 30) {
                 initiateGrandPyroFinale();
             }
         }
@@ -540,7 +654,7 @@
 
         // --- ENGINE LAYER: PYROTECHNIC STRUCTURAL GENERATOR ---
         function triggerClusterExplosion() {
-            const richColors = ['#d4af37', '#fbeba7', '#ffffff', '#ff4757', '#2ed573', '#ffa502'];
+            const richColors = ['#d4af37', '#fbeba7', '#ffffff', '#9b5de5', '#f15bb5', '#00f5d4'];
             const singleBurstVolume = 45; 
 
             // Calculate randomized multi-node coordinate centers across the wrapper zone
