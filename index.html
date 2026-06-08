@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Engagement Ceremony of Arbaj & Sana Kaussain</title>
-    <!-- Premium Curated Fonts & FontAwesome -->
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@700&family=Great+Vibes&family=Cinzel:wght@500;700&family=Playball&display=swap" rel="stylesheet">
+    <!-- Premium Selected Fonts & FontAwesome Layout Vectors -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@700&family=Alex+Brush&family=Cinzel:wght@600;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
             --gold-base: #cfa83d;
-            --gold-linear: linear-gradient(135deg, #aa7c11 0%, #fbeba7 30%, #d4af37 50%, #fbeba7 80%, #946b07 100%);
-            --dark-emerald: #021a11; 
-            --emerald-light: #063825;
+            --gold-linear: linear-gradient(135deg, #a17610 0%, #fef1b7 25%, #d4af37 50%, #fef1b7 75%, #886205 100%);
+            --dark-emerald: #021a11;
+            --emerald-light: #053321;
             --gold-text: #f3e5ab;
             --white: #ffffff;
         }
@@ -28,13 +28,13 @@
         body {
             font-family: 'Cinzel', serif;
             background-color: var(--gold-base);
-            background-image: radial-gradient(circle at center, rgba(251, 235, 167, 0.45) 0%, rgba(170, 124, 17, 0.85) 100%), 
+            background-image: radial-gradient(circle at center, rgba(251, 235, 167, 0.45) 0%, rgba(161, 118, 16, 0.9) 100%), 
                               url('https://www.transparenttextures.com/patterns/royal-feather.png');
             color: var(--dark-emerald);
             overflow-x: hidden;
         }
 
-        /* ----- LUXURY METALLIC GATE DOORS ----- */
+        /* ----- ROYAL DOOR MODULE ----- */
         #doors-container {
             position: fixed;
             top: 0;
@@ -53,25 +53,25 @@
             top: 0;
             width: 50%;
             height: 100%;
-            background-color: #946b07;
-            background-image: linear-gradient(135deg, rgba(148, 107, 7, 0.4) 0%, rgba(40, 30, 2, 0.9) 100%), 
-                              url('https://www.transparenttextures.com/patterns/arabesque.png');
+            background-color: #886205;
+            background-image: linear-gradient(135deg, rgba(136, 98, 5, 0.35) 0%, rgba(33, 24, 2, 0.95) 100%), 
+                              url('https://www.transparenttextures.com/patterns/royal-feather.png');
             border: 5px solid var(--dark-emerald);
-            transition: transform 2.4s cubic-bezier(0.76, 0, 0.175, 1);
+            transition: transform 2.5s cubic-bezier(0.76, 0, 0.165, 1);
         }
 
-        .door.left { left: 0; border-right: 2.5px solid var(--dark-emerald); box-shadow: inset -20px 0 40px rgba(0,0,0,0.7); }
-        .door.right { right: 0; border-left: 2.5px solid var(--dark-emerald); box-shadow: inset 20px 0 40px rgba(0,0,0,0.7); }
+        .door.left { left: 0; border-right: 2.5px solid var(--dark-emerald); box-shadow: inset -25px 0 50px rgba(0,0,0,0.85); }
+        .door.right { right: 0; border-left: 2.5px solid var(--dark-emerald); box-shadow: inset 20px 0 50px rgba(0,0,0,0.85); }
 
         .door::after {
             content: '';
             position: absolute;
-            top: 6%; bottom: 6%;
-            width: 82%;
-            border: 2px double var(--dark-emerald);
+            top: 7%; bottom: 7%;
+            width: 84%;
+            border: 3px double var(--dark-emerald);
         }
-        .door.left::after { right: 6%; border-radius: 200px 0 0 200px; }
-        .door.right::after { left: 6%; border-radius: 0 200px 200px 0; }
+        .door.left::after { right: 7%; border-radius: 250px 0 0 250px; }
+        .door.right::after { left: 7%; border-radius: 0 250px 250px 0; }
 
         .door-open-left { transform: translateX(-100%); }
         .door-open-right { transform: translateX(100%); }
@@ -79,18 +79,18 @@
         .open-btn {
             position: relative;
             z-index: 101;
-            width: 100px;
-            height: 100px;
+            width: 105px;
+            height: 105px;
             border-radius: 50%;
             font-family: 'Cinzel', serif;
-            font-size: 1.1rem;
-            font-weight: 700;
+            font-size: 1.15rem;
+            font-weight: 800;
             color: var(--gold-text);
-            background: radial-gradient(circle, #063825 0%, #021a11 100%);
-            border: 3px solid var(--gold-base);
+            background: radial-gradient(circle, #063c27 0%, #01140d 100%);
+            border: 3.5px solid var(--gold-base);
             cursor: pointer;
-            box-shadow: 0 0 35px rgba(2, 26, 17, 0.8), inset 0 0 15px rgba(212, 175, 55, 0.4);
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+            box-shadow: 0 0 35px rgba(2, 26, 17, 0.85), inset 0 0 15px rgba(212, 175, 55, 0.45);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.15);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -99,7 +99,7 @@
 
         .open-btn.fade-out { opacity: 0; transform: scale(0); pointer-events: none; }
 
-        /* ----- SCROLL MODULES ----- */
+        /* ----- MAIN TIMELINE VIEWS ----- */
         .main-content {
             display: none;
             flex-direction: column;
@@ -110,137 +110,100 @@
 
         section {
             opacity: 0;
-            transform: translateY(40px);
-            transition: all 1.3s cubic-bezier(0.215, 0.610, 0.355, 1);
+            transform: translateY(60px);
+            transition: all 1.4s cubic-bezier(0.215, 0.610, 0.355, 1);
             width: 100%;
-            max-width: 650px;
-            margin: 25px auto;
+            max-width: 660px;
+            margin: 40px auto;
             text-align: center;
         }
         
         section.active { opacity: 1; transform: translateY(0); }
 
-        /* ----- CARD BASE FRAME ----- */
         .islamic-box-frame {
-            border: 3px solid var(--dark-emerald);
-            padding: 55px 35px;
-            border-radius: 200px 200px 30px 30px;
+            border: 4px solid var(--dark-emerald);
+            padding: 65px 35px;
+            border-radius: 220px 220px 40px 40px;
             background: var(--dark-emerald);
             background-image: radial-gradient(circle at center, var(--emerald-light) 0%, var(--dark-emerald) 100%),
                               url('https://www.transparenttextures.com/patterns/royal-feather.png');
-            box-shadow: 0 25px 55px rgba(40, 30, 2, 0.4);
+            box-shadow: 0 30px 65px rgba(40, 30, 2, 0.45);
             position: relative;
         }
         
         .islamic-box-frame::before {
             content: '';
             position: absolute;
-            top: 6px; left: 6px; right: 6px; bottom: 6px;
+            top: 7px; left: 7px; right: 7px; bottom: 7px;
             border: 1px dashed var(--gold-base);
-            border-radius: 194px 194px 24px 24px;
+            border-radius: 213px 213px 33px 33px;
             pointer-events: none;
         }
 
-        .bismillah {
-            font-family: 'Amiri', serif;
-            font-size: 1.8rem;
-            color: var(--gold-text);
-            margin-bottom: 20px;
-        }
+        .bismillah-text { font-family: 'Amiri', serif; font-size: 1.8rem; color: var(--gold-text); margin-bottom: 5px; display: block; }
+        .bismillah-sub { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 2px; color: var(--white); opacity: 0.8; display: block; margin-bottom: 25px; }
+        .islamic-box-frame h1 { font-family: 'Amiri', serif; font-size: 1.6rem; margin-bottom: 20px; color: var(--gold-text); letter-spacing: 3px; }
 
-        .islamic-box-frame h1 {
-            font-family: 'Amiri', serif;
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            color: var(--white);
-            letter-spacing: 2px;
-        }
-
-        .bride-groom-name {
-            font-family: 'Playball', cursive;
-            font-size: 4rem;
+        /* Ultra Premium Handpicked Calligraphy Upgrades */
+        .calligraphy-name {
+            font-family: 'Alex Brush', cursive;
+            font-size: 5.5rem;
+            font-weight: 400;
             background: var(--gold-linear);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6));
-            margin: 10px 0;
+            filter: drop-shadow(0 3px 5px rgba(0,0,0,0.6));
+            line-height: 1.2;
             display: block;
         }
 
-        /* ----- INTERACTIVE MATRIX ENGINE BASED ON 1000572912.JPG ----- */
-        .img-rings-container {
+        /* ----- CUSTOM ROTATING DUAL RING GEOMETRY ENGINE (Ref: 1000572912.jpg) ----- */
+        .tilted-cross-axis {
             position: relative;
-            width: 240px;
-            height: 180px;
-            margin: 20px auto;
+            width: 260px;
+            height: 80px;
+            margin: 15px auto;
         }
 
-        .cross-line {
+        .axis-line {
             position: absolute;
+            top: 50%; left: 0;
             width: 100%;
-            height: 4px;
-            background: var(--white);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--dark-emerald) 20%, var(--gold-base) 50%, var(--dark-emerald) 80%, transparent);
+            transform: rotate(-10deg); /* Replicating angle orientation from file 1000572912.jpg */
         }
-        .line-top { top: 35%; transform: rotate(12deg); }
-        .line-bottom { bottom: 35%; transform: rotate(-12deg); }
 
-        /* Rendered Ring Nodes mimicking the 3D visual look from 1000572912.JPG */
-        .matrix-ring {
+        .embedded-rings-carrier {
             position: absolute;
-            width: 25px;
-            height: 65px;
-            border: 4px solid var(--gold-text);
-            border-radius: 50%;
-            box-shadow: 0 0 10px rgba(251, 235, 167, 0.6), inset 0 0 5px rgba(255,255,255,0.5);
-            transition: all 1.5s cubic-bezier(0.25, 1, 0.25, 1);
+            top: 0; left: 0; width: 100%; height: 100%;
         }
 
-        /* Section 1 & 3: Moving Out mechanics */
-        .track-out .r1 { left: 35%; top: 12%; }
-        .track-out .r2 { left: 55%; top: 18%; }
-        .track-out .r3 { left: 30%; bottom: 12%; }
-        .track-out .r4 { left: 50%; bottom: 6%; }
-
-        .scroll-section.active .track-out .r1 { left: 10%; transform: rotate(15deg); }
-        .scroll-section.active .track-out .r2 { left: 80%; transform: rotate(-15deg); }
-        .scroll-section.active .track-out .r3 { left: 5%; transform: rotate(-15deg); }
-        .scroll-section.active .track-out .r4 { left: 75%; transform: rotate(15deg); }
-
-        /* Section 2 (Post Scratch Box): Reverse Moving Inwards mechanics */
-        .track-in .r1 { left: 5%; top: 12%; }
-        .track-in .r2 { left: 80%; top: 18%; }
-        .track-in .r3 { left: 5%; bottom: 12%; }
-        .track-in .r4 { left: 80%; bottom: 6%; }
-
-        .scroll-section.active .track-in .r1 { left: 35%; transform: rotate(0deg); }
-        .scroll-section.active .track-in .r2 { left: 55%; transform: rotate(0deg); }
-        .scroll-section.active .track-in .r3 { left: 30%; transform: rotate(0deg); }
-        .scroll-section.active .track-in .r4 { left: 50%; transform: rotate(0deg); }
-
-
-        /* ----- SCRATCH DESIGN PLATFORM ----- */
-        .instruction {
-            font-size: 1.1rem;
-            color: var(--dark-emerald);
-            font-weight: 700;
-            margin-bottom: 15px;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
+        .ring-avatar {
+            position: absolute;
+            font-size: 2.2rem;
+            color: #e4c15c;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
+            top: 15px;
+            transition: all 1.8s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
-        .scratch-outer-shield {
-            position: relative;
-            width: 100%;
-            max-width: 420px;
-            height: 250px;
-            margin: 0 auto;
-            border-radius: 20px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.35);
-            overflow: hidden;
-            border: 4px solid var(--dark-emerald);
-        }
+        /* Pattern Layout 1: Moving Right / Left Outwards */
+        .pattern-out .r-one { left: 45%; transform: translateX(0) scale(1) rotateY(0deg); }
+        .pattern-out .r-two { right: 45%; transform: translateX(0) scale(1) rotateY(0deg); }
+        .scroll-section.active .pattern-out .r-one { transform: translateX(55px) rotateY(180deg); }
+        .scroll-section.active .pattern-out .r-two { transform: translateX(-55px) rotateY(-180deg); }
 
+        /* Pattern Layout 2: Opposite Towards Middle Inwards */
+        .pattern-in .r-one { left: 15%; transform: translateX(0); }
+        .pattern-in .r-two { right: 15%; transform: translateX(0); }
+        .scroll-section.active .pattern-in .r-one { transform: translateX(70px) scale(1.1) rotateY(-180deg); }
+        .scroll-section.active .pattern-in .r-two { transform: translateX(-70px) scale(1.1) rotateY(180deg); }
+
+        /* ----- PURPLE SCRATCH GRID ARCHITECT ----- */
+        .instruction { font-size: 1.15rem; color: var(--dark-emerald); font-weight: 800; margin-bottom: 20px; letter-spacing: 1.5px; text-transform: uppercase; }
+        .scratch-outer-shield { position: relative; width: 100%; max-width: 440px; height: 260px; margin: 0 auto; border-radius: 24px; box-shadow: 0 25px 55px rgba(0,0,0,0.4); overflow: hidden; border: 4px solid var(--dark-emerald); }
+        
         .invitation-reveal-vault {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -248,204 +211,131 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 25px;
+            padding: 30px 20px;
             z-index: 1;
-            background: linear-gradient(135deg, #04261a 0%, #010d08 100%);
+            background: linear-gradient(135deg, #032116 0%, #010a07 100%), url('https://www.transparenttextures.com/patterns/royal-feather.png');
         }
 
-        .invitation-reveal-vault h3 {
-            font-family: 'Cinzel Decorative', serif;
-            font-size: 1.8rem;
-            color: var(--gold-base);
-            margin-bottom: 5px;
-            text-transform: uppercase;
-        }
-
-        .upon-you-text {
-            font-family: 'Playball', cursive;
+        .invitation-reveal-vault h3 { font-family: 'Playfair Display', serif; font-style: italic; font-size: 2.2rem; color: var(--gold-base); margin-bottom: 8px; letter-spacing: 1px; }
+        
+        .peace-blessing-text {
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
             color: var(--gold-text);
-            font-size: 1.4rem;
-            margin-bottom: 15px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+            opacity: 0.9;
         }
 
         .single-line-row {
             font-family: 'Amiri', serif;
-            font-size: 1.4rem;
+            font-size: 1.45rem;
             color: var(--white);
             width: 100%;
-            border-top: 1px dashed rgba(212, 175, 55, 0.3);
+            border-top: 1px dashed rgba(212, 175, 55, 0.25);
             padding: 10px 0;
             letter-spacing: 0.5px;
         }
+        .single-line-row:last-child { color: var(--gold-text); }
 
-        #scratch-canvas {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: 2;
-            cursor: pointer;
-            transition: opacity 0.8s ease-in-out;
-        }
+        #scratch-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; cursor: pointer; transition: opacity 0.7s ease; }
 
-        /* ----- FIREWORKS ----- */
-        .fw-particle {
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 99;
-            animation: fireworkFly 1.3s cubic-bezier(0.05, 0.7, 0.1, 1) forwards;
-        }
+        /* ----- PYROTECHNICS INTERFACES ----- */
+        .fw-particle { position: absolute; width: 6px; height: 6px; border-radius: 50%; pointer-events: none; z-index: 99; animation: fireworkFly 1.4s cubic-bezier(0.05, 0.75, 0.1, 1) forwards; }
+        @keyframes fireworkFly { 0% { transform: translate(0,0) scale(2); opacity: 1; } 100% { transform: translate(var(--mx), var(--my)) scale(0); opacity: 0; } }
 
-        @keyframes fireworkFly {
-            0% { transform: translate(0,0) scale(1.8); opacity: 1; }
-            100% { transform: translate(var(--mx), var(--my)) scale(0); opacity: 0; }
-        }
+        /* ----- TIMER CORE PANELS ----- */
+        .countdown-title { font-family: 'Amiri', serif; font-size: 2.1rem; font-weight: 700; color: var(--dark-emerald); margin-bottom: 25px; }
+        .timer-flex-row { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+        .time-box-shield { background: var(--dark-emerald); background-image: radial-gradient(circle at top, var(--emerald-light) 0%, var(--dark-emerald) 100%); border: 2px solid var(--gold-base); padding: 20px 10px; border-radius: 16px; min-width: 95px; box-shadow: 0 15px 35px rgba(0,0,0,0.3); }
+        .time-box-shield span { display: block; font-size: 2.5rem; font-weight: 700; color: var(--gold-base); }
+        .time-box-shield label { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--white); display: block; margin-top: 6px; }
 
-        /* ----- LUXURY COUNTER PANELS ----- */
-        .countdown-title {
-            font-family: 'Amiri', serif;
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--dark-emerald);
-            margin-bottom: 25px;
-        }
+        /* ----- GEOGRAPHIC MAP LAYERS ----- */
+        .venue-title { font-family: 'Amiri', serif; font-size: 2.3rem; font-weight: bold; color: var(--dark-emerald); margin-bottom: 15px; }
+        .venue-address-box { font-size: 1.25rem; line-height: 1.7; margin-bottom: 35px; color: var(--dark-emerald); font-weight: 600; }
+        .map-frame-wrapper { border: 4px solid var(--dark-emerald); border-radius: 24px; overflow: hidden; box-shadow: 0 20px 45px rgba(40,30,2,0.4); }
+        .map-frame-wrapper iframe { width: 100%; height: 340px; display: block; }
 
-        .timer-flex-row {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .time-box-shield {
-            background: var(--dark-emerald);
-            background-image: radial-gradient(circle at top, var(--emerald-light) 0%, var(--dark-emerald) 100%);
-            border: 2px solid var(--gold-base);
-            padding: 18px 10px;
-            border-radius: 15px;
-            min-width: 95px;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.25);
-        }
-
-        .time-box-shield span {
-            display: block;
-            font-size: 2.4rem;
-            font-weight: 700;
-            color: var(--gold-base);
-        }
-
-        .time-box-shield label {
-            font-size: 0.75rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--white);
-            display: block;
-            margin-top: 5px;
-        }
-
-        /* ----- VENUE MAP SEGMENT ----- */
-        .venue-title {
-            font-family: 'Amiri', serif;
-            font-size: 2.2rem;
-            font-weight: bold;
-            color: var(--dark-emerald);
-            margin-bottom: 15px;
-        }
-
-        .venue-address-box {
-            font-size: 1.2rem;
-            line-height: 1.7;
-            margin-bottom: 30px;
-            color: var(--dark-emerald);
-            font-weight: 500;
-        }
-
-        .map-frame-wrapper {
-            border: 4px solid var(--dark-emerald);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.35);
-        }
-
-        .map-frame-wrapper iframe { width: 100%; height: 330px; display: block; }
-
-        /* ----- SIGNATURE FOOTER ----- */
-        .regards-panel {
-            margin-top: 60px;
-            border-top: 1px solid rgba(2, 26, 17, 0.3);
-            padding-top: 30px;
+        /* ----- REVISED ROYAL FOOTER SIGNATURE ----- */
+        .royal-signature-panel {
+            margin-top: 70px;
+            padding: 40px 15px;
             width: 100%;
+            max-width: 550px;
+            border-top: 2px double var(--dark-emerald);
+            text-align: center;
         }
 
-        .regards-title {
+        .royal-signature-panel h5 {
             font-family: 'Cinzel', serif;
             font-size: 0.9rem;
             letter-spacing: 4px;
-            text-transform: uppercase;
             color: var(--dark-emerald);
-            opacity: 0.8;
-            margin-bottom: 10px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            font-weight: 700;
         }
 
-        footer {
-            font-family: 'Great Vibes', cursive;
-            font-size: 3rem;
-            color: var(--dark-emerald);
-            text-align: center;
-            font-weight: bold;
+        .signature-names {
+            font-family: 'Alex Brush', cursive;
+            font-size: 3.2rem;
+            color: #795704;
+            line-height: 1.2;
+            text-shadow: 0 1px 2px rgba(255,255,255,0.5);
         }
 
         @media (max-width: 480px) {
-            .bride-groom-name { font-size: 3rem; }
-            .time-box-shield { min-width: 75px; padding: 12px 5px; }
-            .time-box-shield span { font-size: 1.8rem; }
-            .img-rings-container { width: 100%; transform: scale(0.9); }
+            .calligraphy-name { font-size: 4rem; }
+            .scratch-outer-shield { height: 290px; }
+            .signature-names { font-size: 2.6rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Double Metallic Gate Entry Screen -->
+    <!-- Metallic Royal Front Doors -->
     <div id="doors-container">
         <div class="door left" id="door-l"></div>
         <div class="door right" id="door-r"></div>
         <button class="open-btn" id="click-open-btn">OPEN</button>
     </div>
 
-    <!-- Layout Container -->
+    <!-- Core Layout System -->
     <div class="main-content" id="wedding-card-content">
         
-        <!-- Frame Section 1: Main Inscriptions -->
+        <!-- Frame Section 1: Main Monogram -->
         <section class="scroll-section">
             <div class="islamic-box-frame">
-                <div class="bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+                <span class="bismillah-text">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</span>
+                <span class="bismillah-sub">In the name of Allah, the Most Gracious, the Most Merciful</span>
+                
                 <h1>The Engagement Ceremony of</h1>
-                <span class="bride-groom-name">Arbaj</span>
-                <p style="font-family:'Great Vibes'; font-size:2.5rem; color:var(--gold-text); margin: 5px 0;">&</p>
-                <span class="bride-groom-name">Sana Kaussain</span>
+                <span class="calligraphy-name">Arbaj</span>
+                <p style="font-family:'Great Vibes'; font-size:2.5rem; color:var(--gold-text); margin: 5px 0;">and</p>
+                <span class="calligraphy-name">Sana Kaussain</span>
             </div>
         </section>
 
-        <!-- Ring Node 1 (Pattern from 1000572912.jpg - Moving Outwards) -->
+        <!-- Dynamic Tilted Axis Ring Node 1: Sliding Right & Left Outwards -->
         <section class="scroll-section" style="margin: 0 auto;">
-            <div class="img-rings-container track-out">
-                <div class="cross-line line-top"></div>
-                <div class="matrix-ring r1"></div>
-                <div class="matrix-ring r2"></div>
-                <div class="cross-line line-bottom"></div>
-                <div class="matrix-ring r3"></div>
-                <div class="matrix-ring r4"></div>
+            <div class="tilted-cross-axis pattern-out">
+                <div class="axis-line"></div>
+                <div class="embedded-rings-carrier">
+                    <i class="fas fa-ring ring-avatar r-one"></i>
+                    <i class="fas fa-ring ring-avatar r-two"></i>
+                </div>
             </div>
         </section>
 
-        <!-- Frame Section 2: Canvas Scratch Shield -->
+        <!-- Frame Section 2: Premium Purple Scratch Grid -->
         <section class="scroll-section" style="position: relative;">
-            <div class="instruction"><i class="fas fa-fingerprint"></i> Rub on card to unveil invitation</div>
+            <div class="instruction"><i class="fas fa-hand-sparkles"></i> Rub on card to unveil invitation</div>
             <div class="scratch-outer-shield" id="canvas-host">
                 <div class="invitation-reveal-vault">
                     <h3>You're Invited</h3>
-                    <div class="upon-you-text">upon you</div>
+                    <div class="peace-blessing-text">Peace be upon you</div>
                     <div class="single-line-row">
                         <i class="far fa-calendar-alt" style="color:var(--gold-base); margin-right: 8px;"></i> June 13, 2026, Saturday
                     </div>
@@ -457,15 +347,14 @@
             </div>
         </section>
 
-        <!-- Ring Node 2 (Pattern from 1000572912.jpg - Opposite Inwards) -->
+        <!-- Dynamic Tilted Axis Ring Node 2: Sliding Opposite Towards Middle Inwards -->
         <section class="scroll-section" style="margin: 0 auto;">
-            <div class="img-rings-container track-in">
-                <div class="cross-line line-top"></div>
-                <div class="matrix-ring r1"></div>
-                <div class="matrix-ring r2"></div>
-                <div class="cross-line line-bottom"></div>
-                <div class="matrix-ring r3"></div>
-                <div class="matrix-ring r4"></div>
+            <div class="tilted-cross-axis pattern-in">
+                <div class="axis-line"></div>
+                <div class="embedded-rings-carrier">
+                    <i class="fas fa-ring ring-avatar r-one"></i>
+                    <i class="fas fa-ring ring-avatar r-two"></i>
+                </div>
             </div>
         </section>
 
@@ -480,23 +369,22 @@
             </div>
         </section>
 
-        <!-- Ring Node 3 (Pattern from 1000572912.jpg - Moving Outwards) -->
+        <!-- Dynamic Tilted Axis Ring Node 3: Back to Outward Slide Vector Frame -->
         <section class="scroll-section" style="margin: 0 auto;">
-            <div class="img-rings-container track-out">
-                <div class="cross-line line-top"></div>
-                <div class="matrix-ring r1"></div>
-                <div class="matrix-ring r2"></div>
-                <div class="cross-line line-bottom"></div>
-                <div class="matrix-ring r3"></div>
-                <div class="matrix-ring r4"></div>
+            <div class="tilted-cross-axis pattern-out">
+                <div class="axis-line"></div>
+                <div class="embedded-rings-carrier">
+                    <i class="fas fa-ring ring-avatar r-one"></i>
+                    <i class="fas fa-ring ring-avatar r-two"></i>
+                </div>
             </div>
         </section>
 
-        <!-- Frame Section 4: Map Segmentation Matrix -->
+        <!-- Frame Section 4: Location Matrix -->
         <section class="scroll-section">
             <h3 class="venue-title"><i class="fas fa-map-marker-alt"></i> Venue</h3>
             <div class="venue-address-box">
-                <strong style="font-size: 1.4rem;">Hotel Yugveer & Garden</strong><br>
+                <strong style="font-size: 1.45rem; color: var(--emerald-light);">Hotel Yugveer & Garden</strong><br>
                 Nira-Baramati Road, Nimbut
             </div>
             <div class="map-frame-wrapper">
@@ -504,14 +392,15 @@
             </div>
         </section>
 
-        <section class="scroll-section regards-panel">
-            <div class="regards-title">With Best Compliments From</div>
-            <footer>Hakim & Shaikh family</footer>
-        </section>
+        <!-- Revised Custom Regards Design Panel -->
+        <div class="royal-signature-panel scroll-section">
+            <h5>With Best Compliments From</h5>
+            <div class="signature-names">Hakim & Shaikh Family</div>
+        </div>
     </div>
 
     <script>
-        // --- DRIVER MECHANICS: GATE EXTRACTION ---
+        // --- MOTOR CONTROL: SLIDING GATES ---
         const btnOpen = document.getElementById('click-open-btn');
         const doorLeft = document.getElementById('door-l');
         const doorRight = document.getElementById('door-r');
@@ -531,19 +420,19 @@
             }, 2400);
         });
 
-        // --- DRIVER MECHANICS: ANIMATION SCROLL INTERSECTIONS ---
+        // --- MOTOR CONTROL: VIEWPORT TRANSITIONS ---
         const sections = document.querySelectorAll('.scroll-section');
         function manageScrollReveals() {
             sections.forEach(sec => {
                 const secTop = sec.getBoundingClientRect().top;
-                if (secTop < window.innerHeight * 0.88) {
+                if (secTop < window.innerHeight * 0.92) {
                     sec.classList.add('active');
                 }
             });
         }
         window.addEventListener('scroll', manageScrollReveals);
 
-        // --- DRIVER MECHANICS: EMERALD GREEN CANVAS SCRATCH UNIT ---
+        // --- MOTOR CONTROL: SMOOTH VELVET PURPLE CANVAS SCRATCH MODULE ---
         const cvs = document.getElementById('scratch-canvas');
         const renderCtx = cvs.getContext('2d');
         const hostBox = document.getElementById('canvas-host');
@@ -555,7 +444,6 @@
             cvs.width = hostBox.offsetWidth;
             cvs.height = hostBox.offsetHeight;
 
-            // Velvet Deep Purple Metallic Cover
             let gd = renderCtx.createLinearGradient(0, 0, cvs.width, cvs.height);
             gd.addColorStop(0, '#1c0433');
             gd.addColorStop(0.4, '#4a127a');
@@ -565,12 +453,10 @@
             renderCtx.fillStyle = gd;
             renderCtx.fillRect(0, 0, cvs.width, cvs.height);
 
-            // Fine Golden Intricate Border Linework
             renderCtx.strokeStyle = 'rgba(214, 175, 55, 0.5)';
             renderCtx.lineWidth = 2;
             renderCtx.strokeRect(14, 14, cvs.width - 28, cvs.height - 28);
 
-            // Clean overlay text lines
             renderCtx.font = "bold 18px 'Cinzel', serif";
             renderCtx.fillStyle = "#d4af37";
             renderCtx.textAlign = "center";
@@ -600,7 +486,7 @@
 
             scratchStrokeCounter++;
             
-            if (scratchStrokeCounter > 30) {
+            if (scratchStrokeCounter > 35) {
                 initiateGrandPyroFinale();
             }
         }
@@ -629,8 +515,7 @@
         cvs.addEventListener('touchmove', (e) => { if(isDrawing) processScratchMovement(e); });
         window.addEventListener('touchend', () => isDrawing = false);
 
-
-        // --- ENGINE LAYER: PYROTECHNIC STRUCTURAL GENERATOR ---
+        // --- PYROTECHNICS EXPLOSION ENGINE ---
         function triggerClusterExplosion() {
             const richColors = ['#d4af37', '#fbeba7', '#ffffff', '#9b5de5', '#f15bb5', '#00f5d4'];
             const singleBurstVolume = 45; 
@@ -661,7 +546,7 @@
             }
         }
 
-        // --- REAL-TIME ENGINE: CHRONO TIMELINE CALCULATOR ---
+        // --- LIVE REALTIME TIMELINE RECKONER ---
         const TargetTimelineEpoch = new Date("June 13, 2026 17:30:00").getTime();
 
         setInterval(() => {
